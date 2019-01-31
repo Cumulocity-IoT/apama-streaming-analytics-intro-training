@@ -1,0 +1,20 @@
+des.apigateway.runtime.metrics.PerformanceMetrics : event
+    @EventId(path = "eventId")
+{
+    eventId         : string
+    api             : des.apigateway.runtime.events.API
+    operationName   : string
+    lively          : string
+    includeFaults   : string
+    intervalStart   : string
+    intervalStop    : string
+    availability    : float32
+    faultCount      : int32
+    successCount    : int32
+    totalCount      : int32
+    maxResponseTime : int32
+    minResponseTime : int32
+    avgResponseTime : float32
+    creationDate    : time
+    userAgent       : string
+}

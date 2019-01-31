@@ -1,0 +1,6 @@
+des.rules.nonpublishable.DecisionTableRowType : event
+{
+    newOldEnum : string
+    row        : int32
+    cells      : des.rules.nonpublishable.DecisionTableCellType[]
+}

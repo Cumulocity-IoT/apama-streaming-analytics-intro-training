@@ -1,0 +1,40 @@
+package apamax.training;
+using com.apama.memorystore.Storage;
+using com.apama.memorystore.Schema;
+using com.apama.memorystore.Row;
+using com.apama.memorystore.Store;
+using com.apama.memorystore.Table;
+using com.apama.memorystore.Finished;
+
+/** Monitors responses coming back from the students to see what they've done. */
+monitor TrainingMonitor {
+	action onload() {
+		log "Loaded monitor TrainingMonitor" at INFO;
+		
+		schema := Schema.schemaFromAny(new Alert);
+		schema.exposeMemoryView := true;
+		
+		on Finished(Storage.prepareInMemory("alerts"),*,*) as f {
+			store := Storage.open("alerts");
+			on Finished(store.prepare("alerts", schema),*,*) as f2 {
+				tbl := store.open("alerts");
+				startMonitoring();
+				com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
+			}
+		}
+	}
+	
+	action startMonitoring()
+	{
+		monitor.subscribe(Alert.CHANNEL);
+		on all Alert() as a {
+			Row r := tbl.get(a.user);
+			r.setAll(a);
+			r.commit();
+			log a.toString();
+		}
+	}
+	Schema schema;
+	Table tbl;
+	Store store;
+}

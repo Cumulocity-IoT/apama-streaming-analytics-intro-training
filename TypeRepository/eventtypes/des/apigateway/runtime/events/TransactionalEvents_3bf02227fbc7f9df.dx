@@ -1,0 +1,36 @@
+des.apigateway.runtime.events.TransactionalEvents : event
+    @EventId(path = "eventId")
+{
+    eventId         : string
+    api             : des.apigateway.runtime.events.API
+    cachedResponse  : string
+    httpMethod      : string
+    operationName   : string
+    targetName      : string
+    application     : des.apigateway.runtime.events.Application
+    status          : string
+    request         : string
+    response        : string
+    responseCode    : string
+    totalDataSize   : int32
+    totalTime       : string
+    providerTime    : string
+    serverID        : string
+    creationDate    : time
+    eventUsername   : string
+    eventSource     : string
+    nativeEndpoint  : string
+    packageName     : string
+    packageID       : string
+    planName        : string
+    planID          : string
+    messageType     : string
+    messagePayload  : string
+    origin          : string
+    requestHeaders  : map<string,string>
+    responseHeaders : map<string,string>
+    queryParameters : map<string,string>
+    correlationID   : string
+    customFields    : map<string,string>
+    errorOrigin     : string
+}

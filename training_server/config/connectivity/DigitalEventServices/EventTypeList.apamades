@@ -1,0 +1,10 @@
+#EventTypeList.apamades 10.3.0.1
+#This is an internal file and is not user-editable.
+EXPORT,apamax.training.Alert
+EXPORT,apamax.training.RegisterRobot
+EXPORT,apamax.training.TemperatureReading
+EXPORT,apamax.training.RequestRobotStatus
+EXPORT,apamax.training.RobotError
+EXPORT,apamax.training.RobotStatus
+EXPORT,apamax.training.RobotDataRequest
+EXPORT,apamax.training.RobotDataSummary

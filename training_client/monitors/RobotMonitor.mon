@@ -1,0 +1,19 @@
+package apamax.training;
+using com.apama.aggregates.mean;
+
+/** This monitor will monitor for problems with the robot sensors and send alerts when we find them  */
+monitor RobotMonitor {
+	action onload() {		
+		// Receive events of the type TemperatureReading.
+		// This is how DES receives events. Other systems 
+		// could define channels on other axes
+		monitor.subscribe(TemperatureReading.CHANNEL);
+		
+		// Insert your code here...
+
+		// Once the code is ready, start receiving events
+		com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
+		// so we know it's ready
+		log "Loaded monitor RobotMonitor" at INFO;
+	}
+}

@@ -1,0 +1,5 @@
+apamax.training.RobotError : event
+{
+    id      : int64
+    message : string
+}

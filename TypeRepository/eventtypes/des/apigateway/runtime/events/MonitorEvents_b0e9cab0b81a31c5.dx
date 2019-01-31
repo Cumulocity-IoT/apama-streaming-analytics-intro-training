@@ -1,0 +1,17 @@
+des.apigateway.runtime.events.MonitorEvents : event
+    @EventId(path = "eventId")
+{
+    eventId        : string
+    api            : des.apigateway.runtime.events.API
+    operationName  : string
+    application    : des.apigateway.runtime.events.Application
+    alertSource    : string
+    alertType      : string
+    alertDesc      : string
+    monitorAttr    : string
+    creationDate   : time
+    httpMethod     : string
+    responseCode   : string
+    userAgent      : string
+    nativeEndpoint : string
+}

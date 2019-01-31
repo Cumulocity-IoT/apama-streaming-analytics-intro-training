@@ -1,0 +1,18 @@
+package apamax.training;
+
+/** This monitor generates all the simulation data for the training. */
+monitor TrainingSimulator {
+	action onload() {
+		log "Loaded monitor TrainingSimulator" at INFO;
+		
+		(new RobotSimulator).startNormalSimulation();
+		(new RobotSimulator).startNormalSimulation();
+		(new RobotSimulator).startNormalSimulation();
+		(new RobotSimulator).startDeadSimulation();
+		(new RobotSimulator).startHotSimulation();
+		(new RobotSimulator).startVariableSimulation();
+		(new RobotSimulator).startSlowSimulation();
+		(new RobotSimulator).startSpikeySimulation();
+		(new RobotSimulator).startSimulationWithErrors();		
+	}
+}

@@ -1,0 +1,37 @@
+package apamax.training;
+
+/** Manage the list of robots which should exist  */
+event RobotManager {
+		
+	action init()
+	{
+		monitor.subscribe(RegisterRobot.CHANNEL);
+		on all RegisterRobot() as rr {
+			if not robots.hasKey(rr.id) {
+				robots[rr.id] := "OK";
+				send RobotStatus(rr.id, robots[rr.id]) to RobotStatus.CHANNEL;
+			}
+		}
+		monitor.subscribe(RobotError.CHANNEL);
+		on all RobotError() as re {
+			if robots.hasKey(re.id) {
+				if re.message.length() > 0 {
+					robots[re.id] := "Failed: "+re.message;
+				} else {
+					robots[re.id] := "OK";
+				}
+				send RobotStatus(re.id, robots[re.id]) to RobotStatus.CHANNEL;
+			}
+		}
+		monitor.subscribe(RequestRobotStatus.CHANNEL);
+		on all RequestRobotStatus() as rrs {
+			integer id;
+			for id in robots.keys() {
+				send RobotStatus(id, robots[id]) to RobotStatus.CHANNEL;
+			}
+		}
+	}
+	
+	dictionary<integer, string> robots;
+	
+}

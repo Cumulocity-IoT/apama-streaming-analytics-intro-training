@@ -1,0 +1,7 @@
+des.apigateway.runtime.events.LifeCycleEvents : event
+    @EventId(path = "eventId")
+{
+    eventId      : string
+    creationDate : time
+    eventStatus  : string
+}

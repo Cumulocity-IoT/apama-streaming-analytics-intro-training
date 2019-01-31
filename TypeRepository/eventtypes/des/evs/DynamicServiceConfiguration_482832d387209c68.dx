@@ -1,0 +1,4 @@
+des.evs.DynamicServiceConfiguration : event
+{
+    configuration : des.evs.KeyValuePair[]
+}
