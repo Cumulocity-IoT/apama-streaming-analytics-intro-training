@@ -1,0 +1,618 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Row</TITLE>
+<META NAME="keywords" CONTENT="Row&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Row";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Row.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Row.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Row</H2>
+<HR>Represents an ordered and typed set of named fields in a table, with a key that uniquely identifies the row within the table.<br>
+<br> A Row is an atomic snapshot of the data in the table and once returned, a Row's contents are guaranteed to be consistent and unchanging.<br>
+<br> Any changes the user makes to a Row are local until commit is called.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html" title="type in com.apama.memorystore">com.apama.memorystore.Table</A>&nbsp;-&nbsp;A table holds a collection of rows.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#commit()">commit</A></B>()</CODE>
+<br>
+<br>Try to commit changes from this Row back to the table, which could result in an exception being thrown if the Row is not up to date.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#copy()">copy</A></B>(<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&nbsp;other)</CODE>
+<br>
+<br>Copy the contents of the specified other Row into this one.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#forceCommit()">forceCommit</A></B>()</CODE>
+<br>
+<br>Commit this Row back to the table even if the Row is not up to date.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;any</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#get()">get</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (can be used on all types). This will return a string for types that cannot be stored. Use getParsed() to parse to a type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;any</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getAll()">getAll</A></B>(any&nbsp;prototype)</CODE>
+<br>
+<br>Fill in value of all keys in the supplied 'any' with values from the row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getBoolean()">getBoolean</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (must only be used on boolean fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;decimal</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getDecimal()">getDecimal</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (must only be used on decimal fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getFloat()">getFloat</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (must only be used on float fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getInteger()">getInteger</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (must only be used on integer fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getKey()">getKey</A></B>()</CODE>
+<br>
+<br>Get the key for this Row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getKeys()">getKeys</A></B>()</CODE>
+<br>
+<br>Get all of the field names held in this Row. These are all of the valid values that can be passed to get(). Will include all Schema field names followed by any extra fields if the driver supports them.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;any</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getParsed()">getParsed</A></B>(string&nbsp;name,&nbsp;string&nbsp;typeName)</CODE>
+<br>
+<br>Get the value of the specified field in this row parsed to the specified typeName.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getStoreName()">getStoreName</A></B>()</CODE>
+<br>
+<br>Get the name of the Store that contains this Row's Table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getString()">getString</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Get the value of the specified field in this row (must only be used on string fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#getTableName()">getTableName</A></B>()</CODE>
+<br>
+<br>Get the name of the Table that contains this Row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#inTable()">inTable</A></B>()</CODE>
+<br>
+<br>Indicate whether this row was in the table when the Row was created or updated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#remove()">remove</A></B>()</CODE>
+<br>
+<br>Mark the row for deletion when the table is committed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#removeNonSchema()">removeNonSchema</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Remove a non-schema field from the row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#set()">set</A></B>(string&nbsp;name,&nbsp;any&nbsp;value)</CODE>
+<br>
+<br>Set the value of the specified field in this row (can be used with all types). Will use the string form if needed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setAll()">setAll</A></B>(any&nbsp;value)</CODE>
+<br>
+<br>Set all values in this row from all available fields in the supplied any type.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setBoolean()">setBoolean</A></B>(string&nbsp;name,&nbsp;boolean&nbsp;b)</CODE>
+<br>
+<br>Set the value of the specified field in this row (must only be used on boolean fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setDecimal()">setDecimal</A></B>(string&nbsp;name,&nbsp;decimal&nbsp;d)</CODE>
+<br>
+<br>Set the value of the specified field in this row (must only be used on decimal fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setFloat()">setFloat</A></B>(string&nbsp;name,&nbsp;float&nbsp;f)</CODE>
+<br>
+<br>Set the value of the specified field in this row (must only be used on float fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setInteger()">setInteger</A></B>(string&nbsp;name,&nbsp;integer&nbsp;i)</CODE>
+<br>
+<br>Set the value of the specified field in this row (must only be used on integer fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#setString()">setString</A></B>(string&nbsp;name,&nbsp;string&nbsp;s)</CODE>
+<br>
+<br>Set the value of the specified field in this row (must only be used on string fields).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;any</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#toAny()">toAny</A></B>()</CODE>
+<br>
+<br>Get the row as an any using the type the Store was created with (using prepareFromAny() or prepareFromTypeName()).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;string,&nbsp;any&gt;</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#toDictionary()">toDictionary</A></B>()</CODE>
+<br>
+<br>Get a dictionary copy of the Row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#tryCommit()">tryCommit</A></B>()</CODE>
+<br>
+<br>Try to commit changes from this Row back to the table, returning false if the Row is not up to date.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#tryCommitOrUpdate()">tryCommitOrUpdate</A></B>()</CODE>
+<br>
+<br>Try to commit, or update (losing local modifications) if not.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Row.html#update()">update</A></B>()</CODE>
+<br>
+<br>Update the local Row event to reflect the current state of the shared MemoryStore table, losing any local modifications.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="commit()"></A>
+<H3>commit</H3>
+<PRE>void&nbsp;<B>commit</B>()</PRE>Try to commit changes from this Row back to the table, which could result in an exception being thrown if the Row is not up to date.<br>
+<br> If nothing else has modified the row in the table since this Row was created, the changes are committed so other users can see them.<br>
+<br> Otherwise, an exception is thrown and the table is left unchanged.<br>
+<br> If there is any chance that the same row may be written to concurrently - for example by multiple correlator contexts, and/or if using a distributed MemoryStore - use Row.tryCommit() instead of Row.commit() so that it is possible to recover from this situation when it occurs or use Row.forceCommit() to commit the changes forcefully.<br>
+<br> Note that a MemoryStore commit operation synchronously writes changes made to the local Row instance back to the table which is shared by all monitors inside the Correlator (or the distributed store), but does not cause a persistent write to disk (see Table#persist).<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Row.html#tryCommit()" title="Action in com.apama.memorystore.">com.apama.memorystore.Row#tryCommit()</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Row.html#tryCommitOrUpdate()" title="Action in com.apama.memorystore.">com.apama.memorystore.Row#tryCommitOrUpdate()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="copy()"></A>
+<H3>copy</H3>
+<PRE>void&nbsp;<B>copy</B>(<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&nbsp;other)</PRE>Copy the contents of the specified other Row into this one.<br>
+<br> The two rows that these Row events represent must have the same schema but they need not be in the same table.<br>
+<br> r1.copy(r2) is a more efficient equivalent to r1.setX("a", r2.getX("a")) for every field.<br>
+<br> You cannot copy a row between a correlator-persistent store and an in-memory, on-disk or distributed store.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>other</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="forceCommit()"></A>
+<H3>forceCommit</H3>
+<PRE>void&nbsp;<B>forceCommit</B>()</PRE>Commit this Row back to the table even if the Row is not up to date.<br>
+<br> If this Row is marked for deletion using Row.remove() then forceCommit will unconditionally remove the Row from the table.<br>
+<br> Note that a MemoryStore commit operation synchronously writes changes made to the local Row instance back to the table which is shared by all monitors inside the Correlator (or the distributed store), but does not cause a persistent write to disk (see Table#persist).<HR>
+<A NAME="get()"></A>
+<H3>get</H3>
+<PRE>any&nbsp;<B>get</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (can be used on all types). This will return a string for types that cannot be stored. Use getParsed() to parse to a type.<br>
+<br> An exception will be thrown if the specified field name is not present in this row.<br>
+<br> If it is not known whether the field name exists or not, use getKeys().indexOf(...) to find out, or use toDictionary.getOr(...).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Row.html#getParsed()" title="Action in com.apama.memorystore.">com.apama.memorystore.Row#getParsed()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getAll()"></A>
+<H3>getAll</H3>
+<PRE>any&nbsp;<B>getAll</B>(any&nbsp;prototype)</PRE>Fill in value of all keys in the supplied 'any' with values from the row.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>prototype</tt>&nbsp;-&nbsp;Any type value (an event or non-empty dictionary) which will be modified in-place with the current values from this row.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The same instance passed in as prototype, filled in with values from this row.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="getBoolean()"></A>
+<H3>getBoolean</H3>
+<PRE>boolean&nbsp;<B>getBoolean</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (must only be used on boolean fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getDecimal()"></A>
+<H3>getDecimal</H3>
+<PRE>decimal&nbsp;<B>getDecimal</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (must only be used on decimal fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getFloat()"></A>
+<H3>getFloat</H3>
+<PRE>float&nbsp;<B>getFloat</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (must only be used on float fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getInteger()"></A>
+<H3>getInteger</H3>
+<PRE>integer&nbsp;<B>getInteger</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (must only be used on integer fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getKey()"></A>
+<H3>getKey</H3>
+<PRE>string&nbsp;<B>getKey</B>()</PRE>Get the key for this Row.<br>
+<br> It cannot be changed.<HR>
+<A NAME="getKeys()"></A>
+<H3>getKeys</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>getKeys</B>()</PRE>Get all of the field names held in this Row. These are all of the valid values that can be passed to get(). Will include all Schema field names followed by any extra fields if the driver supports them.<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="getParsed()"></A>
+<H3>getParsed</H3>
+<PRE>any&nbsp;<B>getParsed</B>(string&nbsp;name,&nbsp;string&nbsp;typeName)</PRE>Get the value of the specified field in this row parsed to the specified typeName.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>typeName</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="getStoreName()"></A>
+<H3>getStoreName</H3>
+<PRE>string&nbsp;<B>getStoreName</B>()</PRE>Get the name of the Store that contains this Row's Table.<HR>
+<A NAME="getString()"></A>
+<H3>getString</H3>
+<PRE>string&nbsp;<B>getString</B>(string&nbsp;name)</PRE>Get the value of the specified field in this row (must only be used on string fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getTableName()"></A>
+<H3>getTableName</H3>
+<PRE>string&nbsp;<B>getTableName</B>()</PRE>Get the name of the Table that contains this Row.<HR>
+<A NAME="inTable()"></A>
+<H3>inTable</H3>
+<PRE>boolean&nbsp;<B>inTable</B>()</PRE>Indicate whether this row was in the table when the Row was created or updated.<br>
+<br> It is possible to construct a Row that has no corresponding entry in the table, in which case all fields have default values.<br>
+<br> Calling commit on a Row for which inTable()=false will create the row.<HR>
+<A NAME="remove()"></A>
+<H3>remove</H3>
+<PRE>void&nbsp;<B>remove</B>()</PRE>Mark the row for deletion when the table is committed.<br>
+<br> Fields cannot be accessed after this call, until the removal is successfully committed (or reverted using update).<HR>
+<A NAME="removeNonSchema()"></A>
+<H3>removeNonSchema</H3>
+<PRE>void&nbsp;<B>removeNonSchema</B>(string&nbsp;name)</PRE>Remove a non-schema field from the row.<br>
+<br> Only functions on non-schema fields with a supported distributed store.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.3</DD>
+</DL>
+<HR>
+<A NAME="set()"></A>
+<H3>set</H3>
+<PRE>void&nbsp;<B>set</B>(string&nbsp;name,&nbsp;any&nbsp;value)</PRE>Set the value of the specified field in this row (can be used with all types). Will use the string form if needed.<br>
+<br> If name is a non-schema field and the store is a distributed store which supports them, a new field will be added. If any is empty and the above is true, then the field will be removed from the row. Otherwise this method will throw.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>value</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="setAll()"></A>
+<H3>setAll</H3>
+<PRE>void&nbsp;<B>setAll</B>(any&nbsp;value)</PRE>Set all values in this row from all available fields in the supplied any type.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>value</tt>&nbsp;-&nbsp;Any type value (event or dictionary) to take the field values from</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="setBoolean()"></A>
+<H3>setBoolean</H3>
+<PRE>void&nbsp;<B>setBoolean</B>(string&nbsp;name,&nbsp;boolean&nbsp;b)</PRE>Set the value of the specified field in this row (must only be used on boolean fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>b</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setDecimal()"></A>
+<H3>setDecimal</H3>
+<PRE>void&nbsp;<B>setDecimal</B>(string&nbsp;name,&nbsp;decimal&nbsp;d)</PRE>Set the value of the specified field in this row (must only be used on decimal fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>d</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setFloat()"></A>
+<H3>setFloat</H3>
+<PRE>void&nbsp;<B>setFloat</B>(string&nbsp;name,&nbsp;float&nbsp;f)</PRE>Set the value of the specified field in this row (must only be used on float fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>f</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setInteger()"></A>
+<H3>setInteger</H3>
+<PRE>void&nbsp;<B>setInteger</B>(string&nbsp;name,&nbsp;integer&nbsp;i)</PRE>Set the value of the specified field in this row (must only be used on integer fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>i</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setString()"></A>
+<H3>setString</H3>
+<PRE>void&nbsp;<B>setString</B>(string&nbsp;name,&nbsp;string&nbsp;s)</PRE>Set the value of the specified field in this row (must only be used on string fields).<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+<DD>
+<tt>s</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="toAny()"></A>
+<H3>toAny</H3>
+<PRE>any&nbsp;<B>toAny</B>()</PRE>Get the row as an any using the type the Store was created with (using prepareFromAny() or prepareFromTypeName()).<br>
+<br> This is equivalent to calling getAll(any.newInstance(getTableName())). This action can be used only if the table name is a valid Apama type. Use getAll() instead if the store was not created from an Apama type.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepareFromAny()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepareFromAny()</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepareFromTypeName()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepareFromTypeName()</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Row.html#getAll()" title="Action in com.apama.memorystore.">com.apama.memorystore.Row#getAll()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="toDictionary()"></A>
+<H3>toDictionary</H3>
+<PRE>dictionary&lt;string,&nbsp;any&gt;&nbsp;<B>toDictionary</B>()</PRE>Get a dictionary copy of the Row.<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="tryCommit()"></A>
+<H3>tryCommit</H3>
+<PRE>boolean&nbsp;<B>tryCommit</B>()</PRE>Try to commit changes from this Row back to the table, returning false if the Row is not up to date.<br>
+<br> If nothing else has modified the row in the table since this Row was created, the changes are committed so other users can see them and true is returned.<br>
+<br> Otherwise, false is returned and the table is left unchanged. Do not repeatedly call tryCommit() without also calling update(), or use the more efficient Row.tryCommitOrUpdate().<br>
+<br> Note that a MemoryStore commit operation synchronously writes changes made to the local Row instance back to the table which is shared by all monitors inside the Correlator (or the distributed store), but does not cause a persistent write to disk (see Table#persist).<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>true if the table was modified; false if an error occurred and the table was not changed.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Row.html#tryCommitOrUpdate()" title="Action in com.apama.memorystore.">com.apama.memorystore.Row#tryCommitOrUpdate()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="tryCommitOrUpdate()"></A>
+<H3>tryCommitOrUpdate</H3>
+<PRE>boolean&nbsp;<B>tryCommitOrUpdate</B>()</PRE>Try to commit, or update (losing local modifications) if not.<br>
+<br> This is a more efficient equivalent to calling tryCommit then calling update if the commit fails. Typical usage would be to have a loop that makes some modifications to a row, calls tryCommitOrUpdate, and continues to loop (re-instating the local modifications and calling tryCommitOrUpdate again) until it returns true.<br>
+<br> Note that a MemoryStore commit operation synchronously writes changes made to the local Row instance back to the table which is shared by all monitors inside the Correlator (or the distributed store), but does not cause a persistent write to disk (see Table#persist).<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>true if the commit succeeded, false if the commit failed but the row has been updated ready for a retry attempt.</DD>
+</DL>
+<HR>
+<A NAME="update()"></A>
+<H3>update</H3>
+<PRE>void&nbsp;<B>update</B>()</PRE>Update the local Row event to reflect the current state of the shared MemoryStore table, losing any local modifications.<br>
+<br> row.update() has a very similar effect to r := t.get(r.getKey()), but is more efficient and doesn't require access to the table.<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Row.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Row.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

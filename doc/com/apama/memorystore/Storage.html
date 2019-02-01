@@ -1,0 +1,345 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Storage</TITLE>
+<META NAME="keywords" CONTENT="Storage&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Storage";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Storage.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Storage.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Storage</H2>
+<HR>MemoryStore factory interface for creating Store event objects.<br>
+<br> There are several different types of Store supported by MemoryStore: <ul> <li>In-memory only (no persistence)</li> <li>Persistent (using a specified database file on disk; committed changes go to disk when the persist() action is called)</li> <li>Correlator-persistent (using the Correlator's integrated data store; committed changes go to disk periodically when the Correlator takes a snapshot of persistent monitor state and persists the results). </li> <li>Distributed (Using a distributed cache technology to share and access data across multiple distributed nodes). </li> </ul> Correlator-persistent stores are only available if Correlator persistence has been enabled. Non-persistent monitors may use any type of store, but a monitor marked as 'persistent' may ONLY access Correlator-persistent stores.<br>
+<br> To use the MemoryStore, create a monitor field (or variable) to hold the Storage factory event, and use one of the prepare* actions to asynchronously get a Store of the desired type ready for use, and give it a unique name. Once the store has been prepared, use the open(name) action to get a Store event that can be used to interact with the store.<br>
+<br> e.g.<pre> <br/>using com.apama.memorystore.Storage; <br/>using com.apama.memorystore.Store; <br/>using com.apama.memorystore.Finished; <br/> <br/>monitor Test { <br/>	Storage storage; <br/>	Store store; <br/> <br/>	action onload() { <br/>		integer id := storage.prepareOrCreate("storename", "/tmp/example.dat"); <br/>		Finished f; <br/>		on Finished(id=id):f <br/>		{ <br/>			if not f.success { log "Store creation failed: "+f.status at ERROR; die; } <br/>			store := storage.open("storename"); <br/>			... <br/>		} <br/>	} <br/>} </pre><DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html" title="type in com.apama.memorystore">com.apama.memorystore.Store</A>&nbsp;-&nbsp;The purpose of the Storage event is to prepare and open stores.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Storage.html#prepareOrCreate()" title="Action in com.apama.memorystore.">com.apama.memorystore.Storage#prepareOrCreate()</A>&nbsp;-&nbsp;The most commonly used action for preparing a persistent Store.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Storage.html#open()" title="Action in com.apama.memorystore.">com.apama.memorystore.Storage#open()</A>&nbsp;-&nbsp;Once a store has been prepared it can be opened.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#hasDistributedStore()">hasDistributedStore</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Indicates whether configuration for the given distributed store name exists.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#hasStore()">hasStore</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Indicate whether or not a Store with the specified name has been prepared already.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Store.html" title="type in com.apama.memorystore">com.apama.memorystore.Store</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#open()">open</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Open a named Store that has already been prepared, ready for use by this monitor instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepare()">prepare</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
+<br>
+<br>Prepare a persistent read-write Store associated with an existing database file on disk.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareCorrelatorPersistent()">prepareCorrelatorPersistent</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Prepare a Correlator-persistent read-write Store to be opened and used by the application.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareDistributed()">prepareDistributed</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Prepare a distributed store (e.g. distributed cache) to be opened and used by the application.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareInMemory()">prepareInMemory</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Prepare an in-memory read-write Store to be opened and used by the application.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareOrCreate()">prepareOrCreate</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
+<br>
+<br>Prepare a persistent read-write Store associated with a database file on disk, which will be created if it does not exist already.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareReadOnly()">prepareReadOnly</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
+<br>
+<br>Prepare a persistent read-only Store associated with an existing database file on disk.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="hasDistributedStore()"></A>
+<H3>hasDistributedStore</H3>
+<PRE>boolean&nbsp;static <B>hasDistributedStore</B>(string&nbsp;name)</PRE>Indicates whether configuration for the given distributed store name exists.<br>
+<br> Returning false indicates that a prepareDistributed of the store name will definitely fail.  True indicates it may succeed, but is not a guarantee of success. Does not actually connect to the distributed store.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>false if prepareDistributed for the given store name will definitely fail</DD>
+</DL>
+<HR>
+<A NAME="hasStore()"></A>
+<H3>hasStore</H3>
+<PRE>boolean&nbsp;static <B>hasStore</B>(string&nbsp;name)</PRE>Indicate whether or not a Store with the specified name has been prepared already.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>True if it is safe to call open() on the specified store; false if preparation failed or is still in progress.</DD>
+</DL>
+<HR>
+<A NAME="open()"></A>
+<H3>open</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Store.html" title="type in com.apama.memorystore">com.apama.memorystore.Store</A>&nbsp;static <B>open</B>(string&nbsp;name)</PRE>Open a named Store that has already been prepared, ready for use by this monitor instance.<br>
+<br> Every monitor instance should prepare and open the stores it needs. Multiple monitor instances can have the same table open at the same time.<br>
+<br> It is an error to call open() before a prepare call for the table has finished without error.<br>
+<br> Note that opening a store will not immediately bring all that store's tables into memory, this only happens when each individual table is itself prepared and opened.<br>
+<br> A persistent monitor can access only Correlator-persistent stores. If a persistent monitor tries to open any other type of store (e.g. in-memory, on-disk or distributed) the monitor instance will terminate with an error.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+</DL>
+<HR>
+<A NAME="prepare()"></A>
+<H3>prepare</H3>
+<PRE>integer&nbsp;static <B>prepare</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-write Store associated with an existing database file on disk.<br>
+<br> The specified file must exist and must have been created by the MemoryStore. If the specified file does not exist, or cannot be opened for read-write, the Finished event will indicate failure.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+<DD>
+<tt>filename</tt>&nbsp;-&nbsp;The path of the database file holding the persistent store. If a relative path is specified, it is relative to the directory that contains the associated Apama Studio project (i.e. the Correlator working directory).</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareCorrelatorPersistent()"></A>
+<H3>prepareCorrelatorPersistent</H3>
+<PRE>integer&nbsp;static <B>prepareCorrelatorPersistent</B>(string&nbsp;name)</PRE>Prepare a Correlator-persistent read-write Store to be opened and used by the application.<br>
+<br> All committed changes made to a Correlator-persistent store are persisted to disk automatically whenever the Correlator takes a snapshot of the Correlator persistent application state. Because the Correlator determines when to persist its state, you cannot explicitly request persistence for a Correlator-persistent store or any tables it contains.<br>
+<br> Attempts to create a Correlator-persistent store in a Correlator that does not have persistence enabled will result in an error that will terminate the monitor instance.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareDistributed()"></A>
+<H3>prepareDistributed</H3>
+<PRE>integer&nbsp;static <B>prepareDistributed</B>(string&nbsp;name)</PRE>Prepare a distributed store (e.g. distributed cache) to be opened and used by the application.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store, which also specifies the id of its configuration bean in the XML configuration file. This name should not contain spaces.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareInMemory()"></A>
+<H3>prepareInMemory</H3>
+<PRE>integer&nbsp;static <B>prepareInMemory</B>(string&nbsp;name)</PRE>Prepare an in-memory read-write Store to be opened and used by the application.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareOrCreate()"></A>
+<H3>prepareOrCreate</H3>
+<PRE>integer&nbsp;static <B>prepareOrCreate</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-write Store associated with a database file on disk, which will be created if it does not exist already.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+<DD>
+<tt>filename</tt>&nbsp;-&nbsp;The path of the database file holding the persistent store. If a relative path is specified, it is relative to the directory that contains the associated Apama Studio project (i.e. the Correlator working directory). The parent directory of the specified file must already exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareReadOnly()"></A>
+<H3>prepareReadOnly</H3>
+<PRE>integer&nbsp;static <B>prepareReadOnly</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-only Store associated with an existing database file on disk.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name identifying this Store.</DD>
+<DD>
+<tt>filename</tt>&nbsp;-&nbsp;The path of the database file holding the persistent store. If a relative path is specified, it is relative to the directory that contains the associated Apama Studio project (i.e. the Correlator working directory).</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete and it becomes safe to call open() on this store.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Storage.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Storage.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,172 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Iterator</TITLE>
+<META NAME="keywords" CONTENT="Iterator&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Iterator";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Iterator.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Iterator.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Iterator</H2>
+<HR>Represents an iterator that can be used to step through each Row of a Table in turn, making changes or reading data from the row.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#begin()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#begin()</A>&nbsp;-&nbsp;Gets an iterator, beginning from the start of the table.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#appendKeys()">appendKeys</A></B>(sequence&lt;string&gt;&nbsp;seq,&nbsp;integer&nbsp;n)</CODE>
+<br>
+<br>Append to the specified sequence, keys for up to n consecutive rows of the Table, beginning where this Iterator is pointing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#done()">done</A></B>()</CODE>
+<br>
+<br>Checks whether this Iterator has now reached the end of the Table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#getKey()">getKey</A></B>()</CODE>
+<br>
+<br>Get the key for the row this Iterator is pointing at.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#getKeys()">getKeys</A></B>(integer&nbsp;n)</CODE>
+<br>
+<br>Get the keys for up to n consecutive rows of the Table beginning where this Iterator is pointing.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A></CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#getRow()">getRow</A></B>()</CODE>
+<br>
+<br>Get the Row this Iterator is pointing at.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Iterator.html#step()">step</A></B>()</CODE>
+<br>
+<br>Step this Iterator to the next row in the table.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="appendKeys()"></A>
+<H3>appendKeys</H3>
+<PRE>void&nbsp;<B>appendKeys</B>(sequence&lt;string&gt;&nbsp;seq,&nbsp;integer&nbsp;n)</PRE>Append to the specified sequence, keys for up to n consecutive rows of the Table, beginning where this Iterator is pointing.<br>
+<br> The iterator will be advanced. If it becomes done then fewer than n keys will be appended.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>seq</tt>&nbsp;-&nbsp;The sequence which is to be updated with the keys from the following n table rows.</DD>
+<DD>
+<tt>n</tt>&nbsp;-&nbsp;The number of keys to get and append to the sequence.</DD>
+</DL>
+<HR>
+<A NAME="done()"></A>
+<H3>done</H3>
+<PRE>boolean&nbsp;<B>done</B>()</PRE>Checks whether this Iterator has now reached the end of the Table.<br>
+<br> You should check done() is not true before you call other Iterator actions (except for appendKeys() and getKeys()).<HR>
+<A NAME="getKey()"></A>
+<H3>getKey</H3>
+<PRE>string&nbsp;<B>getKey</B>()</PRE>Get the key for the row this Iterator is pointing at.<br>
+<br> To avoid an error that will terminate the monitor instance, always use done() to check that the iterator has not reached the end of the table before calling this action.<HR>
+<A NAME="getKeys()"></A>
+<H3>getKeys</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>getKeys</B>(integer&nbsp;n)</PRE>Get the keys for up to n consecutive rows of the Table beginning where this Iterator is pointing.<br>
+<br> The iterator will be advanced. If it becomes done, a sequence of fewer than n keys will be returned.<br>
+<br> The first key in the returned sequence is the key of the row that the iterator is pointing at when the action is called. When this action is finished, the iterator is pointing at the row immediately beyond that of the last key that was returned.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>n</tt>&nbsp;-&nbsp;The number of keys to get and append to the sequence.</DD>
+</DL>
+<HR>
+<A NAME="getRow()"></A>
+<H3>getRow</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&nbsp;<B>getRow</B>()</PRE>Get the Row this Iterator is pointing at.<br>
+<br> It is possible that the row the iterator is pointing at is no longer present. This can happen if another monitor deleted the row or table, or cleared the table while the iterator was pointing at that row.<br>
+<br> If the requested row is no longer there, you receive a Row event that represents a row in which all fields have default values and for which Row.inTable() is false. This is the same result as if you call Table.get() on a key that does not exist yet.<br>
+<br> To avoid an error that will terminate the monitor instance, always use done() to check that the iterator has not reached the end of the table before calling this action.<HR>
+<A NAME="step()"></A>
+<H3>step</H3>
+<PRE>void&nbsp;<B>step</B>()</PRE>Step this Iterator to the next row in the table.<br>
+<br> If there are no more rows the Iterator becomes done.<br>
+<br> To avoid an error that will terminate the monitor instance, always use done() to check that the iterator has not reached the end of the table before calling this action.<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Iterator.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Iterator.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

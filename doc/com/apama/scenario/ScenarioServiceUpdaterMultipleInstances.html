@@ -1,0 +1,855 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>ScenarioServiceUpdaterMultipleInstances</TITLE>
+<META NAME="keywords" CONTENT="ScenarioServiceUpdaterMultipleInstances&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="ScenarioServiceUpdaterMultipleInstances";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceUpdaterMultipleInstances.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceUpdaterMultipleInstances.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.scenario</FONT>
+<BR>Event ScenarioServiceUpdaterMultipleInstances</H2>
+<HR>Utility event for tracking configuration for a given scenario. This event is suitable for use by monitors which spawn per scenario, but not per instance. (e.g. ScenarioService, DataViewService)<br>
+<br> actions starting with an underscore should be considered private and not called by users of this event.<br>
+<br> Note that this updater only honours sendThrottledUser changes at the next throttling period (it does not record the owner if sendThrottledUser is not true)<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Created.html" title="type in com.apama.scenario">com.apama.scenario.Created</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Deleted.html" title="type in com.apama.scenario">com.apama.scenario.Deleted</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Edited.html" title="type in com.apama.scenario">com.apama.scenario.Edited</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/StateChange.html" title="type in com.apama.scenario">com.apama.scenario.StateChange</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/OperationCompleted.html" title="type in com.apama.scenario">com.apama.scenario.OperationCompleted</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/RequestInstancesParallelDone.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesParallelDone</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/StateChange.html" title="type in com.apama.scenario">com.apama.scenario.StateChange</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Created.html" title="type in com.apama.scenario">com.apama.scenario.Created</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Deleted.html" title="type in com.apama.scenario">com.apama.scenario.Deleted</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Edited.html" title="type in com.apama.scenario">com.apama.scenario.Edited</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/SendQueuedUpdatesNow.html" title="type in com.apama.scenario">com.apama.scenario.SendQueuedUpdatesNow</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="member_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Member summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#scenarioId">scenarioId</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;listener</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#throttlingListener">throttlingListener</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/scenario/ScenarioServiceUpdaterBase.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioServiceUpdaterBase</A></CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#base">base</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#currentlySendingThrottledUser">currentlySendingThrottledUser</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;integer,&nbsp;<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#updates">updates</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;integer,&nbsp;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#owners">owners</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;context</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#mainContext">mainContext</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#controlChannel">controlChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#rawChannel">rawChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#dataChannel">dataChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#_configurationUpdated()">_configurationUpdated</A></B>()</CODE>
+<br>
+<br>called in instances (not factories) when configuration has changed</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#_init()">_init</A></B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx,&nbsp;action&lt;&gt;&nbsp;cb_initComplete)</CODE>
+<br>
+<br>Implementation of init and init_cb</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#_sendThrottledUpdates()">_sendThrottledUpdates</A></B>()</CODE>
+<br>
+<br>actually send an update on the throttled channel</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#_setupThrottleListener()">_setupThrottleListener</A></B>()</CODE>
+<br>
+<br>set up a throttled listener according to throttlePeriod control</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#destroy()">destroy</A></B>()</CODE>
+<br>
+<br>Kill any listeners this object has started</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitAcknowledgement()">emitAcknowledgement</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;output)</CODE>
+<br>
+<br>Called to send a new Acknowledgement event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitCreated()">emitCreated</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner,&nbsp;string&nbsp;state,&nbsp;sequence&lt;string&gt;&nbsp;inputVariables,&nbsp;sequence&lt;string&gt;&nbsp;outputVariables)</CODE>
+<br>
+<br>Called to send a new Created event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitDeleted()">emitDeleted</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called to send a new Deleted event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitEdited()">emitEdited</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;inputVariables,&nbsp;sequence&lt;string&gt;&nbsp;outputVariables,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called to send a new Edited event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitInstance()">emitInstance</A></B>(<A HREF="../../../com/apama/scenario/RequestInstancesInternal.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesInternal</A>&nbsp;request,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner,&nbsp;string&nbsp;state,&nbsp;sequence&lt;string&gt;&nbsp;input,&nbsp;sequence&lt;string&gt;&nbsp;output)</CODE>
+<br>
+<br>Called to send an instance in response to a RequestInstancesInternal event</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitInstanceDied()">emitInstanceDied</A></B>(integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called to send an instance Died event (either of failed, ended)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitNack()">emitNack</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId)</CODE>
+<br>
+<br>Called to send a new Nak event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitOpCompleted()">emitOpCompleted</A></B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId)</CODE>
+<br>
+<br>Called to say an operation has completed; implied by emitEdited. Must be called before emitInstanceDied.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitReceivedEvents()">emitReceivedEvents</A></B>()</CODE>
+<br>
+<br>Called to send any received events (except for instance) for this scenario.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitReceivedInstance()">emitReceivedInstance</A></B>(<A HREF="../../../com/apama/scenario/RequestInstancesInternal.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesInternal</A>&nbsp;request,&nbsp;<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;instance)</CODE>
+<br>
+<br>Called to send an instance that has already been seen in the current context</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitStateChange()">emitStateChange</A></B>(string&nbsp;state,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called to send a new StateChange event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitUpdate()">emitUpdate</A></B>(integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;output,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called when a new update is available.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#emitUpdate_time()">emitUpdate_time</A></B>(integer&nbsp;scenarioInstanceId,&nbsp;float&nbsp;time,&nbsp;sequence&lt;string&gt;&nbsp;output,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Called when a new update is available. (This variant allows setting of the time parameter)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#flushPending()">flushPending</A></B>()</CODE>
+<br>
+<br>flush any pending update on the throttled channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#flushPendingInstance()">flushPendingInstance</A></B>(integer&nbsp;scenarioInstanceId)</CODE>
+<br>
+<br>Flush pending throttled data for one instance</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#init()">init</A></B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx)</CODE>
+<br>
+<br>Called by monitor for each scenario Will maintain configuration for this scenario Id</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#init_cb()">init_cb</A></B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx,&nbsp;action&lt;&gt;&nbsp;cb_initComplete)</CODE>
+<br>
+<br>Called by monitor for each scenario Will maintain configuration for this scenario Id</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#isRouteUpdate()">isRouteUpdate</A></B>()</CODE>
+<br>
+<br>Get whether this scenario should route updates</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html#notifyInstanceDied()">notifyInstanceDied</A></B>(integer&nbsp;scenarioInstanceId)</CODE>
+<br>
+<br>Called to notify the scenario service monitor that we have gone away - must be called after emitting any events regarding this instance going away. Implied by emitDeleted.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="member_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Member detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="base"></A>
+<H3>base</H3>
+<PRE>
+<A HREF="../../../com/apama/scenario/ScenarioServiceUpdaterBase.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioServiceUpdaterBase</A>&nbsp;<B>base</B>
+</PRE>
+<HR>
+<A NAME="controlChannel"></A>
+<H3>controlChannel</H3>
+<PRE>string&nbsp;<B>controlChannel</B>
+</PRE>
+<HR>
+<A NAME="currentlySendingThrottledUser"></A>
+<H3>currentlySendingThrottledUser</H3>
+<PRE>boolean&nbsp;<B>currentlySendingThrottledUser</B>
+</PRE>
+<HR>
+<A NAME="dataChannel"></A>
+<H3>dataChannel</H3>
+<PRE>string&nbsp;<B>dataChannel</B>
+</PRE>
+<HR>
+<A NAME="mainContext"></A>
+<H3>mainContext</H3>
+<PRE>context&nbsp;<B>mainContext</B>
+</PRE>
+<HR>
+<A NAME="owners"></A>
+<H3>owners</H3>
+<PRE>dictionary&lt;integer,&nbsp;string&gt;&nbsp;<B>owners</B>
+</PRE>
+<HR>
+<A NAME="rawChannel"></A>
+<H3>rawChannel</H3>
+<PRE>string&nbsp;<B>rawChannel</B>
+</PRE>
+<HR>
+<A NAME="scenarioId"></A>
+<H3>scenarioId</H3>
+<PRE>string&nbsp;<B>scenarioId</B>
+</PRE>
+<HR>
+<A NAME="throttlingListener"></A>
+<H3>throttlingListener</H3>
+<PRE>listener&nbsp;<B>throttlingListener</B>
+</PRE>
+<HR>
+<A NAME="updates"></A>
+<H3>updates</H3>
+<PRE>dictionary&lt;integer,&nbsp;<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&gt;&nbsp;<B>updates</B>
+</PRE>
+<HR>
+<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="_configurationUpdated()"></A>
+<H3>_configurationUpdated</H3>
+<PRE>void&nbsp;<B>_configurationUpdated</B>()</PRE>called in instances (not factories) when configuration has changed<HR>
+<A NAME="_init()"></A>
+<H3>_init</H3>
+<PRE>void&nbsp;<B>_init</B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx,&nbsp;action&lt;&gt;&nbsp;cb_initComplete)</PRE>Implementation of init and init_cb<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>sId</tt>
+</DD>
+<DD>
+<tt>mainCtx</tt>
+</DD>
+<DD>
+<tt>cb_initComplete</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/SendQueuedUpdatesNow.html" title="type in com.apama.scenario">com.apama.scenario.SendQueuedUpdatesNow</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="_sendThrottledUpdates()"></A>
+<H3>_sendThrottledUpdates</H3>
+<PRE>void&nbsp;<B>_sendThrottledUpdates</B>()</PRE>actually send an update on the throttled channel<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="_setupThrottleListener()"></A>
+<H3>_setupThrottleListener</H3>
+<PRE>void&nbsp;<B>_setupThrottleListener</B>()</PRE>set up a throttled listener according to throttlePeriod control<HR>
+<A NAME="destroy()"></A>
+<H3>destroy</H3>
+<PRE>void&nbsp;<B>destroy</B>()</PRE>Kill any listeners this object has started<HR>
+<A NAME="emitAcknowledgement()"></A>
+<H3>emitAcknowledgement</H3>
+<PRE>void&nbsp;<B>emitAcknowledgement</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;output)</PRE>Called to send a new Acknowledgement event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>output</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitCreated()"></A>
+<H3>emitCreated</H3>
+<PRE>void&nbsp;<B>emitCreated</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner,&nbsp;string&nbsp;state,&nbsp;sequence&lt;string&gt;&nbsp;inputVariables,&nbsp;sequence&lt;string&gt;&nbsp;outputVariables)</PRE>Called to send a new Created event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+<DD>
+<tt>state</tt>
+</DD>
+<DD>
+<tt>inputVariables</tt>
+</DD>
+<DD>
+<tt>outputVariables</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Created.html" title="type in com.apama.scenario">com.apama.scenario.Created</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitDeleted()"></A>
+<H3>emitDeleted</H3>
+<PRE>void&nbsp;<B>emitDeleted</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</PRE>Called to send a new Deleted event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Deleted.html" title="type in com.apama.scenario">com.apama.scenario.Deleted</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitEdited()"></A>
+<H3>emitEdited</H3>
+<PRE>void&nbsp;<B>emitEdited</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;inputVariables,&nbsp;sequence&lt;string&gt;&nbsp;outputVariables,&nbsp;string&nbsp;owner)</PRE>Called to send a new Edited event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>inputVariables</tt>
+</DD>
+<DD>
+<tt>outputVariables</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Edited.html" title="type in com.apama.scenario">com.apama.scenario.Edited</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitInstance()"></A>
+<H3>emitInstance</H3>
+<PRE>void&nbsp;<B>emitInstance</B>(<A HREF="../../../com/apama/scenario/RequestInstancesInternal.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesInternal</A>&nbsp;request,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner,&nbsp;string&nbsp;state,&nbsp;sequence&lt;string&gt;&nbsp;input,&nbsp;sequence&lt;string&gt;&nbsp;output)</PRE>Called to send an instance in response to a RequestInstancesInternal event<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>request</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+<DD>
+<tt>state</tt>
+</DD>
+<DD>
+<tt>input</tt>
+</DD>
+<DD>
+<tt>output</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/RequestInstancesParallelDone.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesParallelDone</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitInstanceDied()"></A>
+<H3>emitInstanceDied</H3>
+<PRE>void&nbsp;<B>emitInstanceDied</B>(integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</PRE>Called to send an instance Died event (either of failed, ended)<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitNack()"></A>
+<H3>emitNack</H3>
+<PRE>void&nbsp;<B>emitNack</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId)</PRE>Called to send a new Nak event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Acknowledge.html" title="type in com.apama.scenario">com.apama.scenario.Acknowledge</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitOpCompleted()"></A>
+<H3>emitOpCompleted</H3>
+<PRE>void&nbsp;<B>emitOpCompleted</B>(integer&nbsp;messageId,&nbsp;integer&nbsp;scenarioInstanceId)</PRE>Called to say an operation has completed; implied by emitEdited. Must be called before emitInstanceDied.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>messageId</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/OperationCompleted.html" title="type in com.apama.scenario">com.apama.scenario.OperationCompleted</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitReceivedEvents()"></A>
+<H3>emitReceivedEvents</H3>
+<PRE>void&nbsp;<B>emitReceivedEvents</B>()</PRE>Called to send any received events (except for instance) for this scenario.<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Edited.html" title="type in com.apama.scenario">com.apama.scenario.Edited</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Deleted.html" title="type in com.apama.scenario">com.apama.scenario.Deleted</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Created.html" title="type in com.apama.scenario">com.apama.scenario.Created</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitReceivedInstance()"></A>
+<H3>emitReceivedInstance</H3>
+<PRE>void&nbsp;<B>emitReceivedInstance</B>(<A HREF="../../../com/apama/scenario/RequestInstancesInternal.html" title="type in com.apama.scenario">com.apama.scenario.RequestInstancesInternal</A>&nbsp;request,&nbsp;<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;instance)</PRE>Called to send an instance that has already been seen in the current context<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>request</tt>
+</DD>
+<DD>
+<tt>instance</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Instance.html" title="type in com.apama.scenario">com.apama.scenario.Instance</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitStateChange()"></A>
+<H3>emitStateChange</H3>
+<PRE>void&nbsp;<B>emitStateChange</B>(string&nbsp;state,&nbsp;integer&nbsp;scenarioInstanceId,&nbsp;string&nbsp;owner)</PRE>Called to send a new StateChange event.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>state</tt>
+</DD>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/StateChange.html" title="type in com.apama.scenario">com.apama.scenario.StateChange</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/StateChange.html" title="type in com.apama.scenario">com.apama.scenario.StateChange</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="emitUpdate()"></A>
+<H3>emitUpdate</H3>
+<PRE>void&nbsp;<B>emitUpdate</B>(integer&nbsp;scenarioInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;output,&nbsp;string&nbsp;owner)</PRE>Called when a new update is available.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>output</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="emitUpdate_time()"></A>
+<H3>emitUpdate_time</H3>
+<PRE>void&nbsp;<B>emitUpdate_time</B>(integer&nbsp;scenarioInstanceId,&nbsp;float&nbsp;time,&nbsp;sequence&lt;string&gt;&nbsp;output,&nbsp;string&nbsp;owner)</PRE>Called when a new update is available. (This variant allows setting of the time parameter)<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+<DD>
+<tt>time</tt>
+</DD>
+<DD>
+<tt>output</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="flushPending()"></A>
+<H3>flushPending</H3>
+<PRE>void&nbsp;<B>flushPending</B>()</PRE>flush any pending update on the throttled channel.<HR>
+<A NAME="flushPendingInstance()"></A>
+<H3>flushPendingInstance</H3>
+<PRE>void&nbsp;<B>flushPendingInstance</B>(integer&nbsp;scenarioInstanceId)</PRE>Flush pending throttled data for one instance<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Update.html" title="type in com.apama.scenario">com.apama.scenario.Update</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="init()"></A>
+<H3>init</H3>
+<PRE>void&nbsp;<B>init</B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx)</PRE>Called by monitor for each scenario Will maintain configuration for this scenario Id<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>sId</tt>
+</DD>
+<DD>
+<tt>mainCtx</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="init_cb()"></A>
+<H3>init_cb</H3>
+<PRE>void&nbsp;<B>init_cb</B>(string&nbsp;sId,&nbsp;context&nbsp;mainCtx,&nbsp;action&lt;&gt;&nbsp;cb_initComplete)</PRE>Called by monitor for each scenario Will maintain configuration for this scenario Id<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>sId</tt>
+</DD>
+<DD>
+<tt>mainCtx</tt>
+</DD>
+<DD>
+<tt>cb_initComplete</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="isRouteUpdate()"></A>
+<H3>isRouteUpdate</H3>
+<PRE>boolean&nbsp;<B>isRouteUpdate</B>()</PRE>Get whether this scenario should route updates<HR>
+<A NAME="notifyInstanceDied()"></A>
+<H3>notifyInstanceDied</H3>
+<PRE>void&nbsp;<B>notifyInstanceDied</B>(integer&nbsp;scenarioInstanceId)</PRE>Called to notify the scenario service monitor that we have gone away - must be called after emitting any events regarding this instance going away. Implied by emitDeleted.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioInstanceId</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Sends:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/InstanceDied.html" title="type in com.apama.scenario">com.apama.scenario.InstanceDied</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceUpdaterMultipleInstances.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceUpdaterMultipleInstances.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

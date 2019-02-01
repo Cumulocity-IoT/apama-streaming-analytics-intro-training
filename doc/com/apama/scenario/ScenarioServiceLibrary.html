@@ -1,0 +1,447 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>ScenarioServiceLibrary</TITLE>
+<META NAME="keywords" CONTENT="ScenarioServiceLibrary&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="ScenarioServiceLibrary";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceLibrary.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceLibrary.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.scenario</FONT>
+<BR>Event ScenarioServiceLibrary</H2>
+<HR>Library of utility actions<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/AllConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.AllConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Configuration.html" title="type in com.apama.scenario">com.apama.scenario.Configuration</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/GetAllConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetAllConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/GetConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/ScenarioProcessedUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioProcessedUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#configurationManager()">configurationManager</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaultConfig,&nbsp;dictionary&lt;string,&nbsp;dictionary&lt;string,&nbsp;string&gt;&gt;&nbsp;configurations)</CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getConfig()">getConfig</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config,&nbsp;string&nbsp;key,&nbsp;string&nbsp;_default)</CODE>
+<br>
+<br>Get the specified key from the configuration dictionaries, reverting to the default if none specified.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getControlChannel()">getControlChannel</A></B>(string&nbsp;scenarioId)</CODE>
+<br>
+<br>Get the control channel for a scenario Id. This channel is always enabled (uses an event set scenario ID)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getDataChannel()">getDataChannel</A></B>(string&nbsp;scenarioId)</CODE>
+<br>
+<br>Get the data channel for a scenario ID. This channel is enabled by the sendThrottled configuration key and the throttlePeriod key (Update events may be throttled)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getDataUserChannel()">getDataUserChannel</A></B>(string&nbsp;channel,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Get the data channel for a scenario Id. This channel is enabled by the sendThrottledUser configuration key and the throttlePeriod key (Update events may be throttled)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getRawChannel()">getRawChannel</A></B>(string&nbsp;scenarioId)</CODE>
+<br>
+<br>Get the raw channel for a scenario ID. This channel is enabled by the sendRaw configuration key.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getRawUserChannel()">getRawUserChannel</A></B>(string&nbsp;channel,&nbsp;string&nbsp;owner)</CODE>
+<br>
+<br>Get the raw channel for a scenario Id. This channel is enabled by the sendRawUser configuration key.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getRouteUpdate()">getRouteUpdate</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the routeUpdate value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getSendRaw()">getSendRaw</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the sendRaw value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getSendRawUser()">getSendRawUser</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the sendRawUser value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getSendThrottled()">getSendThrottled</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the sendThrottled value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getSendThrottledUser()">getSendThrottledUser</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the sendThrottledUser value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#getThrottlePeriod()">getThrottlePeriod</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</CODE>
+<br>
+<br>Get the throttlePeriod value from the given configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ScenarioServiceLibrary.html#mergeConfiguration()">mergeConfiguration</A></B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;updates,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;configuration)</CODE>
+<br>
+<br>Merge configuration. Any entries in updates overwrite entries in configuration. An empty string value removes the value.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="configurationManager()"></A>
+<H3>configurationManager</H3>
+<PRE>void&nbsp;static <B>configurationManager</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaultConfig,&nbsp;dictionary&lt;string,&nbsp;dictionary&lt;string,&nbsp;string&gt;&gt;&nbsp;configurations)</PRE>
+<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaultConfig</tt>
+</DD>
+<DD>
+<tt>configurations</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/AllConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.AllConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/Configuration.html" title="type in com.apama.scenario">com.apama.scenario.Configuration</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/GetConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/ScenarioProcessedUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioProcessedUpdates</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/GetAllConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetAllConfiguration</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getConfig()"></A>
+<H3>getConfig</H3>
+<PRE>string&nbsp;static <B>getConfig</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config,&nbsp;string&nbsp;key,&nbsp;string&nbsp;_default)</PRE>Get the specified key from the configuration dictionaries, reverting to the default if none specified.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+<DD>
+<tt>key</tt>
+</DD>
+<DD>
+<tt>_default</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getControlChannel()"></A>
+<H3>getControlChannel</H3>
+<PRE>string&nbsp;static <B>getControlChannel</B>(string&nbsp;scenarioId)</PRE>Get the control channel for a scenario Id. This channel is always enabled (uses an event set scenario ID)<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioId</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getDataChannel()"></A>
+<H3>getDataChannel</H3>
+<PRE>string&nbsp;static <B>getDataChannel</B>(string&nbsp;scenarioId)</PRE>Get the data channel for a scenario ID. This channel is enabled by the sendThrottled configuration key and the throttlePeriod key (Update events may be throttled)<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioId</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getDataUserChannel()"></A>
+<H3>getDataUserChannel</H3>
+<PRE>string&nbsp;static <B>getDataUserChannel</B>(string&nbsp;channel,&nbsp;string&nbsp;owner)</PRE>Get the data channel for a scenario Id. This channel is enabled by the sendThrottledUser configuration key and the throttlePeriod key (Update events may be throttled)<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>channel</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getRawChannel()"></A>
+<H3>getRawChannel</H3>
+<PRE>string&nbsp;static <B>getRawChannel</B>(string&nbsp;scenarioId)</PRE>Get the raw channel for a scenario ID. This channel is enabled by the sendRaw configuration key.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>scenarioId</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getRawUserChannel()"></A>
+<H3>getRawUserChannel</H3>
+<PRE>string&nbsp;static <B>getRawUserChannel</B>(string&nbsp;channel,&nbsp;string&nbsp;owner)</PRE>Get the raw channel for a scenario Id. This channel is enabled by the sendRawUser configuration key.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>channel</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getRouteUpdate()"></A>
+<H3>getRouteUpdate</H3>
+<PRE>boolean&nbsp;static <B>getRouteUpdate</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the routeUpdate value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getSendRaw()"></A>
+<H3>getSendRaw</H3>
+<PRE>boolean&nbsp;static <B>getSendRaw</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the sendRaw value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getSendRawUser()"></A>
+<H3>getSendRawUser</H3>
+<PRE>boolean&nbsp;static <B>getSendRawUser</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the sendRawUser value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getSendThrottled()"></A>
+<H3>getSendThrottled</H3>
+<PRE>boolean&nbsp;static <B>getSendThrottled</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the sendThrottled value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getSendThrottledUser()"></A>
+<H3>getSendThrottledUser</H3>
+<PRE>boolean&nbsp;static <B>getSendThrottledUser</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the sendThrottledUser value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getThrottlePeriod()"></A>
+<H3>getThrottlePeriod</H3>
+<PRE>float&nbsp;static <B>getThrottlePeriod</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;defaults,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;config)</PRE>Get the throttlePeriod value from the given configuration<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>defaults</tt>
+</DD>
+<DD>
+<tt>config</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="mergeConfiguration()"></A>
+<H3>mergeConfiguration</H3>
+<PRE>void&nbsp;static <B>mergeConfiguration</B>(dictionary&lt;string,&nbsp;string&gt;&nbsp;updates,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;configuration)</PRE>Merge configuration. Any entries in updates overwrite entries in configuration. An empty string value removes the value.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>updates</tt>
+</DD>
+<DD>
+<tt>configuration</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceLibrary.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceLibrary.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

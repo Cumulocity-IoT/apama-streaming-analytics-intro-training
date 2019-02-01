@@ -1,0 +1,242 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>RowChanged</TITLE>
+<META NAME="keywords" CONTENT="RowChanged&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="RowChanged";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/RowChanged.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="RowChanged.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_summary">CONSTANT</A>&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_detail">CONSTANT</A>&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event RowChanged</H2>
+<HR>Sent to the application on every successful row commit in tables the application has subscribed to.<br>
+<br> Supported in distributed stores only, and only for fields named in the schema (extra fields are not supported).<br>
+<br> Events are sent for every change, whether from the local or a remote node, for tables where the subscribe method has been called.<br>
+<br> Some distributed MemoryStore drivers support including new and old values in this event, some just new values, and others - such as TCStore - leave both sequences empty.<br>
+<br> For * example: <pre> <br/>	integer positionRowId := tbl.getFieldIndex("position"); <br/>	RowChanged rowChanged; <br/>	on all RowChanged(storeName = STORE, <br/>	                  tableName = TABLE):rowChanged { <br/>		// we handle things simply by treating an update as a remove followed by an insert: <br/>		if (rowChanged.changeType = RowChanged.REMOVE or <br/>		    rowChanged.changeType = RowChanged.UPDATE) { <br/>			position := position - float.parse(rowChanged.oldFieldValues[positionRowId]); <br/>		} <br/>		if rowChanged.changeType = RowChanged.INSERT or <br/>		   rowChanged.changeType = RowChanged.UPDATE { <br/>			position := position + float.parse(rowChanged.newFieldValues[positionRowId]); <br/>		} <br/>		log "Position is now "+position.toString(); <br/>	} </pre><DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#subscribeRowChanged()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#subscribeRowChanged()</A>&nbsp;-&nbsp;for subscribing to RowChanged events</DD>
+</DL>
+<HR>
+<A NAME="constant_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Constant summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;constant integer</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#INSERT">INSERT</A> := 1</B></CODE>
+<br>
+<br>Value for changeType when a row is added to a table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;constant integer</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#REMOVE">REMOVE</A> := 2</B></CODE>
+<br>
+<br>Value for changeType when a row is removed from a table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;constant integer</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#UPDATE">UPDATE</A> := 3</B></CODE>
+<br>
+<br>Value for changeType when a row is modified in a table.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="member_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Member summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#changeType">changeType</A></B></CODE>
+<br>
+<br>One of INSERT, REMOVE, UPDATE for rows being added, removed, updated.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#storeName">storeName</A></B></CODE>
+<br>
+<br>Name of the store that the table is in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#tableName">tableName</A></B></CODE>
+<br>
+<br>Name of the table that the row is in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#key">key</A></B></CODE>
+<br>
+<br>The key value for the changed row.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#oldFieldValues">oldFieldValues</A></B></CODE>
+<br>
+<br>Old values of the row, or an empty sequence if not supported by this driver.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="RowChanged.html#newFieldValues">newFieldValues</A></B></CODE>
+<br>
+<br>New values of the row, or an empty sequence if not supported by this driver.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="RowChanged.html#getChangeTypeString()">getChangeTypeString</A></B>()</CODE>
+<br>
+<br>Get a display string representing this event's change type.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="constant_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Constant detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="INSERT"></A>
+<H3>INSERT</H3>
+<PRE>constant integer&nbsp;<B>INSERT := 1</B>
+</PRE>Value for changeType when a row is added to a table.<HR>
+<A NAME="REMOVE"></A>
+<H3>REMOVE</H3>
+<PRE>constant integer&nbsp;<B>REMOVE := 2</B>
+</PRE>Value for changeType when a row is removed from a table.<HR>
+<A NAME="UPDATE"></A>
+<H3>UPDATE</H3>
+<PRE>constant integer&nbsp;<B>UPDATE := 3</B>
+</PRE>Value for changeType when a row is modified in a table.<HR>
+<A NAME="member_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Member detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="changeType"></A>
+<H3>changeType</H3>
+<PRE>integer&nbsp;<B>changeType</B>
+</PRE>One of INSERT, REMOVE, UPDATE for rows being added, removed, updated.<HR>
+<A NAME="key"></A>
+<H3>key</H3>
+<PRE>string&nbsp;<B>key</B>
+</PRE>The key value for the changed row.<HR>
+<A NAME="newFieldValues"></A>
+<H3>newFieldValues</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>newFieldValues</B>
+</PRE>New values of the row, or an empty sequence if not supported by this driver.<br>
+<br> This sequence is always blank when using TCStore.<br>
+<br> The new values of the row, in toString() format, in the order defined by the table's Schema.<br>
+<br> For REMOVE, this will be an empty sequence, otherwise it will have as many entries as there are fields in the schema.<br>
+<br> The field values can be recovered by using the parse method on the field's type (e.g. <tt>integer.parse(rc.newFieldValues[i])</tt>), except for strings which are inserted without any escaping, so do not need to be parsed.<br>
+<br> Use Table.getFieldIndex() to efficiently map a field name to an index in this sequence (although consider caching the index in a variable to avoid unnecessary lookups).<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#getFieldIndex()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#getFieldIndex()</A>&nbsp;-&nbsp;for mapping from field name to index.</DD>
+</DL>
+<HR>
+<A NAME="oldFieldValues"></A>
+<H3>oldFieldValues</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>oldFieldValues</B>
+</PRE>Old values of the row, or an empty sequence if not supported by this driver.<br>
+<br> This sequence is always blank when using TCStore or BigMemory.<br>
+<br> The old values of the row, in toString() format, in the order defined by the table's Schema.  For UPDATE changeTypes, this is only populated if the storeFactory bean property rowChangedOldValueRequired is true (the default value is provider-specific).<br>
+<br> For INSERT (or UPDATE if rowChangedOldValueRequired is false), this will be an empty sequence, otherwise it will have as many entries as there are fields in the schema.<br>
+<br> The field values can be recovered by using the parse method on the field's type (e.g. <tt>integer.parse(rc.oldFieldValues[i])</tt>),except for strings which are inserted without any escaping, so do not need to be parsed.<br>
+<br> Use Table.getFieldIndex() to efficiently map a field name to an index in this sequence (although consider caching the index in a variable to avoid unnecessary lookups).<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#getFieldIndex()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#getFieldIndex()</A>&nbsp;-&nbsp;for mapping from field name to index.</DD>
+</DL>
+<HR>
+<A NAME="storeName"></A>
+<H3>storeName</H3>
+<PRE>string&nbsp;<B>storeName</B>
+</PRE>Name of the store that the table is in.<HR>
+<A NAME="tableName"></A>
+<H3>tableName</H3>
+<PRE>string&nbsp;<B>tableName</B>
+</PRE>Name of the table that the row is in.<HR>
+<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="getChangeTypeString()"></A>
+<H3>getChangeTypeString</H3>
+<PRE>string&nbsp;<B>getChangeTypeString</B>()</PRE>Get a display string representing this event's change type.<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>"INSERT", "REMOVE" or "UPDATE".</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/RowChanged.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="RowChanged.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_summary">CONSTANT</A>&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_detail">CONSTANT</A>&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

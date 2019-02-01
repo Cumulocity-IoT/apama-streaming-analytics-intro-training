@@ -1,0 +1,372 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Table</TITLE>
+<META NAME="keywords" CONTENT="Table&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Table";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Table.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Table.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Table</H2>
+<HR>Represents a collection of rows in a store, with a defined schema.<br>
+<br> A table consists of a series of rows, each identified by a key and containing other values with names and types according to the table's Schema.<br>
+<br> A table typically resides in memory, you can also store it on disk if you want to, or a table can be stored on a distributed cache.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#open()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#open()</A>&nbsp;-&nbsp;Tables exist within a named Store, which is used to create and open tables.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A></CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#add()">add</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Add the table Row with the specified key.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Iterator.html" title="type in com.apama.memorystore">com.apama.memorystore.Iterator</A></CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#begin()">begin</A></B>()</CODE>
+<br>
+<br>Return an iterator to the beginning of the Table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#clear()">clear</A></B>()</CODE>
+<br>
+<br>Remove all rows from the table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#enqueueColumn()">enqueueColumn</A></B>(string&nbsp;fieldName)</CODE>
+<br>
+<br>Enqueue an event for each row in the table, taken by parsing the string data in the specified table field/column as an event string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A></CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#get()">get</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Get the table Row with the specified key.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#getFieldIndex()">getFieldIndex</A></B>(string&nbsp;fieldName)</CODE>
+<br>
+<br>Return the index of a field.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#getKeys()">getKeys</A></B>()</CODE>
+<br>
+<br>Returns a sequence that contains the keys for all the rows in this table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#getStoreName()">getStoreName</A></B>()</CODE>
+<br>
+<br>Get the name of the Store that contains this table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#getTableName()">getTableName</A></B>()</CODE>
+<br>
+<br>Get the name of this Table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#hasKey()">hasKey</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Indicate whether or not a row with the specified key is present in the table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#mutate()">mutate</A></B>(string&nbsp;key,&nbsp;action&lt;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&gt;&nbsp;a)</CODE>
+<br>
+<br>Change the row with the specified key by applying an action to it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#mutateAll()">mutateAll</A></B>(action&lt;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&gt;&nbsp;a)</CODE>
+<br>
+<br>Mutate all rows in the Table by applying the specified action.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#persist()">persist</A></B>()</CODE>
+<br>
+<br>Persist this table's committed changes back to stable storage, asynchronously.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#remove()">remove</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Remove the specified row from the table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#subscribeRowChanged()">subscribeRowChanged</A></B>()</CODE>
+<br>
+<br>Subscribe to be notified of all successful commits in this table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Table.html#unsubscribe()">unsubscribe</A></B>(integer&nbsp;subscriptionId)</CODE>
+<br>
+<br>Cancel a previous subscription.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="add()"></A>
+<H3>add</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&nbsp;<B>add</B>(string&nbsp;key)</PRE>Add the table Row with the specified key.<br>
+<br> On distributed stores, for performance reasons this action doesn't check if there is a Row already present in the the table with the specified key. To check if the Row is present in the store, use the Table.get() action.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name/key uniquely identifying the row.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>An empty Row event.</DD>
+</DL>
+<HR>
+<A NAME="begin()"></A>
+<H3>begin</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Iterator.html" title="type in com.apama.memorystore">com.apama.memorystore.Iterator</A>&nbsp;<B>begin</B>()</PRE>Return an iterator to the beginning of the Table.<HR>
+<A NAME="clear()"></A>
+<H3>clear</H3>
+<PRE>void&nbsp;<B>clear</B>()</PRE>Remove all rows from the table.<HR>
+<A NAME="enqueueColumn()"></A>
+<H3>enqueueColumn</H3>
+<PRE>integer&nbsp;<B>enqueueColumn</B>(string&nbsp;fieldName)</PRE>Enqueue an event for each row in the table, taken by parsing the string data in the specified table field/column as an event string.<br>
+<br> The field must be of string type, and its value for every row should be an Apama event string, in the same form that you would send to the Correlator (e.g. "mypackage.MyEvent(123, [false,true])")<br>
+<br> This action is most likely to be useful when you are migrating from the StateStore Correlator plug-in to the MemoryStore. In the StateStore plug-in, persistent data re-entered the Correlator as sent events.<br>
+<br> This is only supported for non-distributed stores.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>fieldName</tt>&nbsp;-&nbsp;The name of the table field whose values are event strings that should be sent.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the column data for the last row has been sent.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="get()"></A>
+<H3>get</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&nbsp;<B>get</B>(string&nbsp;key)</PRE>Get the table Row with the specified key.<br>
+<br> If there is no row with the specified key, this action returns without error, with a Row event that contains default values for the fields in the row. A call to the Row.inTable() action returns false.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name/key uniquely identifying the row.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>A Row event representing an atomic snapshot of the committed data in the table when the action was called.</DD>
+</DL>
+<HR>
+<A NAME="getFieldIndex()"></A>
+<H3>getFieldIndex</H3>
+<PRE>integer&nbsp;<B>getFieldIndex</B>(string&nbsp;fieldName)</PRE>Return the index of a field.<br>
+<br> Returns what position in the Schema the specified field appears at. If a name that is not in Schema fieldName is passed in, the monitor instance will be terminated with an error.<br>
+<br> Using this action is more efficient that getting the same information by using indexOf on the Schema.fields sequence.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>fieldName</tt>&nbsp;-&nbsp;A field name that exists in this table's Schema.</DD>
+</DL>
+<HR>
+<A NAME="getKeys()"></A>
+<H3>getKeys</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>getKeys</B>()</PRE>Returns a sequence that contains the keys for all the rows in this table.<br>
+<br> The keys are in an arbitrary order.<HR>
+<A NAME="getStoreName()"></A>
+<H3>getStoreName</H3>
+<PRE>string&nbsp;<B>getStoreName</B>()</PRE>Get the name of the Store that contains this table.<HR>
+<A NAME="getTableName()"></A>
+<H3>getTableName</H3>
+<PRE>string&nbsp;<B>getTableName</B>()</PRE>Get the name of this Table.<HR>
+<A NAME="hasKey()"></A>
+<H3>hasKey</H3>
+<PRE>boolean&nbsp;<B>hasKey</B>(string&nbsp;key)</PRE>Indicate whether or not a row with the specified key is present in the table.<br>
+<br> t.hasKey("foo") is a more efficient alternative to t.get("foo").inTable()<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name/key uniquely identifying the row.</DD>
+</DL>
+<HR>
+<A NAME="mutate()"></A>
+<H3>mutate</H3>
+<PRE>void&nbsp;<B>mutate</B>(string&nbsp;key,&nbsp;action&lt;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&gt;&nbsp;a)</PRE>Change the row with the specified key by applying an action to it.<br>
+<br> It is possible for another context to commit changes to this row between the time mutate() obtains a Row event to represent the row and the time mutate() tries to commit the changes that result from executing the specified action. In this situation, the MemoryStore automatically calls the specified action again on the most recently committed row content; therefore mutation actions must be designed to cope with being called repeatedly without causing unwanted side effects.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>
+</DD>
+<DD>
+<tt>a</tt>&nbsp;-&nbsp;An action that (idempotently) performs the desired change to the row.</DD>
+</DL>
+<HR>
+<A NAME="mutateAll()"></A>
+<H3>mutateAll</H3>
+<PRE>void&nbsp;<B>mutateAll</B>(action&lt;<A HREF="../../../com/apama/memorystore/Row.html" title="type in com.apama.memorystore">com.apama.memorystore.Row</A>&gt;&nbsp;a)</PRE>Mutate all rows in the Table by applying the specified action.<br>
+<br> This can temporarily consume a lot of memory when called on a relatively large table because the Correlator does no garbage collection until action execution is complete. A few thousand rows are unlikely to present a problem. Beyond that, it depends on how many fields are in each row, how many rows are in the table, and how much RAM is available.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>a</tt>&nbsp;-&nbsp;An action that performs the desired change to each row in the table.</DD>
+</DL>
+<HR>
+<A NAME="persist()"></A>
+<H3>persist</H3>
+<PRE>integer&nbsp;<B>persist</B>()</PRE>Persist this table's committed changes back to stable storage, asynchronously.<br>
+<br> Note that any local changes to a Row that were not committed will not be written to disk (see Row#commit()).<br>
+<br> Only on-disk persistent stores can be persisted using this action. It is not possible to call this method on Correlator-persistent tables since all changes committed to such tables will be written to disk automatically in the same transaction as changes to the state of persistent EPL monitors.<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="remove()"></A>
+<H3>remove</H3>
+<PRE>void&nbsp;<B>remove</B>(string&nbsp;key)</PRE>Remove the specified row from the table.<br>
+<br> If the row does not exist, this action does nothing.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name/key uniquely identifying the row.</DD>
+</DL>
+<HR>
+<A NAME="subscribeRowChanged()"></A>
+<H3>subscribeRowChanged</H3>
+<PRE>integer&nbsp;<B>subscribeRowChanged</B>()</PRE>Subscribe to be notified of all successful commits in this table.<br>
+<br> This is only supported for tables in a distributed store, and only if the underlying provider supports this feature.<br>
+<br> The monitor instance will be terminated with an error if this action is called on a store that does not support it.<br>
+<br> It is important to note that (due to the nature of distributed store technology) there is no way to atomically subscribe to notifications and get an initial snapshot of the table's contents, so applications that perform an initial iteration over the table's contents to initialize some state before subscribing are at risk of double-counting any keys that are mutated after the subscription and during the iteration/initialization process.<br>
+<br> For tables that are relatively small (and fit entirely inside the memory of a single Correlator), a common pattern for addressing the need for a table snapshot to initialize state before subscribing is to maintain a per-key dictionary of last-seen values, updated by both the initial iteration and the RowChanged notification events; any RowChanged event whose old value does not match the last-seen dictionary must be ignored, to avoid double-counting changes. To save memory, entries from the last-seen dictionary can be removed after the first RowChanged event for that key.<br>
+<br> For distributed stores and drivers that support it, the application may also receive MissedRowChanges events to signify that some unknown number of updates have been missed (typically due to a network disconnection between the client and the store)<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>A unique subscriptionId that can be passed to any instance of this Table to unsubscribe.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/RowChanged.html" title="type in com.apama.memorystore">com.apama.memorystore.RowChanged</A>&nbsp;-&nbsp;The event sent whenever a row is modified.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/MissedRowChanges.html" title="type in com.apama.memorystore">com.apama.memorystore.MissedRowChanges</A>&nbsp;-&nbsp;The event sent whenever a row is modified.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#unsubscribe()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#unsubscribe()</A>&nbsp;-&nbsp;Unsubscribe using this action.</DD>
+</DL>
+<HR>
+<A NAME="unsubscribe()"></A>
+<H3>unsubscribe</H3>
+<PRE>void&nbsp;<B>unsubscribe</B>(integer&nbsp;subscriptionId)</PRE>Cancel a previous subscription.<br>
+<br> This is only supported for tables in a distributed store.<br>
+<br> If other monitors in this context have also subscribed, events will still be delivered until they have all unsubscribed. subscriptionId must be a value returned from a subscribeRowChanged() on this table.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>subscriptionId</tt>&nbsp;-&nbsp;Identifier for the subscription to remove, returned by subscribeRowChanged().</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Table.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Table.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

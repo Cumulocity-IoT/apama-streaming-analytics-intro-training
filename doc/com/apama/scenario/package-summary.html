@@ -1,0 +1,237 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>com.apama.scenario</TITLE>
+<META NAME="keywords" CONTENT="com.apama.scenario package">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">
+          function windowTitle()
+          {
+          parent.document.title="com.apama.scenario";
+          }
+        </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"><FONT CLASS="NavBarFont1Rev"><B>Package</B></FONT>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/package-summary.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="package-summary.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>Package com.apama.scenario</H2>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Event summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Acknowledge.html" title="Event in com.apama.scenario">Acknowledge</A></B></TD><TD>A general Acknowledgement event that is the "response" to various "request" events such as Create, Edit, Delete.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="AllConfiguration.html" title="Event in com.apama.scenario">AllConfiguration</A></B></TD><TD>Response all configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="CallbackHelper.html" title="Event in com.apama.scenario">CallbackHelper</A></B></TD><TD>
+            &nbsp;
+          </TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Configuration.html" title="Event in com.apama.scenario">Configuration</A></B></TD><TD>The current configuration for a given scenario and the default configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ConfigureUpdates.html" title="Event in com.apama.scenario">ConfigureUpdates</A></B></TD><TD>Configures how updates are sent from scenarios. Each scenario is controlled by two configurations - a global default, and an optional per scenario configuration.  The per scenario configuration takes precedence over the global default. The configuration is made up of a number of entries in the configuration dictionary. The ConfigureUpdate event is merged into any previous configuration.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Create.html" title="Event in com.apama.scenario">Create</A></B></TD><TD>Request that a new instance of a specific scenario is created.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Created.html" title="Event in com.apama.scenario">Created</A></B></TD><TD>Notifies all interested clients that a new instance of a specific scenario has been created. The event provides the owner (user), initial state, and initial values for all input fields and all output fields.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Delete.html" title="Event in com.apama.scenario">Delete</A></B></TD><TD>Request that a specific instance of a specific scenario is deleted.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Deleted.html" title="Event in com.apama.scenario">Deleted</A></B></TD><TD>Notifies all interested clients that a specific instance of a specific scenario has been deleted.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Edit.html" title="Event in com.apama.scenario">Edit</A></B></TD><TD>Request that a specific instance of a specific scenario is edited (the input field values are changed).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Edited.html" title="Event in com.apama.scenario">Edited</A></B></TD><TD>Notifies all interested clients that a specific instance of a specific scenario has been edited (the input field values have changed).</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="FinishedScenarioRecovery.html" title="Event in com.apama.scenario">FinishedScenarioRecovery</A></B></TD><TD>Sweeper event to indicate that scenario recovery is done. Only used internally.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="GetAllConfiguration.html" title="Event in com.apama.scenario">GetAllConfiguration</A></B></TD><TD>Request all configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="GetConfiguration.html" title="Event in com.apama.scenario">GetConfiguration</A></B></TD><TD>Get the current configuration for a given scenario and the default configuration</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Instance.html" title="Event in com.apama.scenario">Instance</A></B></TD><TD>Provides a dump of the current state of a scenario instance. The event definition is identical to the Created event, and includes the owner (user), initial state, and current values for all input fields and all output fields.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="InstanceDied.html" title="Event in com.apama.scenario">InstanceDied</A></B></TD><TD>Indicates that a specific instance of a specific scenario has died. This is sent as a result of a scenario instance use of MonitorScript ondie. This occurs for any of deleting a running scenario, a scenario failing, or entering the end state.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="OperationCompleted.html" title="Event in com.apama.scenario">OperationCompleted</A></B></TD><TD>An operation has completed. Sent from parallel scenarios to the main context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ParallelStarting.html" title="Event in com.apama.scenario">ParallelStarting</A></B></TD><TD>Notification of a new scenario instance</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ParentChildRelationship.html" title="Event in com.apama.scenario">ParentChildRelationship</A></B></TD><TD>Notifies the interested clients of child scenarios created from a parent scenario.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesDone.html" title="Event in com.apama.scenario">RequestInstancesDone</A></B></TD><TD>This is a simple marker event that is sent by the correlator to indicate that it has finished sending all of the Instance events in response to a RequestInstancesInternal event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesInternal.html" title="Event in com.apama.scenario">RequestInstancesInternal</A></B></TD><TD>Request that each instance of the specified scenario send an Instance event out on the scenario Data or Raw channel. When all instances for the scenario have been sent out, a final RequestInstancesDone event will be sent on the same channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesOnChannel.html" title="Event in com.apama.scenario">RequestInstancesOnChannel</A></B></TD><TD>Request that each instance of the specified scenario send an Instance event out on the supplied channel. When all instances for the scenario have been sent out, a final RequestInstancesDone event will be sent on the same channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesOnChannelByUser.html" title="Event in com.apama.scenario">RequestInstancesOnChannelByUser</A></B></TD><TD>Request that each instance for the specified user of the specified scenario send an Instance event out on the supplied channel. When all instances for the scenario have been sent out, a final RequestInstancesDone event will be sent on the same channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesParallel.html" title="Event in com.apama.scenario">RequestInstancesParallel</A></B></TD><TD>Trigger discovery of a parallel scenario. Sent from a sub-monitor of ScenarioService to RequestInstancesHandler to create a new sub-monitor.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesParallelDone.html" title="Event in com.apama.scenario">RequestInstancesParallelDone</A></B></TD><TD>Discovery protocol of a parallel scenario. Sent from a scenario instance to RequestInstancesHandler.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestScenarios.html" title="Event in com.apama.scenario">RequestScenarios</A></B></TD><TD>Request that each scenario loaded in the correlator send its meta information out on the supplied channel. When all scenarios have sent out this information, a final RequestScenariosDone event will be sent on the same channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestScenariosAck.html" title="Event in com.apama.scenario">RequestScenariosAck</A></B></TD><TD>
+            &nbsp;
+          </TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestScenariosDone.html" title="Event in com.apama.scenario">RequestScenariosDone</A></B></TD><TD>This is a simple marker event that is sent by the correlator to indicate that it has finished sending all of the Scenario events in response to a RequestScenarios event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Scenario.html" title="Event in com.apama.scenario">Scenario</A></B></TD><TD>Describes the meta-information about a scenario that is loaded in the correlator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioFinished.html" title="Event in com.apama.scenario">ScenarioFinished</A></B></TD><TD>A scenario has finished running, but is still discoverable. (i.e. entered end state or failed - but not deleted). Note that this event contains the state as of the last Update/ Edited event - i.e. if an action modified an output variable and then caused the scenario to fail, the prior modification would not be reflected in this event.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioProcessedUpdates.html" title="Event in com.apama.scenario">ScenarioProcessedUpdates</A></B></TD><TD>Notification that a scenario has loaded a ConfigureUpdates event</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceLibrary.html" title="Event in com.apama.scenario">ScenarioServiceLibrary</A></B></TD><TD>Library of utility actions</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceLoaded.html" title="Event in com.apama.scenario">ScenarioServiceLoaded</A></B></TD><TD>Indicates this shared MonitorScript has been loaded.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceUnloaded.html" title="Event in com.apama.scenario">ScenarioServiceUnloaded</A></B></TD><TD>Indicates this shared MonitorScript is being unloaded.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceUpdaterBase.html" title="Event in com.apama.scenario">ScenarioServiceUpdaterBase</A></B></TD><TD>Base event for tracking configuration for a given scenario</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceUpdaterMultipleInstances.html" title="Event in com.apama.scenario">ScenarioServiceUpdaterMultipleInstances</A></B></TD><TD>Utility event for tracking configuration for a given scenario. This event is suitable for use by monitors which spawn per scenario, but not per instance. (e.g. ScenarioService, DataViewService)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioServiceUpdaterSingleInstance.html" title="Event in com.apama.scenario">ScenarioServiceUpdaterSingleInstance</A></B></TD><TD>Utility event for tracking configuration for a given scenario. This event is suitable for use by monitors which spawn per instance (e.g. Scenarios)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioUnloaded.html" title="Event in com.apama.scenario">ScenarioUnloaded</A></B></TD><TD>Indicates that a specific Scenario definition is being unloaded.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="SendQueuedUpdatesNow.html" title="Event in com.apama.scenario">SendQueuedUpdatesNow</A></B></TD><TD>Immediately flushes to receivers any scenario Update events that were waiting for the next throttling period before being sent.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="SetThrottlingPeriod.html" title="Event in com.apama.scenario">SetThrottlingPeriod</A></B></TD><TD>Set the period over which updates will be queued and coalesced before being sent out on the data channel. Defaults to zero, which means they won't be queued. If it is negative then we won't send any updates on the data channel. This event is deprecated and the ConfigureUpdates event should be used instead (see below)</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="StartScenarioRecovery.html" title="Event in com.apama.scenario">StartScenarioRecovery</A></B></TD><TD>Only used internally to tell all the scenarios to start routing their meta data (Scenario). It is followed by a sweeper FinishedScenarioRecovery event which indicates that all the scenarios have reported in.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="StateChange.html" title="Event in com.apama.scenario">StateChange</A></B></TD><TD>Indicates that a specific instance of a specific scenario has changed state, where valid states include "ENDED", "FAILED", "RUNNING".</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="Update.html" title="Event in com.apama.scenario">Update</A></B></TD><TD>Contains updated scenario instance output fields. Note that this is the ONLY event type that is sent on the "<scenarioId>.Data" channel.</TD>
+</TR>
+</TABLE>
+<P></P>
+        &nbsp;
+        <HR>
+<P></P>
+        &nbsp;
+        <HR>
+<P></P>
+        &nbsp;
+        <HR>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Monitor summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="RequestInstancesHandler.html" title="Monitor in com.apama.scenario">RequestInstancesHandler</A></B></TD><TD>
+            &nbsp;
+          </TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD WIDTH="15%"><B><A HREF="ScenarioService.html" title="Monitor in com.apama.scenario">ScenarioService</A></B></TD><TD>
+            &nbsp;
+          </TD>
+</TR>
+</TABLE>
+<P></P>
+        &nbsp;
+        <HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"><FONT CLASS="NavBarFont1Rev"><B>Package</B></FONT>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/package-summary.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="package-summary.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,254 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Schema</TITLE>
+<META NAME="keywords" CONTENT="Schema&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Schema";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Schema.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Schema.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Schema</H2>
+<HR>Represents the schema for a table in the store, specifying the field names, types, and other behavioural information about the table.<br>
+<br> The fields and types sequences must be the same length as one another, specifying the names of fields and their corresponding types.<br>
+<br> Never construct a Schema using a "Schema(...)" expression. Instead, always create a variable initialized to "new Schema", and then set parameters individually with separate statements. This ensures that your code will continue to work without modification if a subsequent version of the MemoryStore adds more parameters to the Schema event.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepare()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepare()</A>&nbsp;-&nbsp;The schema for a table is specified when it is prepared.</DD>
+</DL>
+<HR>
+<A NAME="member_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Member summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#fields">fields</A></B></CODE>
+<br>
+<br>A sequence specifying the name of each field in this table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#types">types</A></B></CODE>
+<br>
+<br>A sequence specifying the type of each field in this table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#exposeMemoryView">exposeMemoryView</A></B></CODE>
+<br>
+<br>When this field is true, the MemoryStore makes the rows in the in-memory table associated with this schema available to the scenario service, so they can be used by external clients and dashboards.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#exposePersistentView">exposePersistentView</A></B></CODE>
+<br>
+<br>When this field is true, the MemoryStore makes the rows in the on-disk table associated with this schema available to the scenario service, so they can be used by external clients and dashboards.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#memoryViewDisplayName">memoryViewDisplayName</A></B></CODE>
+<br>
+<br>Specifies the display name for an in-memory table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#memoryViewDescription">memoryViewDescription</A></B></CODE>
+<br>
+<br>Describes an in-memory table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#persistentViewDisplayName">persistentViewDisplayName</A></B></CODE>
+<br>
+<br>Specifies the display name for an on-disk table.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="Schema.html#persistentViewDescription">persistentViewDescription</A></B></CODE>
+<br>
+<br>Describes an on-disk table.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;string&gt;</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Schema.html#normalizeTypes()">normalizeTypes</A></B>(sequence&lt;string&gt;&nbsp;types)</CODE>
+<br>
+<br>Normalize a sequence of types to those accepted by Memory Store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Schema.html" title="type in com.apama.memorystore">com.apama.memorystore.Schema</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Schema.html#schemaFromAny()">schemaFromAny</A></B>(any&nbsp;prototype)</CODE>
+<br>
+<br>Convert the supplied types into a valid MemoryStore table Schema.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="member_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Member detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="exposeMemoryView"></A>
+<H3>exposeMemoryView</H3>
+<PRE>boolean&nbsp;<B>exposeMemoryView</B>
+</PRE>When this field is true, the MemoryStore makes the rows in the in-memory table associated with this schema available to the scenario service, so they can be used by external clients and dashboards.<br>
+<br> That is, the MemoryStore creates DataViews that contain the state of this table that has been committed (but not necessarily persisted) to the shared in-memory representation of the table.<br>
+<br> Committing changes to the in-memory row in a table that is exposing its in-memory state causes events to be sent to the main context.<HR>
+<A NAME="exposePersistentView"></A>
+<H3>exposePersistentView</H3>
+<PRE>boolean&nbsp;<B>exposePersistentView</B>
+</PRE>When this field is true, the MemoryStore makes the rows in the on-disk table associated with this schema available to the scenario service, so they can be used by external clients and dashboards.<br>
+<br> That is, the MemoryStore creates DataViews that contain data from this table that has been persisted to disk.<br>
+<br> You cannot expose a persistent view of a table in a correlator-persistent store.<HR>
+<A NAME="fields"></A>
+<H3>fields</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>fields</B>
+</PRE>A sequence specifying the name of each field in this table.<br>
+<br> For looking up the index of a specific field name (e.g. while processing RowChanged events), use Table.getFieldIndex() which is more efficient than using indexOf() on the fields sequence.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html#getFieldIndex()" title="Action in com.apama.memorystore.">com.apama.memorystore.Table#getFieldIndex()</A>&nbsp;-&nbsp;for efficiently obtaining the index of a field.</DD>
+</DL>
+<HR>
+<A NAME="memoryViewDescription"></A>
+<H3>memoryViewDescription</H3>
+<PRE>string&nbsp;<B>memoryViewDescription</B>
+</PRE>Describes an in-memory table.<HR>
+<A NAME="memoryViewDisplayName"></A>
+<H3>memoryViewDisplayName</H3>
+<PRE>string&nbsp;<B>memoryViewDisplayName</B>
+</PRE>Specifies the display name for an in-memory table.<HR>
+<A NAME="persistentViewDescription"></A>
+<H3>persistentViewDescription</H3>
+<PRE>string&nbsp;<B>persistentViewDescription</B>
+</PRE>Describes an on-disk table.<HR>
+<A NAME="persistentViewDisplayName"></A>
+<H3>persistentViewDisplayName</H3>
+<PRE>string&nbsp;<B>persistentViewDisplayName</B>
+</PRE>Specifies the display name for an on-disk table.<HR>
+<A NAME="types"></A>
+<H3>types</H3>
+<PRE>sequence&lt;string&gt;&nbsp;<B>types</B>
+</PRE>A sequence specifying the type of each field in this table.<br>
+<br> Permitted types are currently: 'integer', 'boolean', 'float', 'string' and 'decimal'.<br>
+<br> This sequence must have the same length as the fields sequence.<HR>
+<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="normalizeTypes()"></A>
+<H3>normalizeTypes</H3>
+<PRE>sequence&lt;string&gt;&nbsp;static <B>normalizeTypes</B>(sequence&lt;string&gt;&nbsp;types)</PRE>Normalize a sequence of types to those accepted by Memory Store.<br>
+<br> Converts anything other than integer, float, boolean and decimal to string.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>types</tt>&nbsp;-&nbsp;Type string sequence to normalize</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>Sequence of normalized string types</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<A NAME="schemaFromAny()"></A>
+<H3>schemaFromAny</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Schema.html" title="type in com.apama.memorystore">com.apama.memorystore.Schema</A>&nbsp;static <B>schemaFromAny</B>(any&nbsp;prototype)</PRE>Convert the supplied types into a valid MemoryStore table Schema.<br>
+<br> Field types that are not supported by MemoryStore are converted to strings.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>prototype</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The MemoryStore table Schema.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Schema.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Schema.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

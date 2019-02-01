@@ -1,0 +1,312 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Store</TITLE>
+<META NAME="keywords" CONTENT="Store&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Store";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Store.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Store.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.memorystore</FONT>
+<BR>Event Store</H2>
+<HR>Represents a store, which is a container for a uniquely named collection of tables.<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Storage.html" title="type in com.apama.memorystore">com.apama.memorystore.Storage</A>&nbsp;-&nbsp;Provides actions to prepare and open a Store.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Table.html" title="type in com.apama.memorystore">com.apama.memorystore.Table</A>&nbsp;-&nbsp;Represents the tables in a Store.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#backup()">backup</A></B>(string&nbsp;filename)</CODE>
+<br>
+<br>Create a backup of the Store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#getStoreName()">getStoreName</A></B>()</CODE>
+<br>
+<br>Get the name of this Store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#hasTable()">hasTable</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Indicate whether or not a Table with the specified name is present in the Store.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/memorystore/Table.html" title="type in com.apama.memorystore">com.apama.memorystore.Table</A></CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#open()">open</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Open the specified table, once it has been prepared.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#persist()">persist</A></B>()</CODE>
+<br>
+<br>Persist committed changes back to stable storage, asynchronously.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#prepare()">prepare</A></B>(string&nbsp;name,&nbsp;<A HREF="../../../com/apama/memorystore/Schema.html" title="type in com.apama.memorystore">com.apama.memorystore.Schema</A>&nbsp;schema)</CODE>
+<br>
+<br>Prepare a table so that subsequent open calls for it will succeed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#prepareFromAny()">prepareFromAny</A></B>(any&nbsp;prototype)</CODE>
+<br>
+<br>Prepare a table from a supplied type (a users Event) using the type name as the table name and the fields and field types as the schema.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="Store.html#prepareFromTypeName()">prepareFromTypeName</A></B>(string&nbsp;typeName)</CODE>
+<br>
+<br>Prepare a table from a type identified from the supplied type name. The type name should identify a users Event.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="backup()"></A>
+<H3>backup</H3>
+<PRE>integer&nbsp;<B>backup</B>(string&nbsp;filename)</PRE>Create a backup of the Store.<br>
+<br> The backup is created in the specified file, which is overwritten if it already exists.<br>
+<br> Only persistent (on-disk) stores can be backed up.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>filename</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="getStoreName()"></A>
+<H3>getStoreName</H3>
+<PRE>string&nbsp;<B>getStoreName</B>()</PRE>Get the name of this Store.<HR>
+<A NAME="hasTable()"></A>
+<H3>hasTable</H3>
+<PRE>boolean&nbsp;<B>hasTable</B>(string&nbsp;name)</PRE>Indicate whether or not a Table with the specified name is present in the Store.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;The unique table name to check for.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>True if it is safe to call open() on the specified table; false if preparation failed or is still in progress.</DD>
+</DL>
+<HR>
+<A NAME="open()"></A>
+<H3>open</H3>
+<PRE>
+<A HREF="../../../com/apama/memorystore/Table.html" title="type in com.apama.memorystore">com.apama.memorystore.Table</A>&nbsp;<B>open</B>(string&nbsp;name)</PRE>Open the specified table, once it has been prepared.<br>
+<br> It is an error to call this before a prepare call for the table has finished without error.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;The name of the table to be opened, which must be the same as the name used when the table was first prepared.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepare()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepare()</A>&nbsp;-&nbsp;This action must not be called until prepare has completed successfully.</DD>
+</DL>
+<HR>
+<A NAME="persist()"></A>
+<H3>persist</H3>
+<PRE>integer&nbsp;<B>persist</B>()</PRE>Persist committed changes back to stable storage, asynchronously.<br>
+<br> Only on-disk persistent stores can be persisted using this action. It is not possible to call this method on Correlator-persistent tables since all changes committed to such tables will be written to disk automatically in the same transaction as changes to the state of persistent EPL monitors.<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepare()"></A>
+<H3>prepare</H3>
+<PRE>integer&nbsp;<B>prepare</B>(string&nbsp;name,&nbsp;<A HREF="../../../com/apama/memorystore/Schema.html" title="type in com.apama.memorystore">com.apama.memorystore.Schema</A>&nbsp;schema)</PRE>Prepare a table so that subsequent open calls for it will succeed.<br>
+<br> If the table already exists, the Schema provided to the prepare function must completely match the existing schema. If it does not already exist, the Schema will be used to create the table.<br>
+<br> The function returns an id; once preparation is complete a Finished event with that id will be sent.<br>
+<br> This call is idempotent - if the table was already successfully prepared, it will return success immediately.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;A unique name that will be used to identify the new table.</DD>
+<DD>
+<tt>schema</tt>&nbsp;-&nbsp;The schema identifying the fields of the new table.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+</DL>
+<HR>
+<A NAME="prepareFromAny()"></A>
+<H3>prepareFromAny</H3>
+<PRE>integer&nbsp;<B>prepareFromAny</B>(any&nbsp;prototype)</PRE>Prepare a table from a supplied type (a users Event) using the type name as the table name and the fields and field types as the schema.<br>
+<br> <pre><br>		integer id := Schema.prepareFromAny(new MyEventType);<br>		</pre><DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>prototype</tt>&nbsp;-&nbsp;Any type value to use as the table name and schema</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepare()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepare()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="prepareFromTypeName()"></A>
+<H3>prepareFromTypeName</H3>
+<PRE>integer&nbsp;<B>prepareFromTypeName</B>(string&nbsp;typeName)</PRE>Prepare a table from a type identified from the supplied type name. The type name should identify a users Event.<br>
+<br> <pre><br>		integer id := Schema.prepareFromTypeName("MyEventType");<br>		</pre><DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>typeName</tt>&nbsp;-&nbsp;The type name to use as the table name and schema.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The unique identifier for this operation, which will be included in the Finished event sent after the operation is complete.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.1</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/memorystore/Finished.html" title="type in com.apama.memorystore">com.apama.memorystore.Finished</A>&nbsp;-&nbsp;A Finished event will be sent when this asynchronous operation has completed.</DD>
+<DD>
+<A HREF="../../../com/apama/memorystore/Store.html#prepareFromAny()" title="Action in com.apama.memorystore.">com.apama.memorystore.Store#prepareFromAny()</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/memorystore/Store.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Store.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/memorystore/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

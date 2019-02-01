@@ -1,0 +1,226 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>ConnectivityPlugins</TITLE>
+<META NAME="keywords" CONTENT="ConnectivityPlugins&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="ConnectivityPlugins";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/softwareag/connectivity/ConnectivityPlugins.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ConnectivityPlugins.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/softwareag/connectivity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.softwareag.connectivity</FONT>
+<BR>Event ConnectivityPlugins</H2>
+<HR>Utilities for interacting with connectivity plug-ins.<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ConnectivityPlugins.html#createChain()">createChain</A></B>(string&nbsp;chainInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;string&nbsp;chainDefnName,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;substitutions)</CODE>
+<br>
+<br>Create and start a chain instance from the given chain definition listed in dynamicChains in the configuration file.<DL>
+<DT>
+<B>Deprecated:</B>
+</DT>
+<DD>
+<I>[This action has been deprecated. Please use createDynamicChain instead.]</I>
+</DD>
+</DL>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ConnectivityPlugins.html#createDynamicChain()">createDynamicChain</A></B>(string&nbsp;chainInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;string&nbsp;chainDefnName,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;substitutions,&nbsp;string&nbsp;defaultChannelTowardsHost)</CODE>
+<br>
+<br>Create and start a chain instance from the given chain definition listed in dynamicChains in the configuration file.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ConnectivityPlugins.html#getChainByChannel()">getChainByChannel</A></B>(string&nbsp;channel,&nbsp;string&nbsp;direction)</CODE>
+<br>
+<br>Look up a chain instance by a channel it is subscribed to or sending to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ConnectivityPlugins.html#getChainById()">getChainById</A></B>(string&nbsp;chainInstanceId)</CODE>
+<br>
+<br>Look up a chain instance by its identifier. This can retrieve dynamically created chains, as well as statically created chains from 'startChains' in the correlator configuration.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="ConnectivityPlugins.html#onApplicationInitialized()">onApplicationInitialized</A></B>()</CODE>
+<br>
+<br>Should be called by EPL applications after all EPL has been injected and initialized, to indicate that the application is ready to receive events from connectivity plug-ins.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="createChain()"></A>
+<H3>createChain</H3>
+<PRE>
+<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A>&nbsp;static <B>createChain</B>(string&nbsp;chainInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;string&nbsp;chainDefnName,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;substitutions)</PRE>
+<DL>
+<DT>
+<B>Deprecated:</B>
+</DT>
+<DD>
+<I>[This action has been deprecated. Please use createDynamicChain instead.]</I>
+</DD>
+</DL>Create and start a chain instance from the given chain definition listed in dynamicChains in the configuration file.<br>
+<br> This action returns a Chain that has already been created and started. It is immediately able to receive events.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>chainInstanceId</tt>&nbsp;-&nbsp;The unique identifier to use for the new chain instance. This identifier is used for logging, and for looking up existing Chain objects by id. Caution: A small amount of memory is allocated for each unique chain instance identifier. This memory is not freed when the chain is destroyed. Therefore, if you are creating many chains, consider reusing old chain instance identifiers. If you create more than 1000 unique identifiers, a warning is written to the correlator log file to notify you of this. You cannot have two active chains with the same chain instance identifier, so only reuse identifiers which are no longer in use.</DD>
+<DD>
+<tt>channels</tt>&nbsp;-&nbsp;The list of channels this chain should subscribe to</DD>
+<DD>
+<tt>chainDefnName</tt>&nbsp;-&nbsp;The name of a chain definition listed under dynamicChains in the configuration file</DD>
+<DD>
+<tt>substitutions</tt>&nbsp;-&nbsp;Dictionary providing values for <code>@{...}</code> dynamic substitution variables in the chain definition</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>A Chain object which can be used to destroy this chain later</DD>
+</DL>
+<HR>
+<A NAME="createDynamicChain()"></A>
+<H3>createDynamicChain</H3>
+<PRE>
+<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A>&nbsp;static <B>createDynamicChain</B>(string&nbsp;chainInstanceId,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;string&nbsp;chainDefnName,&nbsp;dictionary&lt;string,&nbsp;string&gt;&nbsp;substitutions,&nbsp;string&nbsp;defaultChannelTowardsHost)</PRE>Create and start a chain instance from the given chain definition listed in dynamicChains in the configuration file.<br>
+<br> This action returns a Chain that has already been created and started. It is immediately able to receive events.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>chainInstanceId</tt>&nbsp;-&nbsp;The unique identifier to use for the new chain instance. This identifier is used for logging, and for looking up existing Chain objects by id.</DD>
+<DD>
+<tt>channels</tt>&nbsp;-&nbsp;The list of channels this chain should subscribe to</DD>
+<DD>
+<tt>chainDefnName</tt>&nbsp;-&nbsp;The name of a chain definition listed under dynamicChains in the configuration file</DD>
+<DD>
+<tt>substitutions</tt>&nbsp;-&nbsp;Dictionary providing values for <code>@{...}</code> dynamic substitution variables in the chain definition</DD>
+<DD>
+<tt>defaultChannelTowardsHost</tt>&nbsp;-&nbsp;Default channel to use for sending a message towards the host if no channel is specified on the message. Use an empty string for no default channel. It is an error to specify non-empty defaultChannelTowardsHost value if defaultChannel is also specified for the host plug-in.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>A Chain object which can be used to destroy this chain later</DD>
+</DL>
+<HR>
+<A NAME="getChainByChannel()"></A>
+<H3>getChainByChannel</H3>
+<PRE>
+<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A>&nbsp;static <B>getChainByChannel</B>(string&nbsp;channel,&nbsp;string&nbsp;direction)</PRE>Look up a chain instance by a channel it is subscribed to or sending to.<br>
+<br> There must be exactly one chain matching the requested combination of channel and direction, else an exception is thrown.<br>
+<br> The direction of the channel specifies how the channel is used by the chain instance. The TOWARDS_TRANSPORT direction means that the channel is one of the channels that the chain instance is subscribed to to receive events from the host. The TOWARDS_HOST direction means that the channel is used by the chain instance as the default channel to deliver events from the transport to the host.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>channel</tt>&nbsp;-&nbsp;The channel to use for lookup.</DD>
+<DD>
+<tt>direction</tt>&nbsp;-&nbsp;Specifies the direction in which the channel is used by the chain instance. Use the constants defined in the Direction event for string literals.</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/softwareag/connectivity/Direction.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Direction</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="getChainById()"></A>
+<H3>getChainById</H3>
+<PRE>
+<A HREF="../../../com/softwareag/connectivity/Chain.html" title="type in com.softwareag.connectivity">com.softwareag.connectivity.Chain</A>&nbsp;static <B>getChainById</B>(string&nbsp;chainInstanceId)</PRE>Look up a chain instance by its identifier. This can retrieve dynamically created chains, as well as statically created chains from 'startChains' in the correlator configuration.<br>
+<br> An exception is thrown if no chain exists with this identifier.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>chainInstanceId</tt>&nbsp;-&nbsp;The unique identifier of the chain instance</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The chain instance</DD>
+</DL>
+<HR>
+<A NAME="onApplicationInitialized()"></A>
+<H3>onApplicationInitialized</H3>
+<PRE>void&nbsp;static <B>onApplicationInitialized</B>()</PRE>Should be called by EPL applications after all EPL has been injected and initialized, to indicate that the application is ready to receive events from connectivity plug-ins.<br>
+<br> This will also enable reception of JMS events if correlator-integrated JMS is enabled (That is, it implicitly calls JMSPlugin.onApplicationInitialized)<br>
+<br> Invoking this action more than once is an error and will throw an exception.<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/softwareag/connectivity/ConnectivityPlugins.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ConnectivityPlugins.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/softwareag/connectivity/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

@@ -1,0 +1,420 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>ScenarioServiceUpdaterBase</TITLE>
+<META NAME="keywords" CONTENT="ScenarioServiceUpdaterBase&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="ScenarioServiceUpdaterBase";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceUpdaterBase.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceUpdaterBase.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.scenario</FONT>
+<BR>Event ScenarioServiceUpdaterBase</H2>
+<HR>Base event for tracking configuration for a given scenario<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/GetConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetConfiguration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/ScenarioProcessedUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioProcessedUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Emits:</B>
+</DT>
+<DD>string&nbsp;representation&nbsp;of&nbsp;an&nbsp;event&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Configuration.html" title="type in com.apama.scenario">com.apama.scenario.Configuration</A>&nbsp;-&nbsp;</DD>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="member_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Member summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#scenarioId">scenarioId</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;string,&nbsp;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#defaultConfig">defaultConfig</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;string,&nbsp;string&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#config">config</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#sendThrottled">sendThrottled</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#sendRaw">sendRaw</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#sendAny">sendAny</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#emitAny">emitAny</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#sendThrottledUser">sendThrottledUser</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#sendRawUser">sendRawUser</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#routeUpdate">routeUpdate</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#throttlePeriod">throttlePeriod</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#throttleStart">throttleStart</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;sequence&lt;listener&gt;</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#listeners">listeners</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#controlChannel">controlChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#rawChannel">rawChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#dataChannel">dataChannel</A></B></CODE>
+<br>
+</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#configurationUpdated()">configurationUpdated</A></B>()</CODE>
+<br>
+<br>Called when the configuration should be re-parsed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#destroy()">destroy</A></B>()</CODE>
+<br>
+<br>Kill any listeners this object has started</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#doEmit()">doEmit</A></B>(string&nbsp;emitted,&nbsp;string&nbsp;owner)</CODE>
+<br>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#init()">init</A></B>(string&nbsp;sId,&nbsp;action&lt;&gt;&nbsp;cb_onUpdate)</CODE>
+<br>
+<br>Called by monitor at onload time Will maintain configuration for this scenario</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#isSendRaw()">isSendRaw</A></B>()</CODE>
+<br>
+<br>Get whether this scenario should send on the raw channel</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#isSendThrottled()">isSendThrottled</A></B>()</CODE>
+<br>
+<br>Get whether this scenario should send on the throttled (Data) channel</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#listenToConfigureUpdates()">listenToConfigureUpdates</A></B>(action&lt;&gt;&nbsp;cb_onUpdate)</CODE>
+<br>
+<br>Listen for further configuration changes.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="ScenarioServiceUpdaterBase.html#onConfigureUpdates()">onConfigureUpdates</A></B>(<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;cu)</CODE>
+<br>
+<br>Called when new ConfigureUpdates event available</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="member_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Member detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="config"></A>
+<H3>config</H3>
+<PRE>dictionary&lt;string,&nbsp;string&gt;&nbsp;<B>config</B>
+</PRE>
+<HR>
+<A NAME="controlChannel"></A>
+<H3>controlChannel</H3>
+<PRE>string&nbsp;<B>controlChannel</B>
+</PRE>
+<HR>
+<A NAME="dataChannel"></A>
+<H3>dataChannel</H3>
+<PRE>string&nbsp;<B>dataChannel</B>
+</PRE>
+<HR>
+<A NAME="defaultConfig"></A>
+<H3>defaultConfig</H3>
+<PRE>dictionary&lt;string,&nbsp;string&gt;&nbsp;<B>defaultConfig</B>
+</PRE>
+<HR>
+<A NAME="emitAny"></A>
+<H3>emitAny</H3>
+<PRE>boolean&nbsp;<B>emitAny</B>
+</PRE>
+<HR>
+<A NAME="listeners"></A>
+<H3>listeners</H3>
+<PRE>sequence&lt;listener&gt;&nbsp;<B>listeners</B>
+</PRE>
+<HR>
+<A NAME="rawChannel"></A>
+<H3>rawChannel</H3>
+<PRE>string&nbsp;<B>rawChannel</B>
+</PRE>
+<HR>
+<A NAME="routeUpdate"></A>
+<H3>routeUpdate</H3>
+<PRE>boolean&nbsp;<B>routeUpdate</B>
+</PRE>
+<HR>
+<A NAME="scenarioId"></A>
+<H3>scenarioId</H3>
+<PRE>string&nbsp;<B>scenarioId</B>
+</PRE>
+<HR>
+<A NAME="sendAny"></A>
+<H3>sendAny</H3>
+<PRE>boolean&nbsp;<B>sendAny</B>
+</PRE>
+<HR>
+<A NAME="sendRaw"></A>
+<H3>sendRaw</H3>
+<PRE>boolean&nbsp;<B>sendRaw</B>
+</PRE>
+<HR>
+<A NAME="sendRawUser"></A>
+<H3>sendRawUser</H3>
+<PRE>boolean&nbsp;<B>sendRawUser</B>
+</PRE>
+<HR>
+<A NAME="sendThrottled"></A>
+<H3>sendThrottled</H3>
+<PRE>boolean&nbsp;<B>sendThrottled</B>
+</PRE>
+<HR>
+<A NAME="sendThrottledUser"></A>
+<H3>sendThrottledUser</H3>
+<PRE>boolean&nbsp;<B>sendThrottledUser</B>
+</PRE>
+<HR>
+<A NAME="throttlePeriod"></A>
+<H3>throttlePeriod</H3>
+<PRE>float&nbsp;<B>throttlePeriod</B>
+</PRE>
+<HR>
+<A NAME="throttleStart"></A>
+<H3>throttleStart</H3>
+<PRE>float&nbsp;<B>throttleStart</B>
+</PRE>
+<HR>
+<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="configurationUpdated()"></A>
+<H3>configurationUpdated</H3>
+<PRE>void&nbsp;<B>configurationUpdated</B>()</PRE>Called when the configuration should be re-parsed.<HR>
+<A NAME="destroy()"></A>
+<H3>destroy</H3>
+<PRE>void&nbsp;<B>destroy</B>()</PRE>Kill any listeners this object has started<HR>
+<A NAME="doEmit()"></A>
+<H3>doEmit</H3>
+<PRE>void&nbsp;<B>doEmit</B>(string&nbsp;emitted,&nbsp;string&nbsp;owner)</PRE>
+<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>emitted</tt>
+</DD>
+<DD>
+<tt>owner</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Emits:</B>
+</DT>
+<DD>string&nbsp;representation&nbsp;of&nbsp;an&nbsp;event&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="init()"></A>
+<H3>init</H3>
+<PRE>void&nbsp;<B>init</B>(string&nbsp;sId,&nbsp;action&lt;&gt;&nbsp;cb_onUpdate)</PRE>Called by monitor at onload time Will maintain configuration for this scenario<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>sId</tt>&nbsp;-&nbsp;the scenarioId</DD>
+<DD>
+<tt>cb_onUpdate</tt>
+</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/GetConfiguration.html" title="type in com.apama.scenario">com.apama.scenario.GetConfiguration</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/Configuration.html" title="type in com.apama.scenario">com.apama.scenario.Configuration</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="isSendRaw()"></A>
+<H3>isSendRaw</H3>
+<PRE>boolean&nbsp;<B>isSendRaw</B>()</PRE>Get whether this scenario should send on the raw channel<HR>
+<A NAME="isSendThrottled()"></A>
+<H3>isSendThrottled</H3>
+<PRE>boolean&nbsp;<B>isSendThrottled</B>()</PRE>Get whether this scenario should send on the throttled (Data) channel<HR>
+<A NAME="listenToConfigureUpdates()"></A>
+<H3>listenToConfigureUpdates</H3>
+<PRE>void&nbsp;<B>listenToConfigureUpdates</B>(action&lt;&gt;&nbsp;cb_onUpdate)</PRE>Listen for further configuration changes.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>cb_onUpdate</tt>&nbsp;-&nbsp;callback upon configuration having been updated</DD>
+</DL>
+<DL>
+<DT>
+<B>Routes:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ScenarioProcessedUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ScenarioProcessedUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<DL>
+<DT>
+<B>Listens:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;-&nbsp;</DD>
+</DL>
+<HR>
+<A NAME="onConfigureUpdates()"></A>
+<H3>onConfigureUpdates</H3>
+<PRE>void&nbsp;<B>onConfigureUpdates</B>(<A HREF="../../../com/apama/scenario/ConfigureUpdates.html" title="type in com.apama.scenario">com.apama.scenario.ConfigureUpdates</A>&nbsp;cu)</PRE>Called when new ConfigureUpdates event available<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>cu</tt>
+</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/scenario/ScenarioServiceUpdaterBase.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="ScenarioServiceUpdaterBase.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/scenario/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_summary">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;<A HREF="#member_detail">MEMBER</A>&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>
