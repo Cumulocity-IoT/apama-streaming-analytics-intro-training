@@ -1,2 +1,12 @@
-# apama-streaming-analytics-intro-training
-Introductory training for Apama
+# Introductory training for Apama
+
+This repository contains slides and Apama code for individual/group exercises to learn about Apama.
+
+Course is designed to be taken in-person with access to an Apama installation for each participant. Course length about four hours.
+
+The Slides cover an introduction to Apama and its use cases, integration with other products inside and outside SAG and cloud deployment. The EPL code provides practical learning exercises. for working with EPL and doing various analytic tasks.
+
+The excercises are designed with active learning principles in mind. They start with a short series of problems to be worked through with the organizer, followed by a larger set of tasks for the particpants to work on in groups with help from the organizer using the documentation provided.
+
+This was created for the SAG Global Architect Program 2018-2019 my Matthew Johnson
+

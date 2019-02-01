@@ -1,6 +1,6 @@
 package apamax.training;
 
-/** A class for simulating robot data  */
+/** A class for simulating robot data. @private */
 event RobotSimulator
 {
 	action initDefaults()
@@ -11,6 +11,8 @@ event RobotSimulator
 		temperatureMean2 := 25.0;
 		period := 1.0;	
 		error := false;
+		onlySendOne := false;
+		offset := 0.0;
 	}
 	// more than 2s between updates, but does respond
 	action startSlowSimulation()
@@ -47,6 +49,13 @@ event RobotSimulator
 		initDefaults();
 		startSimulating();
 	}
+	// mostly normal but on average increasing
+	action startIncreasingSimulation()
+	{
+		initDefaults();
+		offset := 0.1;
+		startSimulating();
+	}
 	// normal, but sends RobotError events
 	action startSimulationWithErrors()
 	{
@@ -60,6 +69,22 @@ event RobotSimulator
 				send RobotError(id, "") to RobotError.CHANNEL;			
 			}
 		}
+	}
+	// the sensors are stuck at a specific value
+	action startStuckSensor(float stuckAt)
+	{
+		initDefaults();
+		temperatureRange := 0.0;
+		temperatureMean1 := stuckAt;
+		temperatureMean2 := stuckAt;
+		startSimulating();
+	}
+	// only one sensor is working
+	action startSingleSensor()
+	{
+		initDefaults();
+		onlySendOne := true;
+		startSimulating();
 	}
 	// normal simulation, but with occasional temperature spikes which go away
 	action startSpikeySimulation()
@@ -88,7 +113,9 @@ event RobotSimulator
 				updateTemperature1();
 				updateTemperature2();				
 				send TemperatureReading(id, 1, currentTemperature1) to TemperatureReading.CHANNEL;
-				send TemperatureReading(id, 2, currentTemperature2) to TemperatureReading.CHANNEL;
+				if not onlySendOne {
+					send TemperatureReading(id, 2, currentTemperature2) to TemperatureReading.CHANNEL;
+				}
 			}
 		}
 		monitor.subscribe(RobotDataRequest.CHANNEL);
@@ -97,7 +124,8 @@ event RobotSimulator
 		}
 	}
 	action updateTemperature1()
-	{
+	{ 
+		temperatureMean1 := temperatureMean1 + offset;
 		float tempChange := (temperatureRange*2.0).rand() - temperatureRange - (currentTemperature1-temperatureMean1);
 		if tempChange > temperatureRange { tempChange := temperatureRange; }
 		if tempChange < -temperatureRange { tempChange := -temperatureRange; }
@@ -105,6 +133,7 @@ event RobotSimulator
 	}		
 	action updateTemperature2()
 	{
+		temperatureMean2 := temperatureMean2 + offset;
 		float tempChange := (temperatureRange*2.0).rand() - temperatureRange - (currentTemperature2-temperatureMean2);
 		if tempChange > temperatureRange { tempChange := temperatureRange; }
 		if tempChange < -temperatureRange { tempChange := -temperatureRange; }
@@ -117,7 +146,9 @@ event RobotSimulator
 	float temperatureMean2;
 	float currentTemperature2;
 	float period;
+	float offset;
 	boolean error;
+	boolean onlySendOne;
 	integer id;
 	listener simoutListener;
 }

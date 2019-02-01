@@ -1,8 +1,9 @@
 package apamax.training;
 
-/** Manage the list of robots which should exist  */
+/** A manager object which handles robot status updates and requests. @private  */
 event RobotManager {
 		
+	/** @private */
 	action init()
 	{
 		monitor.subscribe(RegisterRobot.CHANNEL);
@@ -32,6 +33,7 @@ event RobotManager {
 		}
 	}
 	
+	/** @private */
 	dictionary<integer, string> robots;
 	
 }
