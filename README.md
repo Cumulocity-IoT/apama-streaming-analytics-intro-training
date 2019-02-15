@@ -1,5 +1,7 @@
 # Introductory training for Apama
 
+*WORK IN PROGRESS*
+
 This repository contains slides and Apama code for individual/group exercises to learn about Apama.
 
 Course is designed to be taken in-person with access to an Apama installation for each participant. Course length about four hours.
