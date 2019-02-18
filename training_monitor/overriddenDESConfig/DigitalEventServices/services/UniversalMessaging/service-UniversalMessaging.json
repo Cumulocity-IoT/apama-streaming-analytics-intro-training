@@ -1,1 +1,11 @@
-{"Messaging":{"@alias":"UniversalMessaging","Description":"The pre-installed UniversalMessaging service","Enabled":"true","Provider":{"@type":"UM","URL":"nsp://localhost:9000"}}}
+{
+  "Messaging" : {
+    "@alias" : "UniversalMessaging",
+    "Description" : "The pre-installed UniversalMessaging service",
+    "Enabled" : true,
+    "Provider" : {
+      "@type" : "UM",
+      "URL" : "nsp://hydra.apama.com:39000"
+    }
+  }
+}
