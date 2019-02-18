@@ -1,0 +1,4 @@
+is.Inline : annotation
+flags (eventApplicable)
+{
+}

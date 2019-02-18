@@ -1,0 +1,5 @@
+apamax.training.RobotStatus : event
+{
+    id     : int64
+    status : string
+}

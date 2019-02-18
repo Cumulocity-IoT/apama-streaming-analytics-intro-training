@@ -1,0 +1,5 @@
+apamax.training.Alert : event
+{
+    user        : string
+    description : string
+}

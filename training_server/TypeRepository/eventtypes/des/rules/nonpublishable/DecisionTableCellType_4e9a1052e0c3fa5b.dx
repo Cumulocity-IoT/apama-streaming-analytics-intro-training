@@ -1,0 +1,9 @@
+des.rules.nonpublishable.DecisionTableCellType : event
+{
+    columnType           : string
+    parameterElementName : string
+    columnName           : string
+    column               : int32
+    oldValue             : string
+    newValue             : string
+}

@@ -1,0 +1,9 @@
+des.rules.nonpublishable.CommonFields : event
+{
+    projectName    : string
+    displayName    : string
+    userId         : string
+    projectVersion : string
+    correlationId  : string
+    hostPort       : des.rules.nonpublishable.HostPort
+}

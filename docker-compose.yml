@@ -1,0 +1,67 @@
+# Copyright (c) 2017-2018 Software AG, Darmstadt, Germany and/or its licensors
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may not use this 
+# file except in compliance with the License. You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software distributed under the
+# License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, 
+# either express or implied. 
+# See the License for the specific language governing permissions and limitations under the License.
+#
+# $Date: 2015-07-14 23:35:52 +0100 (Tue, 14 Jul 2015) $
+# $Revision: 259549 $
+
+version: '3.3'
+services:
+   grafana:
+      image: grafana/grafana
+      ports:
+        - 33000:3000
+      networks:
+        - training-net
+      configs:
+        - source: grafana_config_prom
+          target: /etc/grafana/provisioning/datasources/prometheus.yaml
+        - source: grafana_config_dash
+          target: /etc/grafana/provisioning/dashboards/apama.yaml
+        - source: grafana_dash_apama
+          target: /etc/grafana/dashboards/apama.json
+   prometheus:
+      image: prom/prometheus
+      ports:
+        -  39090:9090
+      networks:
+        - training-net
+      configs:
+        - source: prom_config_apama
+          target: /etc/prometheus/prometheus.yml
+    # Runs the UM realm server
+   training-um:
+        image: daerepository03.eur.ad.sag:4443/universal-messaging/universalmessaging-server:10.4
+        ports:
+            - 39000:9000
+        networks:
+            - training-net
+   training-simulator:
+        image: daerepository03.eur.ad.sag:4443/matj/test:training-correlator
+        expose:
+            - 15903
+        # Connect this container to the 'sender' network created below
+        networks:
+            - training-net
+        depends_on:
+            - training-um
+
+configs:
+  prom_config_apama:
+    file: ./prometheus/prometheus.yml
+  grafana_config_prom:
+    file: ./grafana-config/datasources/prometheus.yml
+  grafana_config_dash:
+    file: ./grafana-config/dashboards/apama.yml
+  grafana_dash_apama:
+    file: ./grafana-dashboards/apama.json
+
+networks:
+    training-net:
+        # driver: overlay

@@ -1,0 +1,11 @@
+des.rules.publishable.DecisionTableChanged : event
+    @EventId(path = "eventId")
+    @EventTime(path = "eventStart")
+{
+    commonFields        : des.rules.nonpublishable.CommonFields
+    eventId             : string
+    eventStart          : time
+    name                : string
+    rows                : des.rules.nonpublishable.DecisionTableRowType[]
+    invocationSessionId : string
+}

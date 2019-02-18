@@ -1,0 +1,16 @@
+des.apigateway.runtime.events.ErrorEvents : event
+    @EventId(path = "eventId")
+{
+    eventId        : string
+    api            : des.apigateway.runtime.events.API
+    operationName  : string
+    targetName     : string
+    application    : des.apigateway.runtime.events.Application
+    creationDate   : time
+    eventSource    : string
+    errorDesc      : string
+    responseCode   : string
+    httpMethod     : string
+    userAgent      : string
+    nativeEndpoint : string
+}

@@ -1,0 +1,4 @@
+apamax.training.RegisterRobot : event
+{
+    id : int64
+}

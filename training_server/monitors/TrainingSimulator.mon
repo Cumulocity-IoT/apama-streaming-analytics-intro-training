@@ -20,5 +20,7 @@ monitor TrainingSimulator {
 		(new RobotSimulator).startStuckSensor(20.0);
 		(new RobotSimulator).startSingleSensor();
 		(new RobotSimulator).startIncreasingSimulation();
+
+		com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
 	}
 }
