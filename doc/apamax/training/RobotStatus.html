@@ -47,7 +47,7 @@
 <BR>Event RobotStatus</H2>
 <HR>An event sent out by the robot manager whenever the status of a robot changes or in response to a RequestRobotStatus event.<br>
 <br> To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream:<br>
-<br> monitor.subscribe(RobotStatus.CHANNEL); on all RobotStatus() as rs { doSomething(); }<DL>
+<br> <pre><br>  monitor.subscribe(RobotStatus.CHANNEL);<br>  on all RobotStatus() as rs { doSomething(); }<br></pre><DL>
 <DT>
 <B>See Also:</B>
 </DT>

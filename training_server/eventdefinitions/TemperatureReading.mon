@@ -6,8 +6,10 @@ package apamax.training;
  * 
  * To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream:
  *
- * monitor.subscribe(TemperatureReading.CHANNEL);
- * on all TemperatureReading() as tr { doSomething(); }
+<code>
+  monitor.subscribe(TemperatureReading.CHANNEL);
+  on all TemperatureReading() as tr { doSomething(); }
+</code>
  */
 event TemperatureReading {
 	/** The unique ID of the robot. */

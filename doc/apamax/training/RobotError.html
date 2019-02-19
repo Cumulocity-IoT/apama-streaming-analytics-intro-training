@@ -47,7 +47,7 @@
 <BR>Event RobotError</H2>
 <HR>Event sent by the robot when it detects an internal error.<br>
 <br> To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream:<br>
-<br> monitor.subscribe(RobotError.CHANNEL); on all RobotError() as re { doSomething(); }<HR>
+<br> <pre><br> monitor.subscribe(RobotError.CHANNEL);<br> on all RobotError() as re { doSomething(); }<br></pre><HR>
 <A NAME="constant_summary"></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">

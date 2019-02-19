@@ -47,7 +47,7 @@
 <BR>Event RegisterRobot</H2>
 <HR>This event is send by a robot which its (dynamically generated) ID when it starts up.<br>
 <br> To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream:<br>
-<br> monitor.subscribe(RegisterRobot.CHANNEL); on all RegisterRobot() as rr { doSomething(); }<HR>
+<br> <pre><br> monitor.subscribe(RegisterRobot.CHANNEL);<br> on all RegisterRobot() as rr { doSomething(); }<br></pre><HR>
 <A NAME="constant_summary"></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">

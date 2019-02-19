@@ -5,9 +5,10 @@ package apamax.training;
  * 
  * To send to DES you have to send the event to the appropriate channel, for example:
  *
- * integer requestId := integer.MAX.rand();
- * send RobotDataRequest(robotId, requestId) to RobotDataRequest.CHANNEL;
- * 
+<code>
+  integer requestId := integer.MAX.rand();
+  send RobotDataRequest(robotId, requestId) to RobotDataRequest.CHANNEL;
+</code> 
  * You should use the request ID when listening for the RobotDataSummary in response.
  * @see RobotDataSummary
  */

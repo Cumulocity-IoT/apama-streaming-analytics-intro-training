@@ -46,7 +46,7 @@
 <FONT SIZE="-1">com.apama.memorystore</FONT>
 <BR>Event Storage</H2>
 <HR>MemoryStore factory interface for creating Store event objects.<br>
-<br> There are several different types of Store supported by MemoryStore: <ul> <li>In-memory only (no persistence)</li> <li>Persistent (using a specified database file on disk; committed changes go to disk when the persist() action is called)</li> <li>Correlator-persistent (using the Correlator's integrated data store; committed changes go to disk periodically when the Correlator takes a snapshot of persistent monitor state and persists the results). </li> <li>Distributed (Using a distributed cache technology to share and access data across multiple distributed nodes). </li> </ul> Correlator-persistent stores are only available if Correlator persistence has been enabled. Non-persistent monitors may use any type of store, but a monitor marked as 'persistent' may ONLY access Correlator-persistent stores.<br>
+<br> There are several different types of Store supported by MemoryStore: <ul> <li>In-memory only (nothing persisted to disk)</li> <li>MemoryStore database file (committed changes are persisted to disk when the persist() action is called)</li> <li>Correlator-persistent (integrated with the correlator persistence and only supported when the correlator was started with persistence enabled; committed changes go to disk periodically when the Correlator takes a snapshot of persistent monitor state and persists the results). </li> <li>Distributed (Using a distributed cache or store technology to share and access data across multiple distributed nodes). </li> </ul> Correlator-persistent stores are only available if Correlator persistence has been enabled. Non-persistent monitors may use any type of store, but a monitor marked as 'persistent' may ONLY access Correlator-persistent stores.<br>
 <br> To use the MemoryStore, create a monitor field (or variable) to hold the Storage factory event, and use one of the prepare* actions to asynchronously get a Store of the desired type ready for use, and give it a unique name. Once the store has been prepared, use the open(name) action to get a Store event that can be used to interact with the store.<br>
 <br> e.g.<pre> <br/>using com.apama.memorystore.Storage; <br/>using com.apama.memorystore.Store; <br/>using com.apama.memorystore.Finished; <br/> <br/>monitor Test { <br/>	Storage storage; <br/>	Store store; <br/> <br/>	action onload() { <br/>		integer id := storage.prepareOrCreate("storename", "/tmp/example.dat"); <br/>		Finished f; <br/>		on Finished(id=id):f <br/>		{ <br/>			if not f.success { log "Store creation failed: "+f.status at ERROR; die; } <br/>			store := storage.open("storename"); <br/>			... <br/>		} <br/>	} <br/>} </pre><DL>
 <DT>
@@ -83,12 +83,12 @@
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepare()">prepare</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
 <br>
-<br>Prepare a persistent read-write Store associated with an existing database file on disk.</TD>
+<br>Prepare a file-based read-write store associated with an existing MemoryStore database file on disk.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareCorrelatorPersistent()">prepareCorrelatorPersistent</A></B>(string&nbsp;name)</CODE>
 <br>
-<br>Prepare a Correlator-persistent read-write Store to be opened and used by the application.</TD>
+<br>Prepare a Correlator-persistent read-write store to be opened and used by the application.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareDistributed()">prepareDistributed</A></B>(string&nbsp;name)</CODE>
@@ -98,17 +98,17 @@
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareInMemory()">prepareInMemory</A></B>(string&nbsp;name)</CODE>
 <br>
-<br>Prepare an in-memory read-write Store to be opened and used by the application.</TD>
+<br>Prepare an in-memory read-write store to be opened and used by the application.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareOrCreate()">prepareOrCreate</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
 <br>
-<br>Prepare a persistent read-write Store associated with a database file on disk, which will be created if it does not exist already.</TD>
+<br>Prepare a file-based read-write store associated with a MemoryStore database file on disk, which will be created if it does not exist already.</TD>
 </TR>
 <TR BGCOLOR="white" CLASS="TableRowColor">
 <TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Storage.html#prepareReadOnly()">prepareReadOnly</A></B>(string&nbsp;name,&nbsp;string&nbsp;filename)</CODE>
 <br>
-<br>Prepare a persistent read-only Store associated with an existing database file on disk.</TD>
+<br>Prepare a file-based read-only store associated with an existing MemoryStore database file on disk.</TD>
 </TR>
 </TABLE>&nbsp;<A NAME="action_detail"></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
@@ -167,7 +167,7 @@
 <HR>
 <A NAME="prepare()"></A>
 <H3>prepare</H3>
-<PRE>integer&nbsp;static <B>prepare</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-write Store associated with an existing database file on disk.<br>
+<PRE>integer&nbsp;static <B>prepare</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a file-based read-write store associated with an existing MemoryStore database file on disk.<br>
 <br> The specified file must exist and must have been created by the MemoryStore. If the specified file does not exist, or cannot be opened for read-write, the Finished event will indicate failure.<DL>
 <DT>
 <B>Parameters:</B>
@@ -193,7 +193,8 @@
 <HR>
 <A NAME="prepareCorrelatorPersistent()"></A>
 <H3>prepareCorrelatorPersistent</H3>
-<PRE>integer&nbsp;static <B>prepareCorrelatorPersistent</B>(string&nbsp;name)</PRE>Prepare a Correlator-persistent read-write Store to be opened and used by the application.<br>
+<PRE>integer&nbsp;static <B>prepareCorrelatorPersistent</B>(string&nbsp;name)</PRE>Prepare a Correlator-persistent read-write store to be opened and used by the application.<br>
+<br> Only supported when the Correlator was configured with persistence enabled.<br>
 <br> All committed changes made to a Correlator-persistent store are persisted to disk automatically whenever the Correlator takes a snapshot of the Correlator persistent application state. Because the Correlator determines when to persist its state, you cannot explicitly request persistence for a Correlator-persistent store or any tables it contains.<br>
 <br> Attempts to create a Correlator-persistent store in a Correlator that does not have persistence enabled will result in an error that will terminate the monitor instance.<DL>
 <DT>
@@ -241,7 +242,7 @@
 <HR>
 <A NAME="prepareInMemory()"></A>
 <H3>prepareInMemory</H3>
-<PRE>integer&nbsp;static <B>prepareInMemory</B>(string&nbsp;name)</PRE>Prepare an in-memory read-write Store to be opened and used by the application.<DL>
+<PRE>integer&nbsp;static <B>prepareInMemory</B>(string&nbsp;name)</PRE>Prepare an in-memory read-write store to be opened and used by the application.<DL>
 <DT>
 <B>Parameters:</B>
 </DT>
@@ -264,7 +265,7 @@
 <HR>
 <A NAME="prepareOrCreate()"></A>
 <H3>prepareOrCreate</H3>
-<PRE>integer&nbsp;static <B>prepareOrCreate</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-write Store associated with a database file on disk, which will be created if it does not exist already.<DL>
+<PRE>integer&nbsp;static <B>prepareOrCreate</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a file-based read-write store associated with a MemoryStore database file on disk, which will be created if it does not exist already.<DL>
 <DT>
 <B>Parameters:</B>
 </DT>
@@ -289,7 +290,7 @@
 <HR>
 <A NAME="prepareReadOnly()"></A>
 <H3>prepareReadOnly</H3>
-<PRE>integer&nbsp;static <B>prepareReadOnly</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a persistent read-only Store associated with an existing database file on disk.<DL>
+<PRE>integer&nbsp;static <B>prepareReadOnly</B>(string&nbsp;name,&nbsp;string&nbsp;filename)</PRE>Prepare a file-based read-only store associated with an existing MemoryStore database file on disk.<DL>
 <DT>
 <B>Parameters:</B>
 </DT>

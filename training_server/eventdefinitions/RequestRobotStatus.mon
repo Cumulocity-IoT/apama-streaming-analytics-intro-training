@@ -5,7 +5,9 @@ package apamax.training;
  *
  * To send to DES you have to send the event to the appropriate channel, for example::
  *
- * send RequestRobotStatus() to RequestRobotStatus.CHANNEL;
+<code>
+  send RequestRobotStatus() to RequestRobotStatus.CHANNEL;
+</code>
  *
  * This event has no members.
  * @see RobotStatus

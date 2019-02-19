@@ -5,8 +5,10 @@ package apamax.training;
  * To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream.
  * The listener should include the requestId you sent with the request.
  *
- * monitor.subscribe(RobotDataSummary.CHANNEL);
- * on all RobotDataSummary(requestId=requestId) as rds { doSomething(); }
+<code>
+  monitor.subscribe(RobotDataSummary.CHANNEL);
+  on all RobotDataSummary(requestId=requestId) as rds { doSomething(); }
+</code>
  * @see RobotDataRequest
  */
 event RobotDataSummary {

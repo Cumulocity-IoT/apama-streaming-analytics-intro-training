@@ -47,7 +47,7 @@
 <BR>Event TemperatureReading</H2>
 <HR>Temperature readings taken periodically from the sensor on a robot. Will be sent periodically in normal running of the robot.<br>
 <br> To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream:<br>
-<br> monitor.subscribe(TemperatureReading.CHANNEL); on all TemperatureReading() as tr { doSomething(); }<HR>
+<br> <pre><br>  monitor.subscribe(TemperatureReading.CHANNEL);<br>  on all TemperatureReading() as tr { doSomething(); }<br></pre><HR>
 <A NAME="constant_summary"></A>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">

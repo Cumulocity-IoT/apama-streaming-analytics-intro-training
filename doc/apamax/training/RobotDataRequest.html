@@ -47,8 +47,7 @@
 <BR>Event RobotDataRequest</H2>
 <HR>Request a summary of the current data of a given robot from the robot manager.<br>
 <br> To send to DES you have to send the event to the appropriate channel, for example:<br>
-<br> integer requestId := integer.MAX.rand(); send RobotDataRequest(robotId, requestId) to RobotDataRequest.CHANNEL;<br>
-<br> You should use the request ID when listening for the RobotDataSummary in response.<DL>
+<br> <pre><br>  integer requestId := integer.MAX.rand();<br>  send RobotDataRequest(robotId, requestId) to RobotDataRequest.CHANNEL;<br></pre> You should use the request ID when listening for the RobotDataSummary in response.<DL>
 <DT>
 <B>See Also:</B>
 </DT>

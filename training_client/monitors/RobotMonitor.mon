@@ -3,6 +3,20 @@ using com.apama.aggregates.mean;
 
 /** This monitor will monitor for problems with the robot sensors and send alerts when we find them  */
 monitor RobotMonitor {
+	
+	/** This action is a dummy to demonstrate some basic syntax */
+	action processSomething(integer i, sequence<integer> li) returns float
+	{
+		float f; // declare a primitive variable
+		f := i.toFloat(); // assignment uses := and type conversions are explicit.
+		if i = 1 { // comparison with =
+			return processSomething(i-1, li); // call the method recursively
+		}
+		
+		return 0.0; // explicitly a float variable
+	}
+	
+	/** This is the action which will be run when the monitor starts */
 	action onload() {		
 		// Receive events of the type TemperatureReading.
 		// This is how DES receives events. Other systems 

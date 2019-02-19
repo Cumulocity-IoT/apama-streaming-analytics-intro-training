@@ -4,8 +4,9 @@ package apamax.training;
    Send an alert via DES to be diplayed on the alerts dashboard.
 
    To send to DES you have to send the event to the appropriate channel, for example:
-
+   <code>
    send Alert("YourNameHere", "Description of the alert") to Alert.CHANNEL;
+   </code>
  */
 event Alert {
 	/** Name of the user sending the alert. */

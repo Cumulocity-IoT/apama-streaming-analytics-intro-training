@@ -47,7 +47,7 @@
 <BR>Event RobotDataSummary</H2>
 <HR>This event is returned in response to a RobotDataRequest and contains the current data of the robot.<br>
 <br> To receive over DES you have to subscribe to the CHANNEL for the event and then write a listener or a stream. The listener should include the requestId you sent with the request.<br>
-<br> monitor.subscribe(RobotDataSummary.CHANNEL); on all RobotDataSummary(requestId=requestId) as rds { doSomething(); }<DL>
+<br> <pre><br>  monitor.subscribe(RobotDataSummary.CHANNEL);<br>  on all RobotDataSummary(requestId=requestId) as rds { doSomething(); }<br></pre><DL>
 <DT>
 <B>See Also:</B>
 </DT>

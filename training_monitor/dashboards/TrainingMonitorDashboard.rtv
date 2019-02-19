@@ -23,12 +23,12 @@
 	<localvar name="__$apama_theme" initValue="" dataType="scalar"/>
 	<localvar name="__$apama_roles" initValue="" dataType="scalar"/>
 	<object name="N1" class="obj_table02"
-		y="28.75" x="45.5"
+		y="34.875" x="45.5"
 		dd="$. . "
 		filterProperties=""
 		objWidth="77.375"
 		bgEdgeWidth="1.0"
-		objHeight="50.25"
+		objHeight="62.5"
 		sortAscendingFlag="1"
 		label="Latest alert per user"
 		labelTextColor="16"
@@ -94,17 +94,5 @@
 		webGridHoverColor="-1"
 		webTreeGridFlag="0">
 		<vardef varname="valueTable" dsstring="Apama &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;ApamaData&gt;&lt;version&gt;&lt;![CDATA[5.0]]&gt;&lt;/version&gt;&lt;attachType&gt;&lt;![CDATA[dvCurrent]]&gt;&lt;/attachType&gt;&lt;rtvUser&gt;&lt;![CDATA[$rtvuser]]&gt;&lt;/rtvUser&gt;&lt;correlator&gt;&lt;![CDATA[default]]&gt;&lt;/correlator&gt;&lt;scenario&gt;&lt;![CDATA[DV_MEMST_alerts_alerts_memory]]&gt;&lt;/scenario&gt;&lt;interval&gt;&lt;![CDATA[60]]&gt;&lt;/interval&gt;&lt;intervalUnit&gt;&lt;![CDATA[seconds]]&gt;&lt;/intervalUnit&gt;&lt;variables&gt;&lt;var&gt;&lt;![CDATA[*]]&gt;&lt;/var&gt;&lt;var&gt;&lt;![CDATA[apama.instanceId]]&gt;&lt;/var&gt;&lt;/variables&gt;&lt;filters /&gt;&lt;/ApamaData&gt;"/>
-	</object>
-	<object name="N2" class="obj_text01"
-		y="62.2" x="45.975" scale="4.94423"
-		visFlag="1"
-		label="Apama Training Alerts"
-		labelTextColor="16"
-		rotationAngle="0.0"
-		labelTextHeight="1.2"
-		labelTextFont="7"
-		labelTextAlignX="2"
-		labelTextAlignY="3"
-		webLabelFlag="1">
 	</object>
 </rtview>
