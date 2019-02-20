@@ -4,6 +4,7 @@ package apamax.training;
 monitor TrainingSimulator {
 	action onload() {
 		log "Loaded monitor TrainingSimulator" at INFO;
+		(new RobotManager).init();
 		
 		// it's important for the script that the 1st one be a normal one. Update the examples if you change it.
 		(new RobotSimulator).startNormalSimulation();

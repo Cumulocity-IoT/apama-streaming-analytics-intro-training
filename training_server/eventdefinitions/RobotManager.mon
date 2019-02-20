@@ -26,6 +26,7 @@ event RobotManager {
 		}
 		monitor.subscribe(RequestRobotStatus.CHANNEL);
 		on all RequestRobotStatus() as rrs {
+			log "Received request for robot status ("+robots.toString()+")" at INFO;
 			integer id;
 			for id in robots.keys() {
 				send RobotStatus(id, robots[id]) to RobotStatus.CHANNEL;
