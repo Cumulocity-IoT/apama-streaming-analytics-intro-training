@@ -1,0 +1,342 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Component</TITLE>
+<META NAME="keywords" CONTENT="Component&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Component";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/Component.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Component.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_summary">CONSTANT</A>&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_detail">CONSTANT</A>&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.correlator</FONT>
+<BR>Event Component</H2>
+<HR>EPL interface to the generic component management functionality of the correlator.<HR>
+<A NAME="constant_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Constant summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;constant integer</CODE></FONT></TD><TD><CODE><B><A HREF="Component.html#CONNECT_LEGACY">CONNECT_LEGACY</A> := 0</B></CODE>
+<br>
+<br>Argument for attach/detachAsEventConsumer - use legacy mode. In this mode, all events are delivered in serial to the receiver on the default channel.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;constant integer</CODE></FONT></TD><TD><CODE><B><A HREF="Component.html#CONNECT_PARALLEL">CONNECT_PARALLEL</A> := 1</B></CODE>
+<br>
+<br>Argument for attach/detachAsEventConsumer - use parallel mode. In this mode, all events are delivered in parallel per channel.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#attachAsEventConsumerTo()">attachAsEventConsumerTo</A></B>(string&nbsp;host,&nbsp;integer&nbsp;port,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;boolean&nbsp;disconnectSlow,&nbsp;integer&nbsp;connectMode)</CODE>
+<br>
+<br>Connect to another Apama component to receive events on the specified channels. connectMode should be one of CONNECT_LEGACY or CONNECT_PARALLEL.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#deleteUserStatus()">deleteUserStatus</A></B>(string&nbsp;name)</CODE>
+<br>
+<br>Delete a specific user added status.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#detachAsEventConsumerFrom()">detachAsEventConsumerFrom</A></B>(string&nbsp;host,&nbsp;integer&nbsp;port,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;integer&nbsp;connectMode)</CODE>
+<br>
+<br>Disconnect from another Apama component to receive events on the specified channels. connectMode should be one of CONNECT_LEGACY or CONNECT_PARALLEL.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getComponentLogicalId()">getComponentLogicalId</A></B>()</CODE>
+<br>
+<br>Get the correlator's physical ID; please use getComponentPhysicalId instead.<DL>
+<DT>
+<B>Deprecated:</B>
+</DT>
+<DD>
+<I>Use getComponentPhysicalId instead.</I>
+</DD>
+</DL>
+</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getComponentName()">getComponentName</A></B>()</CODE>
+<br>
+<br>Get the component name of the correlator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getComponentPhysicalId()">getComponentPhysicalId</A></B>()</CODE>
+<br>
+<br>Get a unique identifier for this correlator instance.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getComponentPort()">getComponentPort</A></B>()</CODE>
+<br>
+<br>Get the port the correlator is running on.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getHostname()">getHostname</A></B>()</CODE>
+<br>
+<br>Get the hostname of the server the correlator is running on.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;string,&nbsp;string&gt;</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getInfo()">getInfo</A></B>(string&nbsp;category)</CODE>
+<br>
+<br>Get information from the REST API under the /info/<CATEGORY> endpoint. Will throw if a non-existent category is requested.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getLicenseMode()">getLicenseMode</A></B>()</CODE>
+<br>
+<br>Get the current license mode of the correlator - either "nolicensefile" or "licensefilesupplied".</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getNumberCPUs()">getNumberCPUs</A></B>()</CODE>
+<br>
+<br>Get the number of CPUs the correlator has available to it.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;<A HREF="../../../com/apama/correlator/EngineStatus.html" title="type in com.apama.correlator">com.apama.correlator.EngineStatus</A></CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#getStatus()">getStatus</A></B>()</CODE>
+<br>
+<br>Get the correlator status, internal values and user added stats.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#isExternallyClocked()">isExternallyClocked</A></B>()</CODE>
+<br>
+<br>Get whether or not correlator is running with external clocking on.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Component.html#setUserStatus()">setUserStatus</A></B>(string&nbsp;name,&nbsp;string&nbsp;value)</CODE>
+<br>
+<br>Set a specific value on a user added status, If the status doesn't already exist this will add it.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="constant_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Constant detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="CONNECT_LEGACY"></A>
+<H3>CONNECT_LEGACY</H3>
+<PRE>constant integer&nbsp;<B>CONNECT_LEGACY := 0</B>
+</PRE>Argument for attach/detachAsEventConsumer - use legacy mode. In this mode, all events are delivered in serial to the receiver on the default channel.<HR>
+<A NAME="CONNECT_PARALLEL"></A>
+<H3>CONNECT_PARALLEL</H3>
+<PRE>constant integer&nbsp;<B>CONNECT_PARALLEL := 1</B>
+</PRE>Argument for attach/detachAsEventConsumer - use parallel mode. In this mode, all events are delivered in parallel per channel.<HR>
+<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="attachAsEventConsumerTo()"></A>
+<H3>attachAsEventConsumerTo</H3>
+<PRE>void&nbsp;static <B>attachAsEventConsumerTo</B>(string&nbsp;host,&nbsp;integer&nbsp;port,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;boolean&nbsp;disconnectSlow,&nbsp;integer&nbsp;connectMode)</PRE>Connect to another Apama component to receive events on the specified channels. connectMode should be one of CONNECT_LEGACY or CONNECT_PARALLEL.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>host</tt>
+</DD>
+<DD>
+<tt>port</tt>
+</DD>
+<DD>
+<tt>channels</tt>
+</DD>
+<DD>
+<tt>disconnectSlow</tt>
+</DD>
+<DD>
+<tt>connectMode</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="deleteUserStatus()"></A>
+<H3>deleteUserStatus</H3>
+<PRE>void&nbsp;static <B>deleteUserStatus</B>(string&nbsp;name)</PRE>Delete a specific user added status.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;The name of the user status value to delete.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="detachAsEventConsumerFrom()"></A>
+<H3>detachAsEventConsumerFrom</H3>
+<PRE>void&nbsp;static <B>detachAsEventConsumerFrom</B>(string&nbsp;host,&nbsp;integer&nbsp;port,&nbsp;sequence&lt;string&gt;&nbsp;channels,&nbsp;integer&nbsp;connectMode)</PRE>Disconnect from another Apama component to receive events on the specified channels. connectMode should be one of CONNECT_LEGACY or CONNECT_PARALLEL.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>host</tt>
+</DD>
+<DD>
+<tt>port</tt>
+</DD>
+<DD>
+<tt>channels</tt>
+</DD>
+<DD>
+<tt>connectMode</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getComponentLogicalId()"></A>
+<H3>getComponentLogicalId</H3>
+<PRE>string&nbsp;static <B>getComponentLogicalId</B>()</PRE>
+<DL>
+<DT>
+<B>Deprecated:</B>
+</DT>
+<DD>
+<I>Use getComponentPhysicalId instead.</I>
+</DD>
+</DL>Get the correlator's physical ID; please use getComponentPhysicalId instead.<HR>
+<A NAME="getComponentName()"></A>
+<H3>getComponentName</H3>
+<PRE>string&nbsp;static <B>getComponentName</B>()</PRE>Get the component name of the correlator.<br>
+<br> This is the display name for this correlator, provided when the correlator is started.<HR>
+<A NAME="getComponentPhysicalId()"></A>
+<H3>getComponentPhysicalId</H3>
+<PRE>string&nbsp;static <B>getComponentPhysicalId</B>()</PRE>Get a unique identifier for this correlator instance.<br>
+<br> A new unique identifier is generated each time a correlator process is started or restarted, even for correlators on different hosts, or if the correlator is persistent.<HR>
+<A NAME="getComponentPort()"></A>
+<H3>getComponentPort</H3>
+<PRE>integer&nbsp;static <B>getComponentPort</B>()</PRE>Get the port the correlator is running on.<br>
+<br> This is the main port number; extra ports specified via configuration files are not accessible from this API.<HR>
+<A NAME="getHostname()"></A>
+<H3>getHostname</H3>
+<PRE>string&nbsp;static <B>getHostname</B>()</PRE>Get the hostname of the server the correlator is running on.<HR>
+<A NAME="getInfo()"></A>
+<H3>getInfo</H3>
+<PRE>dictionary&lt;string,&nbsp;string&gt;&nbsp;static <B>getInfo</B>(string&nbsp;category)</PRE>Get information from the REST API under the /info/<CATEGORY> endpoint. Will throw if a non-existent category is requested.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>category</tt>&nbsp;-&nbsp;The category to access; see user doc for supported categories. Only the word is required; do not prepend a '/'. Passing the empty string will return '/info'.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>10.2</DD>
+</DL>
+<HR>
+<A NAME="getLicenseMode()"></A>
+<H3>getLicenseMode</H3>
+<PRE>string&nbsp;static <B>getLicenseMode</B>()</PRE>Get the current license mode of the correlator - either "nolicensefile" or "licensefilesupplied".<HR>
+<A NAME="getNumberCPUs()"></A>
+<H3>getNumberCPUs</H3>
+<PRE>integer&nbsp;static <B>getNumberCPUs</B>()</PRE>Get the number of CPUs the correlator has available to it.<HR>
+<A NAME="getStatus()"></A>
+<H3>getStatus</H3>
+<PRE>
+<A HREF="../../../com/apama/correlator/EngineStatus.html" title="type in com.apama.correlator">com.apama.correlator.EngineStatus</A>&nbsp;static <B>getStatus</B>()</PRE>Get the correlator status, internal values and user added stats.<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>EngineStatus a representation of all status values including user added values.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="isExternallyClocked()"></A>
+<H3>isExternallyClocked</H3>
+<PRE>boolean&nbsp;static <B>isExternallyClocked</B>()</PRE>Get whether or not correlator is running with external clocking on.<HR>
+<A NAME="setUserStatus()"></A>
+<H3>setUserStatus</H3>
+<PRE>void&nbsp;static <B>setUserStatus</B>(string&nbsp;name,&nbsp;string&nbsp;value)</PRE>Set a specific value on a user added status, If the status doesn't already exist this will add it.<br>
+<br> Note the value must be in string format.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>name</tt>&nbsp;-&nbsp;The name of the user status to add.</DD>
+<DD>
+<tt>value</tt>&nbsp;-&nbsp;The value associated with the user status value.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/Component.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Component.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_summary">CONSTANT</A>&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;<A HREF="#constant_detail">CONSTANT</A>&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

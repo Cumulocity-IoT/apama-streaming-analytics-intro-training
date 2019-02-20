@@ -1,0 +1,5 @@
+apamax.training.AllRobotStatus : event
+{
+    requestId : int64
+    robots    : apamax.training.RobotStatus[]
+}

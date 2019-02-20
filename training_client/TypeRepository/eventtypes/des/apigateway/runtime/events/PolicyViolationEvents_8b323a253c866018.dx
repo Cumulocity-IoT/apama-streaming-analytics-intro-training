@@ -1,0 +1,17 @@
+des.apigateway.runtime.events.PolicyViolationEvents : event
+    @EventId(path = "eventId")
+{
+    eventId        : string
+    api            : des.apigateway.runtime.events.API
+    operationName  : string
+    application    : des.apigateway.runtime.events.Application
+    eventSource    : string
+    alertSource    : string
+    alertType      : string
+    alertDesc      : string
+    creationDate   : time
+    httpMethod     : string
+    responseCode   : string
+    userAgent      : string
+    nativeEndpoint : string
+}

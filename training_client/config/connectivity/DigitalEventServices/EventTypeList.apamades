@@ -1,0 +1,11 @@
+#EventTypeList.apamades 10.3.1.0
+#This is an internal file and is not user-editable.
+apamax.training.TemperatureReading,91dffff0295b73f7,SELECTED
+apamax.training.RobotStatus,2532f0838be7833e,SELECTED
+apamax.training.RobotError,681a2c4d457b4007,SELECTED
+apamax.training.RobotDataSummary,f54f592afbd064c,SELECTED
+apamax.training.RobotDataRequest,c72f20390a0a828e,SELECTED
+apamax.training.RequestRobotStatus,bc79bb0bfb7f5d0a,SELECTED
+apamax.training.RegisterRobot,567b555a0a3c6186,SELECTED
+apamax.training.AllRobotStatus,2e0a510ab7f25c42,SELECTED
+apamax.training.Alert,38827aeb7d4bb54d,SELECTED

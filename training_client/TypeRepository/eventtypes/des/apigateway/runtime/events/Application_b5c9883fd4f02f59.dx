@@ -1,0 +1,6 @@
+des.apigateway.runtime.events.Application : event
+{
+    applicationID   : string
+    applicationName : string
+    applicationIP   : string
+}

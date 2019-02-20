@@ -27,10 +27,13 @@ event RobotManager {
 		monitor.subscribe(RequestRobotStatus.CHANNEL);
 		on all RequestRobotStatus() as rrs {
 			log "Received request for robot status ("+robots.toString()+")" at INFO;
+			sequence<RobotStatus> rs := new sequence<RobotStatus>;
 			integer id;
 			for id in robots.keys() {
 				send RobotStatus(id, robots[id]) to RobotStatus.CHANNEL;
+				rs.append(RobotStatus(id, robots[id]));
 			}
+			send AllRobotStatus(rrs.requestId, rs) to AllRobotStatus.CHANNEL;
 		}
 	}
 	

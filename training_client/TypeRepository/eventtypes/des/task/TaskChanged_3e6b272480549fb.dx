@@ -1,0 +1,13 @@
+des.task.TaskChanged : event
+    @EventId(path = "eventId")
+    @EventTime(path = "eventStart")
+{
+    eventId       : string
+    eventStart    : time
+    operation     : int32
+    operationText : string
+    source        : string
+    taskURL       : string
+    oldTask       : des.task.Task
+    newTask       : des.task.Task
+}

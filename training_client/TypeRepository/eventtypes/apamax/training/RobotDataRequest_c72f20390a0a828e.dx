@@ -1,0 +1,5 @@
+apamax.training.RobotDataRequest : event
+{
+    id        : int64
+    requestId : int64
+}

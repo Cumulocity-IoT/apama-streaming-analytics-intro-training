@@ -1,0 +1,216 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>Logging</TITLE>
+<META NAME="keywords" CONTENT="Logging&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="Logging";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/Logging.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Logging.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.correlator</FONT>
+<BR>Event Logging</H2>
+<HR>EPL interface to correlator logging functionality. All methods on this interface are identical to the equivalent engine_management requests, which are described in more detail in the user documentation.<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#getApplicationLogFile()">getApplicationLogFile</A></B>(string&nbsp;pkg)</CODE>
+<br>
+<br>Return the destination file for EPL log messages from the given package. A blank package is the root package.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#getApplicationLogLevel()">getApplicationLogLevel</A></B>(string&nbsp;pkg)</CODE>
+<br>
+<br>Return the log level threshold of EPL log messages from the given package. A blank package is the root package.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#rotateLogs()">rotateLogs</A></B>()</CODE>
+<br>
+<br>Schedule simultaneous rotation of all correlator logs, including application logs and the input log. The rotation will happen shortly after this call.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#setApplicationLogFile()">setApplicationLogFile</A></B>(string&nbsp;pkg,&nbsp;string&nbsp;filename)</CODE>
+<br>
+<br>Set the destination of EPL log messages from the given package. A blank package is the root package.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#setApplicationLogLevel()">setApplicationLogLevel</A></B>(string&nbsp;pkg,&nbsp;string&nbsp;level)</CODE>
+<br>
+<br>Set the log level threshold of EPL log messages from the given package. A blank package is the root package.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#setLogFile()">setLogFile</A></B>(string&nbsp;filename)</CODE>
+<br>
+<br>Change the file that the correlator logs to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#unsetApplicationLogFile()">unsetApplicationLogFile</A></B>(string&nbsp;pkg)</CODE>
+<br>
+<br>Reset logging for the given package to the default. A blank package is the root package.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;void</CODE></FONT></TD><TD><CODE>static </CODE><CODE><B><A HREF="Logging.html#unsetApplicationLogLevel()">unsetApplicationLogLevel</A></B>(string&nbsp;pkg)</CODE>
+<br>
+<br>Remove the log level from the given package, returning it to default. A blank package is the root package.</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="getApplicationLogFile()"></A>
+<H3>getApplicationLogFile</H3>
+<PRE>string&nbsp;static <B>getApplicationLogFile</B>(string&nbsp;pkg)</PRE>Return the destination file for EPL log messages from the given package. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="getApplicationLogLevel()"></A>
+<H3>getApplicationLogLevel</H3>
+<PRE>string&nbsp;static <B>getApplicationLogLevel</B>(string&nbsp;pkg)</PRE>Return the log level threshold of EPL log messages from the given package. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="rotateLogs()"></A>
+<H3>rotateLogs</H3>
+<PRE>void&nbsp;static <B>rotateLogs</B>()</PRE>Schedule simultaneous rotation of all correlator logs, including application logs and the input log. The rotation will happen shortly after this call.<HR>
+<A NAME="setApplicationLogFile()"></A>
+<H3>setApplicationLogFile</H3>
+<PRE>void&nbsp;static <B>setApplicationLogFile</B>(string&nbsp;pkg,&nbsp;string&nbsp;filename)</PRE>Set the destination of EPL log messages from the given package. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+<DD>
+<tt>filename</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setApplicationLogLevel()"></A>
+<H3>setApplicationLogLevel</H3>
+<PRE>void&nbsp;static <B>setApplicationLogLevel</B>(string&nbsp;pkg,&nbsp;string&nbsp;level)</PRE>Set the log level threshold of EPL log messages from the given package. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+<DD>
+<tt>level</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="setLogFile()"></A>
+<H3>setLogFile</H3>
+<PRE>void&nbsp;static <B>setLogFile</B>(string&nbsp;filename)</PRE>Change the file that the correlator logs to.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>filename</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="unsetApplicationLogFile()"></A>
+<H3>unsetApplicationLogFile</H3>
+<PRE>void&nbsp;static <B>unsetApplicationLogFile</B>(string&nbsp;pkg)</PRE>Reset logging for the given package to the default. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+</DL>
+<HR>
+<A NAME="unsetApplicationLogLevel()"></A>
+<H3>unsetApplicationLogLevel</H3>
+<PRE>void&nbsp;static <B>unsetApplicationLogLevel</B>(string&nbsp;pkg)</PRE>Remove the log level from the given package, returning it to default. A blank package is the root package.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>pkg</tt>
+</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/Logging.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="Logging.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

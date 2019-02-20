@@ -1,0 +1,7 @@
+des.rules.nonpublishable.EventRuleResultChange : event
+{
+    rowUuid    : string
+    resultName : string
+    oldValue   : string
+    newValue   : string
+}

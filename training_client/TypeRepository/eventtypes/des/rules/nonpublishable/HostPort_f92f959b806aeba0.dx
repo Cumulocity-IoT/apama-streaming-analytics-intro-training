@@ -1,0 +1,5 @@
+des.rules.nonpublishable.HostPort : event
+{
+    host : string
+    port : string
+}

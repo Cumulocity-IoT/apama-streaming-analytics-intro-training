@@ -1,0 +1,6 @@
+apamax.training.TemperatureReading : event
+{
+    id          : int64
+    sensor      : int64
+    temperature : float64
+}

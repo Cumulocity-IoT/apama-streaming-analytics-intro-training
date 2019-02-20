@@ -1,0 +1,14 @@
+des.apigateway.designtime.events.AuditlogEvents : event
+    @EventId(path = "eventId")
+{
+    eventId         : string
+    event           : des.apigateway.designtime.events.Event
+    objectType      : string
+    action          : string
+    object          : string
+    message         : string
+    user            : string
+    sourceMachine   : string
+    clientIPAddress : string
+    payload         : string
+}

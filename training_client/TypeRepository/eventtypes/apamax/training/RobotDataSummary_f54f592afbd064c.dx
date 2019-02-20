@@ -1,0 +1,7 @@
+apamax.training.RobotDataSummary : event
+{
+    id           : int64
+    requestId    : int64
+    temperature1 : float64
+    temperature2 : float64
+}

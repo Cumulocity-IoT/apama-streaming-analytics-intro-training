@@ -13,9 +13,9 @@
 			<config-files>
 			</config-files>
 			<bundle-instance-files>
-				<file name="../bundles/DigitalEvents/@INSTANCE_NAME@.yaml" timestamp="1548931608983"/>
-				<file name="../bundles/DigitalEvents/EventTypeList.apamades" timestamp="1548931608983"/>
-				<file name="../bundles/DigitalEvents/@INSTANCE_NAME@.properties" timestamp="1548931608982"/>
+				<file name="../bundles/DigitalEvents/@INSTANCE_NAME@.yaml" timestamp="1545150949787"/>
+				<file name="../bundles/DigitalEvents/EventTypeList.apamades" timestamp="1545150949788"/>
+				<file name="../bundles/DigitalEvents/@INSTANCE_NAME@.properties" timestamp="1545150949786"/>
 			</bundle-instance-files>
 			<static-files>
 			</static-files>
@@ -25,6 +25,19 @@
 			</evt-files>
 		</bundle>
 		<bundle file="MemoryStore.bnd" origin-path="" origin="PRODUCT_CATALOG">
+			<instance name=""/>
+			<config-files>
+			</config-files>
+			<bundle-instance-files>
+			</bundle-instance-files>
+			<static-files>
+			</static-files>
+			<dashboard-files>
+			</dashboard-files>
+			<evt-files>
+			</evt-files>
+		</bundle>
+		<bundle file="Management.bnd" origin-path="" origin="PRODUCT_CATALOG">
 			<instance name=""/>
 			<config-files>
 			</config-files>

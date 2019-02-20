@@ -1,0 +1,10 @@
+des.rules.publishable.RMCHotDeploymentStarted : event
+    @EventId(path = "eventId")
+    @EventTime(path = "eventStart")
+{
+    commonFields        : des.rules.nonpublishable.CommonFields
+    eventId             : string
+    eventStart          : time
+    invocationSessionId : string
+    isList              : des.rules.nonpublishable.HostPort[]
+}

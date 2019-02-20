@@ -1,0 +1,11 @@
+des.rules.publishable.EventRuleChanged : event
+    @EventId(path = "eventId")
+    @EventTime(path = "eventStart")
+{
+    commonFields        : des.rules.nonpublishable.CommonFields
+    eventId             : string
+    eventStart          : time
+    name                : string
+    resultChanged       : des.rules.nonpublishable.EventRuleResultChange[]
+    invocationSessionId : string
+}

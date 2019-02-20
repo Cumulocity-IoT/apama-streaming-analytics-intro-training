@@ -1,0 +1,6 @@
+des.apigateway.runtime.events.API : event
+{
+    apiId      : string
+    apiName    : string
+    apiVersion : string
+}

@@ -1,0 +1,517 @@
+<HTML><!-- saved from url=(0014)about:internet -->
+
+
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>EngineStatus</TITLE>
+<META NAME="keywords" CONTENT="EngineStatus&nbsp;event">
+<LINK REL="stylesheet" TYPE="text/css" HREF="stylesheet.css" TITLE="Style">
+<SCRIPT type="text/javascript">function windowTitle()
+          {
+          parent.document.title="EngineStatus";
+          }
+          </SCRIPT>
+<NOSCRIPT></NOSCRIPT>
+</HEAD>
+<BODY BGCOLOR="white" onload="windowTitle();">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/EngineStatus.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="EngineStatus.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+<H2>
+<FONT SIZE="-1">com.apama.correlator</FONT>
+<BR>Event EngineStatus</H2>
+<HR>EPL representation of the correlator status.<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<DL>
+<DT>
+<B>See Also:</B>
+</DT>
+<DD>
+<A HREF="../../../com/apama/correlator/Component.html#getStatus()" title="Action in com.apama.correlator.">com.apama.correlator.Component#getStatus()</A>&nbsp;-&nbsp;To get an instance of this event representing the current status.</DD>
+<DD>
+<A HREF="../../../com/apama/correlator/UserStatusChanged.html" title="type in com.apama.correlator">com.apama.correlator.UserStatusChanged</A>&nbsp;-&nbsp;To receive notifications about changes to a specified user status.</DD>
+</DL>
+<HR>
+<A NAME="action_summary"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="2"><FONT SIZE="+2"><B>Action summary</B></FONT></TH>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getMostBackedUpInput()">getMostBackedUpInput</A></B>()</CODE>
+<br>
+<br>The name of the slowest context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getMostBackedUpQueueSize()">getMostBackedUpQueueSize</A></B>()</CODE>
+<br>
+<br>The number of events on the slowest context's queue, as identified by the name of the slowest context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumConsumers()">getNumConsumers</A></B>()</CODE>
+<br>
+<br>The number of external consumers/receivers connected to receive emitted events.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumContexts()">getNumContexts</A></B>()</CODE>
+<br>
+<br>The number of contexts in the correlator, including the main context.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumEventTypes()">getNumEventTypes</A></B>()</CODE>
+<br>
+<br>The number of event types defined within the correlator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumFastTracked()">getNumFastTracked</A></B>()</CODE>
+<br>
+<br>The number of events that have been routed across all contexts since the correlator was started.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumJavaApplications()">getNumJavaApplications</A></B>()</CODE>
+<br>
+<br>The number of Java applications and Java EPL plug-ins loaded in the correlator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumListeners()">getNumListeners</A></B>()</CODE>
+<br>
+<br>The number of listeners in all contexts.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumMonitors()">getNumMonitors</A></B>()</CODE>
+<br>
+<br>The number of EPL monitor definitions injected into the correlator.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumOutEventsCreated()">getNumOutEventsCreated</A></B>()</CODE>
+<br>
+<br>The number of events that have been sent or emitted to channels which have at least one external consumer/receiver subscribed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumOutEventsQueued()">getNumOutEventsQueued</A></B>()</CODE>
+<br>
+<br>The number of events waiting on output queues to be dispatched to any connected external consumers/receivers.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumOutEventsSent()">getNumOutEventsSent</A></B>()</CODE>
+<br>
+<br>The number of events that have been delivered to external consumers/receivers. This counts for each external consumer/receiver an event is sent to.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumProcessed()">getNumProcessed</A></B>()</CODE>
+<br>
+<br>The number of events processed by the correlator in all contexts.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumProcesses()">getNumProcesses</A></B>()</CODE>
+<br>
+<br>The number of monitor instances, also known as sub-monitors.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumQueuedFastTrack()">getNumQueuedFastTrack</A></B>()</CODE>
+<br>
+<br>The sum of routed events on the route queues of all contexts.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumQueuedInput()">getNumQueuedInput</A></B>()</CODE>
+<br>
+<br>The number of executors on the input queues of all contexts. As well as events, this can include clock ticks, spawns, injections and other operations.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumReceived()">getNumReceived</A></B>()</CODE>
+<br>
+<br>The number of events that the correlator has received from external sources since the correlator started.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getNumSubListeners()">getNumSubListeners</A></B>()</CODE>
+<br>
+<br>The number of sub-event-listeners that are active across all contexts.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getSlowestReceiver()">getSlowestReceiver</A></B>()</CODE>
+<br>
+<br>The name of the consumer/receiver with the largest number of incoming events waiting to be processed.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getSlowestReceiverQueueSize()">getSlowestReceiverQueueSize</A></B>()</CODE>
+<br>
+<br>The number of events on the slowest consumer's/receiver's queue, as identified by the name of the slowest consumer/receiver.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUptime()">getUptime</A></B>()</CODE>
+<br>
+<br>The time in milliseconds since the correlator was started.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserBoolean()">getUserBoolean</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Get a user-set status value of type boolean.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;boolean</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserBooleanOr()">getUserBooleanOr</A></B>(string&nbsp;key,&nbsp;boolean&nbsp;alt)</CODE>
+<br>
+<br>Get a user-set status value of type boolean OR the alternative value specified if the key does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserFloat()">getUserFloat</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Get a user-set status value of type float.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;float</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserFloatOr()">getUserFloatOr</A></B>(string&nbsp;key,&nbsp;float&nbsp;alt)</CODE>
+<br>
+<br>Get a user-set status value of type float OR the alternative value specified if the key does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserInteger()">getUserInteger</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Get a user-set status value of type integer.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;integer</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserIntegerOr()">getUserIntegerOr</A></B>(string&nbsp;key,&nbsp;integer&nbsp;alt)</CODE>
+<br>
+<br>Get a user-set status value of type integer OR the alternative value specified if the key does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserString()">getUserString</A></B>(string&nbsp;key)</CODE>
+<br>
+<br>Get a user-set status value of type string.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;string</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getUserStringOr()">getUserStringOr</A></B>(string&nbsp;key,&nbsp;string&nbsp;alt)</CODE>
+<br>
+<br>Get a user-set status value of type string OR the alternative value specified if the key does not exist.</TD>
+</TR>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD ALIGN="right" VALIGN="top" WIDTH="1%"><FONT SIZE="-1"><CODE>&nbsp;dictionary&lt;string,&nbsp;string&gt;</CODE></FONT></TD><TD><CODE></CODE><CODE><B><A HREF="EngineStatus.html#getValues()">getValues</A></B>()</CODE>
+<br>
+<br>Get the full correlator status value dictionary .</TD>
+</TR>
+</TABLE>&nbsp;<A NAME="action_detail"></A>
+<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>Action detail</B></FONT></TH>
+</TR>
+</TABLE>
+<A NAME="getMostBackedUpInput()"></A>
+<H3>getMostBackedUpInput</H3>
+<PRE>string&nbsp;<B>getMostBackedUpInput</B>()</PRE>The name of the slowest context.<HR>
+<A NAME="getMostBackedUpQueueSize()"></A>
+<H3>getMostBackedUpQueueSize</H3>
+<PRE>integer&nbsp;<B>getMostBackedUpQueueSize</B>()</PRE>The number of events on the slowest context's queue, as identified by the name of the slowest context.<HR>
+<A NAME="getNumConsumers()"></A>
+<H3>getNumConsumers</H3>
+<PRE>integer&nbsp;<B>getNumConsumers</B>()</PRE>The number of external consumers/receivers connected to receive emitted events.<HR>
+<A NAME="getNumContexts()"></A>
+<H3>getNumContexts</H3>
+<PRE>integer&nbsp;<B>getNumContexts</B>()</PRE>The number of contexts in the correlator, including the main context.<HR>
+<A NAME="getNumEventTypes()"></A>
+<H3>getNumEventTypes</H3>
+<PRE>integer&nbsp;<B>getNumEventTypes</B>()</PRE>The number of event types defined within the correlator.<HR>
+<A NAME="getNumFastTracked()"></A>
+<H3>getNumFastTracked</H3>
+<PRE>integer&nbsp;<B>getNumFastTracked</B>()</PRE>The number of events that have been routed across all contexts since the correlator was started.<HR>
+<A NAME="getNumJavaApplications()"></A>
+<H3>getNumJavaApplications</H3>
+<PRE>integer&nbsp;<B>getNumJavaApplications</B>()</PRE>The number of Java applications and Java EPL plug-ins loaded in the correlator.<HR>
+<A NAME="getNumListeners()"></A>
+<H3>getNumListeners</H3>
+<PRE>integer&nbsp;<B>getNumListeners</B>()</PRE>The number of listeners in all contexts.<HR>
+<A NAME="getNumMonitors()"></A>
+<H3>getNumMonitors</H3>
+<PRE>integer&nbsp;<B>getNumMonitors</B>()</PRE>The number of EPL monitor definitions injected into the correlator.<HR>
+<A NAME="getNumOutEventsCreated()"></A>
+<H3>getNumOutEventsCreated</H3>
+<PRE>integer&nbsp;<B>getNumOutEventsCreated</B>()</PRE>The number of events that have been sent or emitted to channels which have at least one external consumer/receiver subscribed.<HR>
+<A NAME="getNumOutEventsQueued()"></A>
+<H3>getNumOutEventsQueued</H3>
+<PRE>integer&nbsp;<B>getNumOutEventsQueued</B>()</PRE>The number of events waiting on output queues to be dispatched to any connected external consumers/receivers.<HR>
+<A NAME="getNumOutEventsSent()"></A>
+<H3>getNumOutEventsSent</H3>
+<PRE>integer&nbsp;<B>getNumOutEventsSent</B>()</PRE>The number of events that have been delivered to external consumers/receivers. This counts for each external consumer/receiver an event is sent to.<HR>
+<A NAME="getNumProcessed()"></A>
+<H3>getNumProcessed</H3>
+<PRE>integer&nbsp;<B>getNumProcessed</B>()</PRE>The number of events processed by the correlator in all contexts.<HR>
+<A NAME="getNumProcesses()"></A>
+<H3>getNumProcesses</H3>
+<PRE>integer&nbsp;<B>getNumProcesses</B>()</PRE>The number of monitor instances, also known as sub-monitors.<HR>
+<A NAME="getNumQueuedFastTrack()"></A>
+<H3>getNumQueuedFastTrack</H3>
+<PRE>integer&nbsp;<B>getNumQueuedFastTrack</B>()</PRE>The sum of routed events on the route queues of all contexts.<HR>
+<A NAME="getNumQueuedInput()"></A>
+<H3>getNumQueuedInput</H3>
+<PRE>integer&nbsp;<B>getNumQueuedInput</B>()</PRE>The number of executors on the input queues of all contexts. As well as events, this can include clock ticks, spawns, injections and other operations.<HR>
+<A NAME="getNumReceived()"></A>
+<H3>getNumReceived</H3>
+<PRE>integer&nbsp;<B>getNumReceived</B>()</PRE>The number of events that the correlator has received from external sources since the correlator started.<HR>
+<A NAME="getNumSubListeners()"></A>
+<H3>getNumSubListeners</H3>
+<PRE>integer&nbsp;<B>getNumSubListeners</B>()</PRE>The number of sub-event-listeners that are active across all contexts.<HR>
+<A NAME="getSlowestReceiver()"></A>
+<H3>getSlowestReceiver</H3>
+<PRE>string&nbsp;<B>getSlowestReceiver</B>()</PRE>The name of the consumer/receiver with the largest number of incoming events waiting to be processed.<HR>
+<A NAME="getSlowestReceiverQueueSize()"></A>
+<H3>getSlowestReceiverQueueSize</H3>
+<PRE>integer&nbsp;<B>getSlowestReceiverQueueSize</B>()</PRE>The number of events on the slowest consumer's/receiver's queue, as identified by the name of the slowest consumer/receiver.<HR>
+<A NAME="getUptime()"></A>
+<H3>getUptime</H3>
+<PRE>integer&nbsp;<B>getUptime</B>()</PRE>The time in milliseconds since the correlator was started.<HR>
+<A NAME="getUserBoolean()"></A>
+<H3>getUserBoolean</H3>
+<PRE>boolean&nbsp;<B>getUserBoolean</B>(string&nbsp;key)</PRE>Get a user-set status value of type boolean.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type boolean.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserBooleanOr()"></A>
+<H3>getUserBooleanOr</H3>
+<PRE>boolean&nbsp;<B>getUserBooleanOr</B>(string&nbsp;key,&nbsp;boolean&nbsp;alt)</PRE>Get a user-set status value of type boolean OR the alternative value specified if the key does not exist.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+<DD>
+<tt>alt</tt>&nbsp;-&nbsp;The alternative value to return if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type boolean or the alternate value if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserFloat()"></A>
+<H3>getUserFloat</H3>
+<PRE>float&nbsp;<B>getUserFloat</B>(string&nbsp;key)</PRE>Get a user-set status value of type float.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type float.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserFloatOr()"></A>
+<H3>getUserFloatOr</H3>
+<PRE>float&nbsp;<B>getUserFloatOr</B>(string&nbsp;key,&nbsp;float&nbsp;alt)</PRE>Get a user-set status value of type float OR the alternative value specified if the key does not exist.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+<DD>
+<tt>alt</tt>&nbsp;-&nbsp;The alternative value to return if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type float or the alternate value if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserInteger()"></A>
+<H3>getUserInteger</H3>
+<PRE>integer&nbsp;<B>getUserInteger</B>(string&nbsp;key)</PRE>Get a user-set status value of type integer.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type integer.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserIntegerOr()"></A>
+<H3>getUserIntegerOr</H3>
+<PRE>integer&nbsp;<B>getUserIntegerOr</B>(string&nbsp;key,&nbsp;integer&nbsp;alt)</PRE>Get a user-set status value of type integer OR the alternative value specified if the key does not exist.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+<DD>
+<tt>alt</tt>&nbsp;-&nbsp;The alternative value to return if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type integer or the alternate value if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserString()"></A>
+<H3>getUserString</H3>
+<PRE>string&nbsp;<B>getUserString</B>(string&nbsp;key)</PRE>Get a user-set status value of type string.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type string.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getUserStringOr()"></A>
+<H3>getUserStringOr</H3>
+<PRE>string&nbsp;<B>getUserStringOr</B>(string&nbsp;key,&nbsp;string&nbsp;alt)</PRE>Get a user-set status value of type string OR the alternative value specified if the key does not exist.<DL>
+<DT>
+<B>Parameters:</B>
+</DT>
+<DD>
+<tt>key</tt>&nbsp;-&nbsp;The name of the value to get.</DD>
+<DD>
+<tt>alt</tt>&nbsp;-&nbsp;The alternative value to return if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The user status of type string or the alternate value if the key does not exist.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<A NAME="getValues()"></A>
+<H3>getValues</H3>
+<PRE>dictionary&lt;string,&nbsp;string&gt;&nbsp;<B>getValues</B>()</PRE>Get the full correlator status value dictionary .<DL>
+<DT>
+<B>Returns:</B>
+</DT>
+<DD>The full correlator status value dictionary.</DD>
+</DL>
+<DL>
+<DT>
+<B>Since:</B>
+</DT>
+<DD>9.10</DD>
+</DL>
+<HR>
+<HR>
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="1" CELLSPACING="0" SUMMARY="">
+<TR>
+<TD BGCOLOR="white" CLASS="NavBarCell2"><FONT SIZE="-2"><A target="_top" HREF="../../../index.html?com/apama/correlator/EngineStatus.html"><B>FRAMES</B></A>  &nbsp;
+
+            &nbsp;<A target="_top" HREF="EngineStatus.html"><B>NO FRAMES</B></A>  &nbsp;
+            &nbsp;<SCRIPT type="text/javascript"></SCRIPT>
+<NOSCRIPT>
+<A HREF="../../../alltypes-noframe.html"><B>All Classes</B></A>
+</NOSCRIPT>
+</FONT></TD>
+</TR>
+<TR>
+<TD COLSPAN="2" BGCOLOR="#EEEEFF" CLASS="NavBarCell1">
+<TABLE BORDER="0" WIDTH="100%" CELLPADDING="0" CELLSPACING="3" SUMMARY="">
+<TR ALIGN="center" VALIGN="top">
+<TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../overview-summary.html"><FONT CLASS="NavBarFont1"><B>Overview</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#FFFFFF" CLASS="NavBarCell1"><A HREF="../../..//com/apama/correlator/package-summary.html"><FONT CLASS="NavBarFont1"><B>Package</B></FONT></A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../deprecated-list.html"><FONT CLASS="NavBarFont1"><B>Deprecated</B></FONT></A>&nbsp;
+              </TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><A HREF="../../../help-doc.html"><FONT CLASS="NavBarFont1"><B>Help</B></FONT>&nbsp;
+                </A></TD><TD BGCOLOR="#EEEEFF" CLASS="NavBarCell1" WIDTH="100%" ALIGN="RIGHT"><FONT CLASS="NavBarFont1"><B>training_server Documentation</B></FONT></TD>
+</TR>
+</TABLE>
+</TD><TD ALIGN="right" VALIGN="top" ROWSPAN="3"><EM></EM></TD>
+</TR>
+<TR>
+<TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">SUMMARY:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_summary">ACTION</A></FONT></TD><TD VALIGN="top" CLASS="NavBarCell3"><FONT SIZE="-2">DETAIL:&nbsp;IMPORT&nbsp;|&nbsp;CONSTANT&nbsp;|&nbsp;MEMBER&nbsp;|&nbsp;<A HREF="#action_detail">ACTION</A></FONT></TD>
+</TR>
+</TABLE>
+<HR>
+</BODY>
+</HTML>

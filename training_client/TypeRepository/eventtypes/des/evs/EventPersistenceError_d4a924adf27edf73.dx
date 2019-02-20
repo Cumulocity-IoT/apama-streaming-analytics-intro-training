@@ -1,0 +1,16 @@
+des.evs.EventPersistenceError : event
+    @EventId(path = "EventID")
+{
+    EventID                        : string
+    ErrorStart                     : time
+    EventType                      : string
+    EventKind                      : string
+    EventProducerId                : string
+    ErrorMessage                   : string
+    ErrorStackTrace                : bytes
+    SourceEventID                  : string
+    SourceEventEventTypeName       : string
+    SourceEventEventTypeVariantKey : string
+    SourceEventEventTypeByteFormat : string
+    SourceEvent                    : bytes
+}

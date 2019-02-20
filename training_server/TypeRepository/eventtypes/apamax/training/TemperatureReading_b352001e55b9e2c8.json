@@ -1,1 +1,1 @@
-{"eventtype":"apamax.training.TemperatureReading","unique":"true","publishable":"true","deliverymode":"Non-Persistent"}
+{"eventtype":"apamax.training.TemperatureReading","unique":true,"publishable":true,"deliverymode":"Non-Persistent"}

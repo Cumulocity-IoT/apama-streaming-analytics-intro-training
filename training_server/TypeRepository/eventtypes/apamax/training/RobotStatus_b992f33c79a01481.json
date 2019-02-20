@@ -1,1 +1,1 @@
-{"eventtype":"apamax.training.RobotStatus","unique":"true","publishable":"true","deliverymode":"Non-Persistent"}
+{"eventtype":"apamax.training.RobotStatus","unique":true,"publishable":true,"deliverymode":"Non-Persistent"}

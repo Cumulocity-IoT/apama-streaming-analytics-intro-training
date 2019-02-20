@@ -1,0 +1,4 @@
+apamax.training.RequestRobotStatus : event
+{
+    requestId : int64
+}

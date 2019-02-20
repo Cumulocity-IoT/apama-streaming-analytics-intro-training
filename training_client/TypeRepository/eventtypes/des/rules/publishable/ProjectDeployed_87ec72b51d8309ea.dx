@@ -1,0 +1,12 @@
+des.rules.publishable.ProjectDeployed : event
+    @EventId(path = "eventId")
+    @EventTime(path = "eventStart")
+{
+    commonFields        : des.rules.nonpublishable.CommonFields
+    eventId             : string
+    eventStart          : time
+    invocationSessionId : string
+    deployedWith        : string
+    projectCreatorApp   : string
+    deployedBy          : string
+}
