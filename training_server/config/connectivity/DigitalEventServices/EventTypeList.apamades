@@ -3,9 +3,9 @@
 EXPORT,apamax.training.Alert
 EXPORT,apamax.training.RegisterRobot
 EXPORT,apamax.training.TemperatureReading
-EXPORT,apamax.training.RequestRobotStatus
 EXPORT,apamax.training.RobotError
 EXPORT,apamax.training.RobotStatus
 EXPORT,apamax.training.RobotDataRequest
 EXPORT,apamax.training.RobotDataSummary
 EXPORT,apamax.training.AllRobotStatus
+EXPORT,apamax.training.RequestRobotStatus
