@@ -22,10 +22,14 @@ services:
       configs:
         - source: grafana_config_prom
           target: /etc/grafana/provisioning/datasources/prometheus.yaml
-        - source: grafana_config_dash
+        - source: grafana_config_dash1
           target: /etc/grafana/provisioning/dashboards/apama.yaml
         - source: grafana_dash_apama
           target: /etc/grafana/dashboards/apama.json
+        - source: grafana_config_dash2
+          target: /etc/grafana/provisioning/dashboards/application.yaml
+        - source: grafana_dash_application
+          target: /etc/grafana/dashboards/application.json
    prometheus:
       image: prom/prometheus
       ports:
@@ -57,10 +61,14 @@ configs:
     file: ./prometheus/prometheus.yml
   grafana_config_prom:
     file: ./grafana-config/datasources/prometheus.yml
-  grafana_config_dash:
+  grafana_config_dash1:
     file: ./grafana-config/dashboards/apama.yml
   grafana_dash_apama:
     file: ./grafana-dashboards/apama.json
+  grafana_config_dash2:
+    file: ./grafana-config/dashboards/application.yml
+  grafana_dash_application:
+    file: ./grafana-dashboards/application.json
 
 networks:
     training-net:
