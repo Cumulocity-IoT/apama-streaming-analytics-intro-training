@@ -1,4 +1,4 @@
-package apamax.training;
+﻿package apamax.training;
 using com.apama.aggregates.mean;
 using com.apama.aggregates.min;
 using com.apama.aggregates.max;
@@ -6,6 +6,7 @@ using com.apama.aggregates.stddev;
 using com.apama.aggregates.count;
 using com.apama.aggregates.last;
 using com.apama.aggregates.first;
+using com.apama.aggregates.sum;
 
 /** This monitor will monitor for problems with the robot sensors and send alerts when we find them  */
 monitor ModelAnswers {
@@ -15,6 +16,7 @@ monitor ModelAnswers {
 		monitor.subscribe(TemperatureReading.CHANNEL);
 		
 		// call the exercise functions
+		
 	}
 	
 	/** An action to call to both send the alert to the dashboard and also log it in the log file */
@@ -260,9 +262,25 @@ monitor ModelAnswers {
 		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;		
 	}
 
-	/** correct statistics still pending for this excercise... */
+	/** linear regression with formula (t=time, v=value) (n(Σtv)-ΣtΣv) / (n(Σt²)-(Σt)²) */
 	action exercise12()
-	{
+	{	
+		// offset the time to prevent rounding errors
+		float startTime := currentTime;
+		
+		// calculate the slopes over a relatively large window into a new stream
+		stream<TemperatureReading> slopes := from r in all TemperatureReading() within 240.0
+		  group by r.id, r.sensor // per-sensor slopes
+		  having count() > 30 // only count once we have enough data
+		  // this implements the above formula for calculating the linear regression slope
+		  select TemperatureReading(r.id, r.sensor, (count().toFloat()*sum(r.temperature*(r.getTime()-startTime))-sum(r.temperature)*sum(r.getTime()-startTime)) /
+		  		(count().toFloat()*sum((r.getTime()-startTime)*(r.getTime()-startTime))-(sum((r.getTime()-startTime))*sum((r.getTime()-startTime)))));
+		  
+		// once we have the slopes, only look for ones with a gradiant above 0.1
+		from s in slopes where s.temperature > 0.1 select s as tr  
+		{
+		  	publish(12, "Robot has increasing slope "+tr.toString());
+		}
 
 	}
 	/** Another internal helper event */
