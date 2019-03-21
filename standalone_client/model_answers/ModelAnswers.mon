@@ -59,40 +59,7 @@ monitor ModelAnswers {
 			  publish(2, "Robot id "+id.toString()+" has sensors which differ by more than 5 degrees");
 		  }
 	}
-	
-	/** Query the robot manager to see how many robots it knows about */
-	action exercise3()
-	{
-		// using a new event type, so subscribe to the channel
-		monitor.subscribe(AllRobotStatus.CHANNEL);
-		// generate a unique id for requests. Note: this is actually only internally unique, so need to be more clever for distributed systems.
-		integer requestId := integer.getUnique();
-		// wait for the specific reply to our request
-		on AllRobotStatus(requestId=requestId) as ars {
-			// just count the size of the sequence we get back
-			publish(3, "There are "+ars.robots.size().toString()+" robots");
-		}
-		// then send the request with our request id
-		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;
-	}
 
-	/** Query the robot manager again, but then wait to see if we get data from that robot */
-	action exercise4()
-	{
-		// another new event type to subscribe to
-		monitor.subscribe(RobotStatus.CHANNEL);
-		// another id for the request
-		integer requestId := integer.getUnique();
-		// this time we're just using the request to prompt for status updates
-		on all RobotStatus() as rs {
-			// for each status update we're going to wait and see if we get a reading in 10s and if not, alert
-			on wait(10.0) and not TemperatureReading(id=rs.id) {
-				publish(4, "Robot id "+rs.id.toString()+" has not sent a status in 10s");
-			}
-		}
-		// send the request
-		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;
-	}
 	
 	/** Listen for RobotError events which might be produced by robots. */
 	action exercise5()
@@ -183,41 +150,7 @@ monitor ModelAnswers {
 			log mmm.toString() at INFO;
 		}
 	}
-	/** Get the current state of every robot */
-	action exercise9()
-	{
-		// receive two more event types
-		monitor.subscribe(AllRobotStatus.CHANNEL);
-		monitor.subscribe(RobotDataSummary.CHANNEL);
-		
-		// generate a unique id as above
-		integer requestId := integer.getUnique();
-		// wait for the response to our request
-		on AllRobotStatus(requestId=requestId) as ars {
-			// being optional is a DES artifact
-			optional<RobotStatus> r;
-			// loop over all robots
-			for r in ars.robots {
-				// this unpacks the optional, we expect it always to be true in this case
-				ifpresent r {
-					// for each robot, do another request to that robot for a summary, with a new requestId
-					integer requestId := integer.getUnique();
-					// a matched pair of self-terminating listeners. If the response arrives first, log it
-					on RobotDataSummary(requestId=requestId) as rds and not wait(10.0) {
-						publish(9, "Current status: "+rds.toString());			
-					}
-					// if 10s happens first, log an error
-					on wait (10.0) and not RobotDataSummary(requestId=requestId) {
-						publish(9, "Robot not responding to summary requests: "+r.toString());
-					}
-					// send the request
-					send RobotDataRequest(r.id, requestId) to RobotDataRequest.CHANNEL;
-				}
-			}
-		}
-		// send the request
-		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;		
-	}
+
 	/** See if a temperature sensor is stuck at the same value */
 	action exercise10()
 	{
@@ -237,29 +170,6 @@ monitor ModelAnswers {
 		{
 			publish(10, "Robot sensor might be stuck "+tr.toString());
 		}
-	}
-	/** Check we get a value for both sensors for each robot */
-	action exercise11()
-	{
-		// another manager request to get all the robots
-		monitor.subscribe(AllRobotStatus.CHANNEL);
-		monitor.subscribe(RobotDataSummary.CHANNEL);
-		integer requestId := integer.getUnique();
-		on AllRobotStatus(requestId=requestId) as ars {
-			optional<RobotStatus> r;
-			for r in ars.robots {
-				ifpresent r {
-					// in this case for each robot wait 10s for an event from each sensor
-					on wait(10.0) and not TemperatureReading(id=r.id, sensor=1) {
-						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 1");
-					}
-					on wait(10.0) and not TemperatureReading(id=r.id, sensor=2) {
-						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 2");
-					}
-				}
-			}
-		}
-		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;		
 	}
 
 	/** linear regression with formula (t=time, v=value) (n(Σtv)-ΣtΣv) / (n(Σt²)-(Σt)²) */

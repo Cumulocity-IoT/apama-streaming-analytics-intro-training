@@ -34,8 +34,6 @@ monitor RobotMonitor {
 		
 		// Insert your code here...
 		
-		// Once the code is ready, start receiving events
-		com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
 		// so we know it's ready
 		log "Loaded monitor RobotMonitor" at INFO;
 	}
