@@ -22,6 +22,5 @@ monitor TrainingSimulator {
 		(new RobotSimulator).startSingleSensor();
 		(new RobotSimulator).startIncreasingSimulation();
 
-		com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
 	}
 }

@@ -195,24 +195,21 @@ monitor ModelAnswers {
 		// wait for the response to our request
 		on AllRobotStatus(requestId=requestId) as ars {
 			// being optional is a DES artifact
-			optional<RobotStatus> r;
+			RobotStatus r;
 			// loop over all robots
 			for r in ars.robots {
-				// this unpacks the optional, we expect it always to be true in this case
-				ifpresent r {
-					// for each robot, do another request to that robot for a summary, with a new requestId
-					integer requestId := integer.getUnique();
-					// a matched pair of self-terminating listeners. If the response arrives first, log it
-					on RobotDataSummary(requestId=requestId) as rds and not wait(10.0) {
-						publish(9, "Current status: "+rds.toString());			
-					}
-					// if 10s happens first, log an error
-					on wait (10.0) and not RobotDataSummary(requestId=requestId) {
-						publish(9, "Robot not responding to summary requests: "+r.toString());
-					}
-					// send the request
-					send RobotDataRequest(r.id, requestId) to RobotDataRequest.CHANNEL;
+				// for each robot, do another request to that robot for a summary, with a new requestId
+				integer requestId := integer.getUnique();
+				// a matched pair of self-terminating listeners. If the response arrives first, log it
+				on RobotDataSummary(requestId=requestId) as rds and not wait(10.0) {
+					publish(9, "Current status: "+rds.toString());			
 				}
+				// if 10s happens first, log an error
+				on wait (10.0) and not RobotDataSummary(requestId=requestId) {
+					publish(9, "Robot not responding to summary requests: "+r.toString());
+				}
+				// send the request
+				send RobotDataRequest(r.id, requestId) to RobotDataRequest.CHANNEL;
 			}
 		}
 		// send the request
@@ -246,16 +243,14 @@ monitor ModelAnswers {
 		monitor.subscribe(RobotDataSummary.CHANNEL);
 		integer requestId := integer.getUnique();
 		on AllRobotStatus(requestId=requestId) as ars {
-			optional<RobotStatus> r;
+			RobotStatus r;
 			for r in ars.robots {
-				ifpresent r {
-					// in this case for each robot wait 10s for an event from each sensor
-					on wait(10.0) and not TemperatureReading(id=r.id, sensor=1) {
-						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 1");
-					}
-					on wait(10.0) and not TemperatureReading(id=r.id, sensor=2) {
-						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 2");
-					}
+				// in this case for each robot wait 10s for an event from each sensor
+				on wait(10.0) and not TemperatureReading(id=r.id, sensor=1) {
+					publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 1");
+				}
+				on wait(10.0) and not TemperatureReading(id=r.id, sensor=2) {
+					publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 2");
 				}
 			}
 		}

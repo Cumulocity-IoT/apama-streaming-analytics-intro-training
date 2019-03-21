@@ -19,7 +19,6 @@ monitor TrainingMonitor {
 			on Finished(store.prepare("alerts", schema),*,*) as f2 {
 				tbl := store.open("alerts");
 				startMonitoring();
-				com.softwareag.connectivity.ConnectivityPlugins.onApplicationInitialized();
 			}
 		}
 	}
