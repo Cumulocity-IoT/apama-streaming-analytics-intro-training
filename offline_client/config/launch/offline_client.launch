@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.apama.text.launcher.monitorscriptApplication">
-<stringAttribute key="com.apama.launch.dirty" value="1548951363185"/>
-<stringAttribute key="com.apama.text.CONFIG_LOCATION" value="\training_monitor\config\launch\training_monitor.deploy"/>
+<stringAttribute key="com.apama.launch.dirty" value="1553188552117"/>
+<stringAttribute key="com.apama.text.CONFIG_LOCATION" value="\offline_client\config\launch\offline_client.deploy"/>
 <intAttribute key="com.apama.text.CONFIG_VERSION" value="3"/>
-<stringAttribute key="com.apama.text.PROJECT_ATTR" value="training_monitor"/>
+<stringAttribute key="com.apama.text.PROJECT_ATTR" value="offline_client"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/training_monitor"/>
+<listEntry value="/offline_client"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>

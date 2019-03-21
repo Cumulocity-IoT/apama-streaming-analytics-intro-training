@@ -17,3 +17,14 @@
 # information about the supported options.
 #To enable use of this file when you launch this project from Designer, edit the project's run/launch configuration,
 #open the correlator, and tick the "Configuration" checkbox next to the textbox that names this .yaml file.
+
+engineConnect:
+  - sourceHost: localhost
+    sourcePort: 15902
+    channels:
+       - apamax.training.AllRobotStatus
+       - apamax.training.RegisterRobot
+       - apamax.training.RobotDataSummary
+       - apamax.training.RobotError
+       - apamax.training.RobotStatus
+       - apamax.training.TemperatureReading

@@ -25,7 +25,7 @@ monitor TrainingMonitor {
 	
 	action startMonitoring()
 	{
-		monitor.subscribe(Alert.CHANNEL);
+		monitor.subscribe("dashboard:"+Alert.CHANNEL);
 		on all Alert() as a {
 			Row r := tbl.get(a.user);
 			r.setAll(a);

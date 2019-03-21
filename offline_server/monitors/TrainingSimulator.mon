@@ -21,6 +21,37 @@ monitor TrainingSimulator {
 		(new RobotSimulator).startStuckSensor(20.0);
 		(new RobotSimulator).startSingleSensor();
 		(new RobotSimulator).startIncreasingSimulation();
-
+		
+		spawn forwardAlerts() to context("AlertForwarder");
+		spawn handleSubscribers();
+	}
+	
+	action handleSubscribers()
+	{
+		on all com.apama.oob.ReceiverConnected() as rc {
+			log "new connection of "+rc.componentName+" from "+rc.address+" with extra params "+rc.extraParams.toString() at INFO;
+			string host := rc.address.replace(":.*", "");
+			com.apama.correlator.Component.attachAsEventConsumerTo(
+			          host, 15903,
+			          ["apamax.training.Alert", "apamax.training.RobotDataRequest", "apamax.training.RequestRobotStatus"],
+			          true, com.apama.correlator.Component.CONNECT_PARALLEL);
+		}
+		on all com.apama.oob.ReceiverDisconnected() as rd {
+			log "new connection of "+rd.componentName+" from "+rd.address+" with extra params "+rd.extraParams.toString() at INFO;
+			string host := rd.address.replace(":.*", "");
+			com.apama.correlator.Component.detachAsEventConsumerFrom(
+			          host, 15903,
+			          ["apamax.training.Alert", "apamax.training.RobotDataRequest", "apamax.training.RequestRobotStatus"],
+			          com.apama.correlator.Component.CONNECT_PARALLEL);
+		}
+		
+	}
+	
+	action forwardAlerts()
+	{
+		monitor.subscribe(Alert.CHANNEL);
+		on all Alert() as a {
+			send a to "dashboard:"+Alert.CHANNEL;
+		}
 	}
 }
