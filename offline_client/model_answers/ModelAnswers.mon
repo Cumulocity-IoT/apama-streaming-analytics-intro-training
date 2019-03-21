@@ -1,0 +1,311 @@
+﻿package apamax.training;
+using com.apama.aggregates.mean;
+using com.apama.aggregates.min;
+using com.apama.aggregates.max;
+using com.apama.aggregates.stddev;
+using com.apama.aggregates.count;
+using com.apama.aggregates.last;
+using com.apama.aggregates.first;
+using com.apama.aggregates.sum;
+
+/** This monitor will monitor for problems with the robot sensors and send alerts when we find them  */
+monitor ModelAnswers {
+	
+	/** This is the action which will be run when the monitor starts */
+	action onload() {		
+		monitor.subscribe(TemperatureReading.CHANNEL);
+		
+		// call the exercise functions
+		
+	}
+	
+	/** An action to call to both send the alert to the dashboard and also log it in the log file */
+	action publish(integer exercise, string description)
+	{
+		send Alert("Matt"+exercise.toString(), description) to Alert.CHANNEL;
+		log "Excercise "+exercise.toString()+": "+description at INFO;
+	}	
+	
+	/**  looking for the range of values over a time window and checking how many degrees it covers */
+	action exercise1()
+	{
+		// use a stream covering all temperatures		
+		from tr in all TemperatureReading()
+			// looking at the last 10s
+		 	within 10.0
+		  	// calculate the average for each sensor individually
+			group by tr.id, tr.sensor
+		  	// we only care about ones where the temperature range is too big
+		    having (min(tr.temperature) - max(tr.temperature)).abs() > 2.0
+		  	// give us the id, sensor and min and max. I'm cheating a little here by implicitly creating a sequence as the result type
+		    select [tr.id.toFloat(), tr.sensor.toFloat(), min(tr.temperature), max(tr.temperature)] as id {
+		    	publish(1, "Robot has a variance of more than +/- 1 degree within 10.0s "+id.toString());
+		    }
+	}
+	/** Looking for two sensors on the same robot which differ by 5 degrees */
+	action exercise2()
+	{
+		// stream of all sensor1s
+		stream<TemperatureReading> sens1 := all TemperatureReading(sensor=1);
+		// stream of all sensor2s
+		stream<TemperatureReading> sens2 := all TemperatureReading(sensor=2);
+		
+		// join the most recent sensor1 value for each robot to the most recent sensor2 value for each robot, matching up the robots
+		from t1 in sens1 partition by t1.id retain 1 join t2 in sens2 partition by t2.id retain 1 on t1.id equals t2.id
+		  // filter out only the ones where the temperature difference is big enough
+		  where (t1.temperature-t2.temperature).abs() > 5.0
+		  // same trick as above to get the result
+		  select [t1.id.toFloat(), t1.temperature, t2.temperature] as id {
+			  publish(2, "Robot id "+id.toString()+" has sensors which differ by more than 5 degrees");
+		  }
+	}
+	
+	/** Query the robot manager to see how many robots it knows about */
+	action exercise3()
+	{
+		// using a new event type, so subscribe to the channel
+		monitor.subscribe(AllRobotStatus.CHANNEL);
+		// generate a unique id for requests. Note: this is actually only internally unique, so need to be more clever for distributed systems.
+		integer requestId := integer.getUnique();
+		// wait for the specific reply to our request
+		on AllRobotStatus(requestId=requestId) as ars {
+			// just count the size of the sequence we get back
+			publish(3, "There are "+ars.robots.size().toString()+" robots");
+		}
+		// then send the request with our request id
+		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;
+	}
+
+	/** Query the robot manager again, but then wait to see if we get data from that robot */
+	action exercise4()
+	{
+		// another new event type to subscribe to
+		monitor.subscribe(RobotStatus.CHANNEL);
+		// another id for the request
+		integer requestId := integer.getUnique();
+		// this time we're just using the request to prompt for status updates
+		on all RobotStatus() as rs {
+			// for each status update we're going to wait and see if we get a reading in 10s and if not, alert
+			on wait(10.0) and not TemperatureReading(id=rs.id) {
+				publish(4, "Robot id "+rs.id.toString()+" has not sent a status in 10s");
+			}
+		}
+		// send the request
+		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;
+	}
+	
+	/** Listen for RobotError events which might be produced by robots. */
+	action exercise5()
+	{
+		// subscribe to RobotErrors
+		monitor.subscribe(RobotError.CHANNEL);
+		// when we get one, from anywhere
+		on all RobotError() as re {
+			// check if the message is valid (and it's not clearing an old error)
+			if re.message != "" {
+				publish(5, "Robot error: "+re.toString());
+			}
+		}
+	}
+	/** This is an event type we're using internally for exercise6 */
+	event TemperatureBands
+	{
+		integer id;
+		integer sensor;
+		float mean;
+		float upper;
+		float lower;
+	}
+	/** Calculate bands of expected range of values and alert if we spike outside that. */
+	action exercise6()
+	{
+		// calculate the mean, upper and lower bounds
+		stream<TemperatureBands> averages := 
+			// start with all temperature readings
+			from t in all TemperatureReading() 
+				// within the last minute
+				within 60.0 
+			  	// group by sensor
+				group by t.id, t.sensor
+			  	// calculate mean, mean+2*stddev and mean-stddev, plus some fudging to ensure it's significant
+				select TemperatureBands(t.id, t.sensor, 
+				                        mean(t.temperature), 
+				                        mean(t.temperature)+float.max(1.0, 2.0*stddev(t.temperature)), 
+				                        mean(t.temperature)-float.max(1.0, 2.0*stddev(t.temperature)));
+		// Take the original readings again, join it with the bands to check for breaches
+		from t in all TemperatureReading()
+			// we want to remember the most recent average for each sensor, but just see readings as they arrive 
+			join a in averages partition by a.id, a.sensor retain 1
+		  	// match up the current reading with the correct average
+		  	on t.id equals a.id
+		  	// see if the temperature is outside the bounds
+			where t.temperature > a.upper or t.temperature < a.lower
+		  	// re-use our event to report all the values
+			select TemperatureBands(t.id, t.sensor, t.temperature, a.upper, a.lower) as t 
+		{
+			publish(6, "Robot has exceeded historical bands "+t.toString());
+		}
+	}
+	/** Detect a robot which is sending updates slowly */
+	action exercise7()
+	{
+		// for each reading we get
+		on all TemperatureReading() as tr {
+			// wait and check that we get another reading for that sensor in 2s
+			on wait(2.0) and not TemperatureReading(id=tr.id) {
+				publish(7, "Robot didn't send another update in 2s: "+tr.id.toString());
+			}
+		}
+	}
+	/** Another helper event */
+	event MinMaxMean
+	{
+		integer id;
+		integer sensor; 
+		float min;
+		float mean;
+		float max;
+	}
+	
+	/** Show min/max/mean values for each sensor over all time. */
+	action exercise8()
+	{
+		// receive all temperature reading events
+		from t in all TemperatureReading()
+		   // look over all time
+		   retain all
+		   // calculate per-sensor
+		   group by t.id, t.sensor
+		   // calculate three aggregates: min, mean, max and put them into an event to be logged
+		   select MinMaxMean(t.id, t.sensor, min(t.temperature), mean(t.temperature), max(t.temperature)) as mmm
+		{
+			publish(8, mmm.toString());
+			log mmm.toString() at INFO;
+		}
+	}
+	/** Get the current state of every robot */
+	action exercise9()
+	{
+		// receive two more event types
+		monitor.subscribe(AllRobotStatus.CHANNEL);
+		monitor.subscribe(RobotDataSummary.CHANNEL);
+		
+		// generate a unique id as above
+		integer requestId := integer.getUnique();
+		// wait for the response to our request
+		on AllRobotStatus(requestId=requestId) as ars {
+			// being optional is a DES artifact
+			optional<RobotStatus> r;
+			// loop over all robots
+			for r in ars.robots {
+				// this unpacks the optional, we expect it always to be true in this case
+				ifpresent r {
+					// for each robot, do another request to that robot for a summary, with a new requestId
+					integer requestId := integer.getUnique();
+					// a matched pair of self-terminating listeners. If the response arrives first, log it
+					on RobotDataSummary(requestId=requestId) as rds and not wait(10.0) {
+						publish(9, "Current status: "+rds.toString());			
+					}
+					// if 10s happens first, log an error
+					on wait (10.0) and not RobotDataSummary(requestId=requestId) {
+						publish(9, "Robot not responding to summary requests: "+r.toString());
+					}
+					// send the request
+					send RobotDataRequest(r.id, requestId) to RobotDataRequest.CHANNEL;
+				}
+			}
+		}
+		// send the request
+		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;		
+	}
+	/** See if a temperature sensor is stuck at the same value */
+	action exercise10()
+	{
+		// option one, just check two consecutive readings for the same sensor (not very reliable)
+		on all TemperatureReading() as tr {
+			on TemperatureReading(id=tr.id, sensor=tr.sensor) as tr2 {
+				if tr.temperature=tr2.temperature {
+					publish(10, "Robot sensor might be stuck: "+tr2.toString());
+				}
+			}
+		}
+		// option two, check over 10s whether all the readings are the same
+		from t in all TemperatureReading() within 10.0
+		  group by t.id, t.sensor
+		  having stddev(t.temperature)=0.0
+		  select TemperatureReading(t.id, t.sensor, mean(t.temperature)) as tr
+		{
+			publish(10, "Robot sensor might be stuck "+tr.toString());
+		}
+	}
+	/** Check we get a value for both sensors for each robot */
+	action exercise11()
+	{
+		// another manager request to get all the robots
+		monitor.subscribe(AllRobotStatus.CHANNEL);
+		monitor.subscribe(RobotDataSummary.CHANNEL);
+		integer requestId := integer.getUnique();
+		on AllRobotStatus(requestId=requestId) as ars {
+			optional<RobotStatus> r;
+			for r in ars.robots {
+				ifpresent r {
+					// in this case for each robot wait 10s for an event from each sensor
+					on wait(10.0) and not TemperatureReading(id=r.id, sensor=1) {
+						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 1");
+					}
+					on wait(10.0) and not TemperatureReading(id=r.id, sensor=2) {
+						publish(11, "Robot "+r.id.toString()+" isn't sending data on sensor 2");
+					}
+				}
+			}
+		}
+		send RequestRobotStatus(requestId) to RequestRobotStatus.CHANNEL;		
+	}
+
+	/** linear regression with formula (t=time, v=value) (n(Σtv)-ΣtΣv) / (n(Σt²)-(Σt)²) */
+	action exercise12()
+	{	
+		// offset the time to prevent rounding errors
+		float startTime := currentTime;
+		
+		// calculate the slopes over a relatively large window into a new stream
+		stream<TemperatureReading> slopes := from r in all TemperatureReading() within 240.0
+		  group by r.id, r.sensor // per-sensor slopes
+		  having count() > 30 // only count once we have enough data
+		  // this implements the above formula for calculating the linear regression slope
+		  select TemperatureReading(r.id, r.sensor, (count().toFloat()*sum(r.temperature*(r.getTime()-startTime))-sum(r.temperature)*sum(r.getTime()-startTime)) /
+		  		(count().toFloat()*sum((r.getTime()-startTime)*(r.getTime()-startTime))-(sum((r.getTime()-startTime))*sum((r.getTime()-startTime)))));
+		  
+		// once we have the slopes, only look for ones with a gradiant above 0.1
+		from s in slopes where s.temperature > 0.1 select s as tr  
+		{
+		  	publish(12, "Robot has increasing slope "+tr.toString());
+		}
+
+	}
+	/** Another internal helper event */
+	event AvgStd
+	{
+		float mean;
+		float stdev;
+	}
+	/** Use a peer model to check for a sensor that's significantly outside the range of the other sensors */
+	action exercise13()
+	{
+		// get all readings
+		stream<TemperatureReading> readings := all TemperatureReading();
+		// calculate the overall mean and stdev
+		stream<AvgStd> allMeans := from r in readings within 10.0 select AvgStd(mean(r.temperature), stddev(r.temperature));
+		// calculate the mean for each sensor over the same period
+		stream<TemperatureReading> perSensorMeans := from r in readings within 10.0 group by r.id, r.sensor select TemperatureReading(r.id, r.sensor, mean(r.temperature));
+		// don't need to window or match them up on ID because of how the network of streams and immediate windows work
+		from a in allMeans
+		from p in perSensorMeans
+		  // look for an event where the per-sensor mean is at least 1.0/1 standard deviation away from the overall mean
+		  where p.temperature > a.mean+float.max(1.0, a.stdev)
+		  select p as p
+		{
+			  publish(13, "Robot "+p.id.toString()+" is outside the peer average");
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.apama.text.launcher.monitorscriptApplication">
+<stringAttribute key="com.apama.launch.dirty" value="1548951473081"/>
+<stringAttribute key="com.apama.text.CONFIG_LOCATION" value="\training_monitor\config\launch\training_server.deploy"/>
+<intAttribute key="com.apama.text.CONFIG_VERSION" value="3"/>
+<stringAttribute key="com.apama.text.PROJECT_ATTR" value="training_server"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/training_server"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.debug.ui.ATTR_CONSOLE_ENCODING" value="UTF-8"/>
+<stringAttribute key="process_factory_id" value="com.apama.launching.core.processFactory"/>
+</launchConfiguration>

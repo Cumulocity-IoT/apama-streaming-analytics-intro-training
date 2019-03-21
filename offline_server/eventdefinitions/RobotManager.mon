@@ -1,0 +1,52 @@
+package apamax.training;
+
+/** A manager object which handles robot status updates and requests. @private  */
+event RobotManager {
+
+	integer errorCount;
+		
+	/** @private */
+	action init()
+	{
+		monitor.subscribe(RegisterRobot.CHANNEL);
+		on all RegisterRobot() as rr {
+			if not robots.hasKey(rr.id) {
+				robots[rr.id] := "OK";
+				com.apama.correlator.Component.setUserStatus("apamax_training_robotTotal", robots.size().toString());
+				send RobotStatus(rr.id, robots[rr.id]) to RobotStatus.CHANNEL;
+			}
+		}
+		monitor.subscribe(RobotError.CHANNEL);
+		on all RobotError() as re {
+			if robots.hasKey(re.id) {
+				errorCount := errorCount + 1;
+				com.apama.correlator.Component.setUserStatus("apamax_training_errorTotal", errorCount.toString());
+				if re.message.length() > 0 {
+					robots[re.id] := "Failed: "+re.message;
+				} else {
+					robots[re.id] := "OK";
+				}
+				send RobotStatus(re.id, robots[re.id]) to RobotStatus.CHANNEL;
+			}
+		}
+		monitor.subscribe(RequestRobotStatus.CHANNEL);
+		on all RequestRobotStatus() as rrs {
+			log "Received request for robot status ("+robots.toString()+")" at INFO;
+			sequence<RobotStatus> rs := new sequence<RobotStatus>;
+			integer id;
+			for id in robots.keys() {
+				send RobotStatus(id, robots[id]) to RobotStatus.CHANNEL;
+				rs.append(RobotStatus(id, robots[id]));
+			}
+			send AllRobotStatus(rrs.requestId, rs) to AllRobotStatus.CHANNEL;
+		}
+		monitor.subscribe(TemperatureReading.CHANNEL);
+		on all TemperatureReading() as tr {
+			com.apama.correlator.Component.setUserStatus("apamax_training_temperature_"+tr.id.toString()+"_"+tr.sensor.toString(), tr.temperature.toString());
+		}
+	}
+	
+	/** @private */
+	dictionary<integer, string> robots;
+	
+}

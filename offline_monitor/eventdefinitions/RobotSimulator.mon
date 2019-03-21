@@ -1,0 +1,154 @@
+package apamax.training;
+
+/** A class for simulating robot data. @private */
+event RobotSimulator
+{
+	action initDefaults()
+	{
+		id := integer.getUnique();
+		temperatureRange := 1.0;
+		temperatureMean1 := 25.0;
+		temperatureMean2 := 25.0;
+		period := 1.0;	
+		error := false;
+		onlySendOne := false;
+		offset := 0.0;
+	}
+	// more than 2s between updates, but does respond
+	action startSlowSimulation()
+	{
+		initDefaults();
+		period := 10.0;
+		startSimulating();
+	}
+	// far too hot
+	action startHotSimulation()
+	{
+		initDefaults();
+		temperatureMean1 := 50.0;
+		temperatureMean2 := 50.0;
+		startSimulating();
+	}
+	// difference between the temps > 5 degrees
+	action startSplitTempSimulation()
+	{
+		initDefaults();
+		temperatureMean2 := 15.0;
+		startSimulating();
+	}	
+	// temps vary by more than 5 degrees
+	action startVariableSimulation()
+	{
+		initDefaults();
+		temperatureRange := 10.0;
+		startSimulating();
+	}
+	// no errors, but we can still do stats on it
+	action startNormalSimulation()
+	{
+		initDefaults();
+		startSimulating();
+	}
+	// mostly normal but on average increasing
+	action startIncreasingSimulation()
+	{
+		initDefaults();
+		offset := 0.1;
+		startSimulating();
+	}
+	// normal, but sends RobotError events
+	action startSimulationWithErrors()
+	{
+		initDefaults();
+		startSimulating();
+		on all wait(period*(20.0+10.0.rand())) {
+			error := not error;
+			if error {
+				send RobotError(id, "There is an issue with a sensor on this robot") to RobotError.CHANNEL;
+			} else {
+				send RobotError(id, "") to RobotError.CHANNEL;			
+			}
+		}
+	}
+	// the sensors are stuck at a specific value
+	action startStuckSensor(float stuckAt)
+	{
+		initDefaults();
+		temperatureRange := 0.0;
+		temperatureMean1 := stuckAt;
+		temperatureMean2 := stuckAt;
+		startSimulating();
+	}
+	// only one sensor is working
+	action startSingleSensor()
+	{
+		initDefaults();
+		onlySendOne := true;
+		startSimulating();
+	}
+	// normal simulation, but with occasional temperature spikes which go away
+	action startSpikeySimulation()
+	{
+		initDefaults();
+		startSimulating();
+		on all wait(period*20.0) {
+			currentTemperature1 := currentTemperature1 + 10.0;
+			currentTemperature2 := currentTemperature2 + 10.0;
+		}
+	}
+	// robot exists, but doesn't send updates
+	action startDeadSimulation()
+	{
+		id := integer.getUnique();
+		send RegisterRobot(id) to RegisterRobot.CHANNEL;
+	}
+	
+	action startSimulating()
+	{
+		currentTemperature1 := temperatureMean1;
+		currentTemperature2 := temperatureMean2;
+		on wait(0.5.rand()) {
+			send RegisterRobot(id) to RegisterRobot.CHANNEL;
+			simoutListener := on all wait(period) {
+				updateTemperature1();
+				updateTemperature2();				
+				send TemperatureReading(id, 1, currentTemperature1) to TemperatureReading.CHANNEL;
+				if not onlySendOne {
+					send TemperatureReading(id, 2, currentTemperature2) to TemperatureReading.CHANNEL;
+				}
+			}
+		}
+		monitor.subscribe(RobotDataRequest.CHANNEL);
+		on all RobotDataRequest(id=id) as rdr {
+			send RobotDataSummary(id, rdr.requestId, currentTemperature1, currentTemperature2) to RobotDataSummary.CHANNEL;
+		}
+	}
+	action updateTemperature1()
+	{ 
+		temperatureMean1 := temperatureMean1 + offset;
+		float tempChange := (temperatureRange*2.0).rand() - temperatureRange - (currentTemperature1-temperatureMean1);
+		if tempChange > temperatureRange { tempChange := temperatureRange; }
+		if tempChange < -temperatureRange { tempChange := -temperatureRange; }
+		currentTemperature1 := currentTemperature1 + tempChange;
+	}		
+	action updateTemperature2()
+	{
+		temperatureMean2 := temperatureMean2 + offset;
+		float tempChange := (temperatureRange*2.0).rand() - temperatureRange - (currentTemperature2-temperatureMean2);
+		if tempChange > temperatureRange { tempChange := temperatureRange; }
+		if tempChange < -temperatureRange { tempChange := -temperatureRange; }
+		currentTemperature2 := currentTemperature2 + tempChange;
+	}
+	
+	float temperatureRange;
+	float temperatureMean1;
+	float currentTemperature1;
+	float temperatureMean2;
+	float currentTemperature2;
+	float period;
+	float offset;
+	boolean error;
+	boolean onlySendOne;
+	integer id;
+	listener simoutListener;
+}

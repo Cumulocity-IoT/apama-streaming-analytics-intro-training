@@ -1,0 +1,50 @@
+Client project creation script:
+
+New->Apama project: training_client
+Connectivity and Adapters: Add Connectivity and Adapters-> Digital Event Services
+config->connectivity->DigitalEventServices->DigitalEventServices.properties:
+	DigitalEventServices_replaceConfigWithRNAME=nsp://localhost:9000
+
+In the course:
+
+Copy in TypeRepository
+
+config->connectivity->DigitalEventServices->EventTypeList.apamades:
+
+Sync, then select apamax.training.*, then save, in the dialog for wizard select Software AG->EPL Event Definition
+
+
+1. Send test alert
+
+		send Alert("Matt", "Test alert") to Alert.CHANNEL;
+
+2. Alert on all temperature updates for a particular sensor
+
+		on all TemperatureReading(id=1, sensor=1) as tr {
+			send Alert("Matt", "Temperature for sensor 1 is "+tr.temperature.toString()) to Alert.CHANNEL;
+		}
+
+3. Alert on any temperature reading above a threshold
+
+		on all TemperatureReading(temperature > 40.0) as tr {
+			send Alert("Matt", "Temperature for robot "+tr.id.toString()+" sensor "+tr.sensor.toString()+" is "+tr.temperature.toString()) to Alert.CHANNEL;
+		}
+
+4. Alert if both sensors on a particular robot are above a threshold
+
+		on all TemperatureReading(id=5, sensor=1, temperature > 40.0) as tr1
+		 	-> TemperatureReading(id=5, sensor=2, temperature > 40.0) as tr2
+		       within(10.0) {
+			send Alert("Matt", "Temperature for both sensors on robot "+tr1.id.toString()+" above threshold within 10.0s") to Alert.CHANNEL;
+		}
+
+5. Do some aggregation over time
+
+		from tr in all TemperatureReading() within 10.0
+		  group by tr.id, tr.sensor
+		  having mean(tr.temperature) > 40.0
+		  select TemperatureReading(tr.id, tr.sensor, mean(tr.temperature)) as mr {
+			send Alert("Matt", "Average temperature for "+mr.id.toString()+" is "+mr.temperature.toString()) to Alert.CHANNEL; 
+		}
+		
+
